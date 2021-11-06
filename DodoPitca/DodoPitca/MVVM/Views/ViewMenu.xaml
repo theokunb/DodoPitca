@@ -190,6 +190,30 @@
                                               Title="Мексиканская"
                                               Description="Цыпленок, остный перец халапеньо, соус сальса, томаты, сладкий перец, красный лук, моцарелла, томатный соус"
                                               Price="от 545 р"/>
+                            <view:CustomTovar ImagePath="{local:ImageResource DodoPitca.Images.Combo.comboSubbota.png}"
+                                              Title="Суббота!"
+                                              Description="Любая пицца 30 см и два десерта на выбор. Идеально к просмотру любимых сериалов!"
+                                              Price="929 р"/>
+                            <view:CustomTovar ImagePath="{local:ImageResource DodoPitca.Images.Combo.combo2Pitci.png}"
+                                              Title="2 пиццы"
+                                              Description="Самое популярное комбо из 2 пицц 30 см. Выбор пицц ограничен"
+                                              Price="1 289 р"/>
+                            <view:CustomTovar ImagePath="{local:ImageResource DodoPitca.Images.Combo.combo2PitciNapitok.png}"
+                                              Title="2 пиццы и напиток"
+                                              Description="2 пиццы 25 см и напиток на выбор. Для компании из 2-4 человек. Выбор пицц органичен"
+                                              Price="969 р"/>
+                            <view:CustomTovar ImagePath="{local:ImageResource DodoPitca.Images.Combo.combo4Dodstera.png}"
+                                              Title="4 додстера"
+                                              Description="4 любых додстепа на выбор: Острый или Классический"
+                                              Price="639 р"/>
+                            <view:CustomTovar ImagePath="{local:ImageResource DodoPitca.Images.Combo.combo3Pitci.png}"
+                                              Title="3 пиццы"
+                                              Description="3 пиццы 30 см на любой вкус. Для компании из 5-10 человек. Выбор пицц ограничен"
+                                              Price="1 879 р"/>
+                            <view:CustomTovar ImagePath="{local:ImageResource DodoPitca.Images.Combo.combo5Pitci.png}"
+                                              Title="5 пицц"
+                                              Description="5 пиццы 30 см на любой вкус. Для компании из 10-15 человек. Выбор пицц ограничен"
+                                              Price="2 749 р"/>
                         </StackLayout>
                     </ScrollView>
                 </StackLayout>

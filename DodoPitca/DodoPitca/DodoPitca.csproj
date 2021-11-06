@@ -12,6 +12,12 @@
 
   <ItemGroup>
     <None Remove="Images\brysletiki.png" />
+    <None Remove="Images\Combo\combo2Pitci.png" />
+    <None Remove="Images\Combo\combo2PitciNapitok.png" />
+    <None Remove="Images\Combo\combo3Pitci.png" />
+    <None Remove="Images\Combo\combo4Dodstera.png" />
+    <None Remove="Images\Combo\combo5Pitci.png" />
+    <None Remove="Images\Combo\comboSubbota.png" />
     <None Remove="Images\contactsSelected.png" />
     <None Remove="Images\dostavka.png" />
     <None Remove="Images\galochka.png" />
@@ -67,6 +73,12 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Images\brysletiki.png" />
+    <EmbeddedResource Include="Images\Combo\combo2Pitci.png" />
+    <EmbeddedResource Include="Images\Combo\combo2PitciNapitok.png" />
+    <EmbeddedResource Include="Images\Combo\combo3Pitci.png" />
+    <EmbeddedResource Include="Images\Combo\combo4Dodstera.png" />
+    <EmbeddedResource Include="Images\Combo\combo5Pitci.png" />
+    <EmbeddedResource Include="Images\Combo\comboSubbota.png" />
     <EmbeddedResource Include="Images\contactsSelected.png" />
     <EmbeddedResource Include="Images\dostavka.png" />
     <EmbeddedResource Include="Images\galochka.png" />
