@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DodoPitca.MVVM.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace DodoPitca
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new TabbedPageMain();
         }
 
         protected override void OnStart()

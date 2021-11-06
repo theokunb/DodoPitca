@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DodoPitca.MVVM.Views.CustomButton"
+             xmlns:local="clr-namespace:DodoPitca.MVVM.Models"
+             xmlns:viewmodel="clr-namespace:DodoPitca.MVVM.ViewModels">
+    <ContentView.BindingContext>
+        <viewmodel:CustomButtonViewModel/>
+    </ContentView.BindingContext>
+  <ContentView.Content>
+      <StackLayout Orientation="Horizontal">
+          <Label Text="Якутск"
+                 TextColor="#5B6370"
+                 FontSize="20"/>
+            <Image Source="{local:ImageResource DodoPitca.Images.galochka.png}"
+                   WidthRequest="20"
+                   HeightRequest="20"/>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

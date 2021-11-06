@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:DodoPitca.MVVM.ViewModels"
+             x:Class="DodoPitca.MVVM.Views.CustomToggleBotton">
+    <ContentView.BindingContext>
+        <viewmodel:CustomToggleBottonViewModel/>
+    </ContentView.BindingContext>
+  <ContentView.Content>
+        <Grid>
+            <Rectangle Fill="#E2E3E8"
+                       WidthRequest="380"
+                       HeightRequest="40"
+                       HorizontalOptions="Start"
+                       RadiusX="10"
+                       RadiusY="10"
+                       x:Name="Base"/>
+            <Rectangle Fill="#E2E3E8"
+                       WidthRequest="190"
+                       HeightRequest="40"
+                       HorizontalOptions="Start"
+                       RadiusX="10"
+                       RadiusY="10"
+                       x:Name="On">
+                <Rectangle.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizerON_Tapped"/>
+                </Rectangle.GestureRecognizers>
+            </Rectangle>
+            <Rectangle Fill="#E2E3E8"
+                       WidthRequest="190"
+                       HeightRequest="40"
+                       HorizontalOptions="Start"
+                       RadiusX="10"
+                       RadiusY="10"
+                       Margin="150,0,0,0"
+                       x:Name="Off">
+                <Rectangle.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizerOFF_Tapped"/>
+                </Rectangle.GestureRecognizers>
+            </Rectangle>
+            <Rectangle Fill="White"
+                       WidthRequest="185"
+                       HeightRequest="35"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"
+                       Margin="2.5,0,0,0"
+                       RadiusX="10"
+                       RadiusY="10"
+                       x:Name="Slider"/>
+            <Label Text="На доставку"
+                   FontSize="18"
+                   TextColor="Black"
+                   HorizontalOptions="Start"
+                   Margin="40,6,0,0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizerON_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="В зале"
+                   FontSize="18"
+                   TextColor="Black"
+                   HorizontalOptions="Start"
+                   Margin="250,6,0,0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizerOFF_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+  </ContentView.Content>
+</ContentView>

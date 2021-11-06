@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DodoPitca.MVVM.Models"
+             xmlns:viewmodel="clr-namespace:DodoPitca.MVVM.ViewModels"
+             x:Class="DodoPitca.MVVM.Views.CustomButtonAddress">
+    <ContentView.BindingContext>
+        <viewmodel:CustomButtonAddressViewModel/>
+    </ContentView.BindingContext>
+    <ContentView.Content>
+      <StackLayout Orientation="Horizontal"
+                   HorizontalOptions="Center">
+            <Image Source="{local:ImageResource DodoPitca.Images.dostavka.png}"/>
+            <Label Text="Улица Чернышевского, 4"
+                   FontSize="18"/>
+            <Image Source="{local:ImageResource DodoPitca.Images.galochka_90.png}"/>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

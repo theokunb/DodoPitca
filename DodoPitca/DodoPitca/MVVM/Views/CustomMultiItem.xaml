@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DodoPitca.MVVM.Models"
+             xmlns:view="clr-namespace:DodoPitca.MVVM.Views"
+             xmlns:viewmodel="clr-namespace:DodoPitca.MVVM.ViewModels"
+             x:Class="DodoPitca.MVVM.Views.CustomMultiItem">
+    <ContentView.BindingContext>
+        <viewmodel:CustomMultiItemViewModel/>
+    </ContentView.BindingContext>
+  <ContentView.Content>
+        <Frame BackgroundColor="#F3F2F7"
+               CornerRadius="10"
+               Margin="15">
+            <StackLayout Orientation="Vertical" 
+                         Spacing="15">
+                <view:CustomToggleBotton/>
+                <Line BackgroundColor="#E2E3E7"
+                      WidthRequest="100"
+                      HeightRequest="2"/>
+                <view:CustomButtonAddress/>
+            </StackLayout>
+        </Frame>
+  </ContentView.Content>
+</ContentView>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DodoPitca.MVVM.Models"
+             xmlns:viewmodel="clr-namespace:DodoPitca.MVVM.ViewModels"
+             x:Class="DodoPitca.MVVM.Views.CustomNewAndHot">
+    <ContentView.BindingContext>
+        <viewmodel:CustomNewAndHotViewModel/>
+    </ContentView.BindingContext>
+  <ContentView.Content>
+        <Frame BackgroundColor="White"
+               CornerRadius="10"
+               WidthRequest="200"
+               HeightRequest="80"
+               Margin="4">
+            <StackLayout Orientation="Horizontal"
+                         Margin="-5">
+                <Image Source="{Binding ImagePath}"/>
+                <StackLayout Orientation="Vertical"
+                             Spacing="10"
+                             Margin="10,0,0,0">
+                    <Label Text="{Binding Title}"
+                           HorizontalTextAlignment="Center"
+                           VerticalOptions="StartAndExpand"
+                           FontSize="18"
+                           TextColor="Black"
+                           LineBreakMode="CharacterWrap"/>
+                    <Frame BackgroundColor="#FEF0E5"
+                           CornerRadius="15"
+                           VerticalOptions="EndAndExpand">
+                        <Label Text="{Binding Price}"
+                               HorizontalTextAlignment="Center"
+                               TextColor="#BE5D18"
+                               Margin="-20,-15,-20,-15"/>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+  </ContentView.Content>
+</ContentView>

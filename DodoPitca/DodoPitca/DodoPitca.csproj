@@ -11,7 +11,150 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\brysletiki.png" />
+    <None Remove="Images\contactsSelected.png" />
+    <None Remove="Images\dostavka.png" />
+    <None Remove="Images\galochka.png" />
+    <None Remove="Images\galochka_90.png" />
+    <None Remove="Images\hotDodster.png" />
+    <None Remove="Images\korzinaSelected.png" />
+    <None Remove="Images\menuSelected.png" />
+    <None Remove="Images\peperoni.png" />
+    <None Remove="Images\Pitci\arriva.png" />
+    <None Remove="Images\Pitci\chizborger.png" />
+    <None Remove="Images\Pitci\diablo.png" />
+    <None Remove="Images\Pitci\dodo.png" />
+    <None Remove="Images\Pitci\dodoMiks.png" />
+    <None Remove="Images\Pitci\doublePeperoni.png" />
+    <None Remove="Images\Pitci\doubleTsiplenok.png" />
+    <None Remove="Images\Pitci\fourSeason.png" />
+    <None Remove="Images\Pitci\fourSir.png" />
+    <None Remove="Images\Pitci\fristailo.png" />
+    <None Remove="Images\Pitci\gavaiskaya.png" />
+    <None Remove="Images\Pitci\karbonara.png" />
+    <None Remove="Images\Pitci\kolbaskiBarbeku.png" />
+    <None Remove="Images\Pitci\margarita.png" />
+    <None Remove="Images\Pitci\meksikanskaya.png" />
+    <None Remove="Images\Pitci\myasnaya.png" />
+    <None Remove="Images\Pitci\nejniLosos.png" />
+    <None Remove="Images\Pitci\ovoshiGribi.png" />
+    <None Remove="Images\Pitci\peperoni380.png" />
+    <None Remove="Images\Pitci\peperoniFresh.png" />
+    <None Remove="Images\Pitci\pesto.png" />
+    <None Remove="Images\Pitci\pitcaIzPolovinok.png" />
+    <None Remove="Images\Pitci\pitcaKeshi.png" />
+    <None Remove="Images\Pitci\pitcaPirog.png" />
+    <None Remove="Images\Pitci\pitcaTychki.png" />
+    <None Remove="Images\Pitci\sirnaya2.png" />
+    <None Remove="Images\Pitci\sirniTciplenok.png" />
+    <None Remove="Images\Pitci\superMyasnaya.png" />
+    <None Remove="Images\Pitci\tciplenokBarbeky.png" />
+    <None Remove="Images\Pitci\tciplenokRanch.png" />
+    <None Remove="Images\Pitci\vetchinaGribi.png" />
+    <None Remove="Images\Pitci\vetchinaSir.png" />
+    <None Remove="Images\profileSelected.png" />
+    <None Remove="Images\search.png" />
+    <None Remove="Images\sirnaya.png" />
+    <None Remove="Images\story1.png" />
+    <None Remove="Images\story2.png" />
+    <None Remove="Images\story3.png" />
+    <None Remove="Images\story4.png" />
+    <None Remove="Images\story5.png" />
+    <None Remove="Images\story6.png" />
+    <None Remove="Images\story7.png" />
+    <None Remove="Images\twoPitci.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\brysletiki.png" />
+    <EmbeddedResource Include="Images\contactsSelected.png" />
+    <EmbeddedResource Include="Images\dostavka.png" />
+    <EmbeddedResource Include="Images\galochka.png" />
+    <EmbeddedResource Include="Images\galochka_90.png" />
+    <EmbeddedResource Include="Images\hotDodster.png" />
+    <EmbeddedResource Include="Images\korzinaSelected.png" />
+    <EmbeddedResource Include="Images\menuSelected.png" />
+    <EmbeddedResource Include="Images\peperoni.png" />
+    <EmbeddedResource Include="Images\Pitci\arriva.png" />
+    <EmbeddedResource Include="Images\Pitci\chizborger.png" />
+    <EmbeddedResource Include="Images\Pitci\diablo.png" />
+    <EmbeddedResource Include="Images\Pitci\dodo.png" />
+    <EmbeddedResource Include="Images\Pitci\dodoMiks.png" />
+    <EmbeddedResource Include="Images\Pitci\doublePeperoni.png" />
+    <EmbeddedResource Include="Images\Pitci\doubleTsiplenok.png" />
+    <EmbeddedResource Include="Images\Pitci\fourSeason.png" />
+    <EmbeddedResource Include="Images\Pitci\fourSir.png" />
+    <EmbeddedResource Include="Images\Pitci\fristailo.png" />
+    <EmbeddedResource Include="Images\Pitci\gavaiskaya.png" />
+    <EmbeddedResource Include="Images\Pitci\karbonara.png" />
+    <EmbeddedResource Include="Images\Pitci\kolbaskiBarbeku.png" />
+    <EmbeddedResource Include="Images\Pitci\margarita.png" />
+    <EmbeddedResource Include="Images\Pitci\meksikanskaya.png" />
+    <EmbeddedResource Include="Images\Pitci\myasnaya.png" />
+    <EmbeddedResource Include="Images\Pitci\nejniLosos.png" />
+    <EmbeddedResource Include="Images\Pitci\ovoshiGribi.png" />
+    <EmbeddedResource Include="Images\Pitci\peperoni380.png" />
+    <EmbeddedResource Include="Images\Pitci\peperoniFresh.png" />
+    <EmbeddedResource Include="Images\Pitci\pesto.png" />
+    <EmbeddedResource Include="Images\Pitci\pitcaIzPolovinok.png" />
+    <EmbeddedResource Include="Images\Pitci\pitcaKeshi.png" />
+    <EmbeddedResource Include="Images\Pitci\pitcaPirog.png" />
+    <EmbeddedResource Include="Images\Pitci\pitcaTychki.png" />
+    <EmbeddedResource Include="Images\Pitci\sirnaya2.png" />
+    <EmbeddedResource Include="Images\Pitci\sirniTciplenok.png" />
+    <EmbeddedResource Include="Images\Pitci\superMyasnaya.png" />
+    <EmbeddedResource Include="Images\Pitci\tciplenokBarbeky.png" />
+    <EmbeddedResource Include="Images\Pitci\tciplenokRanch.png" />
+    <EmbeddedResource Include="Images\Pitci\vetchinaGribi.png" />
+    <EmbeddedResource Include="Images\Pitci\vetchinaSir.png" />
+    <EmbeddedResource Include="Images\profileSelected.png" />
+    <EmbeddedResource Include="Images\search.png" />
+    <EmbeddedResource Include="Images\sirnaya.png" />
+    <EmbeddedResource Include="Images\story1.png" />
+    <EmbeddedResource Include="Images\story2.png" />
+    <EmbeddedResource Include="Images\story3.png" />
+    <EmbeddedResource Include="Images\story4.png" />
+    <EmbeddedResource Include="Images\story5.png" />
+    <EmbeddedResource Include="Images\story6.png" />
+    <EmbeddedResource Include="Images\story7.png" />
+    <EmbeddedResource Include="Images\twoPitci.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="MVVM\Views\CustomButton.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MVVM\Views\CustomButtonAddress.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MVVM\Views\CustomMultiItem.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MVVM\Views\CustomNewAndHot.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MVVM\Views\CustomStory.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MVVM\Views\CustomToggleBotton.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MVVM\Views\CustomTovar.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MVVM\Views\CustumHeader.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MVVM\Views\TabbedPageMain.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MVVM\Views\ViewMenu.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
