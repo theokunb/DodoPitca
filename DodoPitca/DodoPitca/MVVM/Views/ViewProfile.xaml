@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DodoPitca.MVVM.Models"
+             xmlns:view="clr-namespace:DodoPitca.MVVM.Views"
+             x:Class="DodoPitca.MVVM.Views.ViewProfile">
+  <ContentView.Content>
+        <ScrollView Orientation="Vertical"
+                  VerticalScrollBarVisibility="Never">
+            <StackLayout Orientation="Vertical"
+                         Spacing="20">
+                <Label Text="Профиль"
+                       TextColor="Black"
+                       FontSize="20"
+                       Margin="10,20,0,0"
+                       HorizontalOptions="StartAndExpand"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Алексей"
+                           TextColor="Black"
+                           FontSize="28"
+                           FontAttributes="Bold"
+                           Margin="10,0,0,0"
+                           HorizontalOptions="StartAndExpand"
+                           VerticalOptions="Center"/>
+                    <Image Source="{local:ImageResource DodoPitca.Images.settings.png}"
+                           HorizontalOptions="EndAndExpand"
+                           VerticalOptions="Center"
+                           Margin="0,0,20,0"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="CenterAndExpand"
+                             Spacing="10">
+                    <view:CustomProfileFrame Title="Додокоины"
+                                             Coins="200"
+                                             ImagePath="{local:ImageResource DodoPitca.Images.dodoCoin.png}"/>
+                    <view:CustomProfileFrame Title="Персональные акции"
+                                             Coins="0"
+                                             ImagePath="{local:ImageResource DodoPitca.Images.podarki.png}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Адреса доставки"
+                           TextColor="Black"
+                           FontSize="18"
+                           HorizontalOptions="StartAndExpand"
+                           Margin="10,0,0,0"/>
+                    <Label Text="2"
+                           TextColor="Black"
+                           FontSize="18"
+                           HorizontalOptions="EndAndExpand"
+                           Margin="0,0,10,0"/>
+                </StackLayout>
+                <Line BackgroundColor="#E2E3E7"
+                      WidthRequest="100"
+                      HeightRequest="2"
+                      Margin="10,0,10,0"/>
+                <Label Text="История заказов"
+                       TextColor="Black"
+                       FontSize="18"
+                       Margin="10,0,0,0"/>
+                <Line BackgroundColor="#E2E3E7"
+                      WidthRequest="100"
+                      HeightRequest="2"
+                      Margin="10,0,10,10"/>
+            </StackLayout>
+        </ScrollView>
+  </ContentView.Content>
+</ContentView>

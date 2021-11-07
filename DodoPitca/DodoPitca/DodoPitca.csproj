@@ -19,6 +19,7 @@
     <None Remove="Images\Combo\combo5Pitci.png" />
     <None Remove="Images\Combo\comboSubbota.png" />
     <None Remove="Images\contactsSelected.png" />
+    <None Remove="Images\dodoCoin.png" />
     <None Remove="Images\dostavka.png" />
     <None Remove="Images\galochka.png" />
     <None Remove="Images\galochka_90.png" />
@@ -58,8 +59,10 @@
     <None Remove="Images\Pitci\tciplenokRanch.png" />
     <None Remove="Images\Pitci\vetchinaGribi.png" />
     <None Remove="Images\Pitci\vetchinaSir.png" />
+    <None Remove="Images\podarki.png" />
     <None Remove="Images\profileSelected.png" />
     <None Remove="Images\search.png" />
+    <None Remove="Images\settings.png" />
     <None Remove="Images\sirnaya.png" />
     <None Remove="Images\story1.png" />
     <None Remove="Images\story2.png" />
@@ -80,6 +83,7 @@
     <EmbeddedResource Include="Images\Combo\combo5Pitci.png" />
     <EmbeddedResource Include="Images\Combo\comboSubbota.png" />
     <EmbeddedResource Include="Images\contactsSelected.png" />
+    <EmbeddedResource Include="Images\dodoCoin.png" />
     <EmbeddedResource Include="Images\dostavka.png" />
     <EmbeddedResource Include="Images\galochka.png" />
     <EmbeddedResource Include="Images\galochka_90.png" />
@@ -119,8 +123,10 @@
     <EmbeddedResource Include="Images\Pitci\tciplenokRanch.png" />
     <EmbeddedResource Include="Images\Pitci\vetchinaGribi.png" />
     <EmbeddedResource Include="Images\Pitci\vetchinaSir.png" />
+    <EmbeddedResource Include="Images\podarki.png" />
     <EmbeddedResource Include="Images\profileSelected.png" />
     <EmbeddedResource Include="Images\search.png" />
+    <EmbeddedResource Include="Images\settings.png" />
     <EmbeddedResource Include="Images\sirnaya.png" />
     <EmbeddedResource Include="Images\story1.png" />
     <EmbeddedResource Include="Images\story2.png" />
@@ -150,6 +156,9 @@
     <EmbeddedResource Update="MVVM\Views\CustomNewAndHot.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="MVVM\Views\CustomProfileFrame.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="MVVM\Views\CustomStory.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -166,6 +175,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MVVM\Views\ViewMenu.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MVVM\Views\ViewProfile.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

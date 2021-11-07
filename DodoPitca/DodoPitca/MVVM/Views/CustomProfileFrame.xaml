@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DodoPitca.MVVM.Models"
+             xmlns:viewmodel="clr-namespace:DodoPitca.MVVM.ViewModels"
+             x:Class="DodoPitca.MVVM.Views.CustomProfileFrame">
+    <ContentView.BindingContext>
+        <viewmodel:CustomProfileFrameViewModel/>
+    </ContentView.BindingContext>
+  <ContentView.Content>
+        <Frame CornerRadius="10">
+            <Frame.Background>
+                <LinearGradientBrush StartPoint="0,0"
+                                     EndPoint="1,1">
+                    <GradientStop Color="#6031D5" Offset="0"/>
+                    <GradientStop Color="#3B17C1" Offset="1"/>
+                </LinearGradientBrush>
+            </Frame.Background>
+            <StackLayout Orientation="Vertical"
+                         Margin="-15">
+                <Label Text="{Binding Title}"
+                       TextColor="White"
+                       FontSize="16"
+                       HorizontalOptions="StartAndExpand"
+                       Margin="10"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding Coins}"
+                           TextColor="White"
+                           FontSize="28"
+                           VerticalOptions="EndAndExpand"
+                           Margin="10,10,0,10"/>
+                    <Image Source="{Binding ImagePath}"
+                           HorizontalOptions="EndAndExpand"
+                           Margin="50,20,-10,-10"/>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+  </ContentView.Content>
+</ContentView>
