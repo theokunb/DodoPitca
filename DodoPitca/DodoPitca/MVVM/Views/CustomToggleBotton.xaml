@@ -60,7 +60,7 @@
                    FontSize="18"
                    TextColor="Black"
                    HorizontalOptions="Start"
-                   Margin="250,6,0,0">
+                   Margin="240,6,0,0">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizerOFF_Tapped"/>
                 </Label.GestureRecognizers>
