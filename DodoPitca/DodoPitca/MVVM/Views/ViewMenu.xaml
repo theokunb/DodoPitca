@@ -3,7 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:view="clr-namespace:DodoPitca.MVVM.Views"
              xmlns:local="clr-namespace:DodoPitca.MVVM.Models"
+             xmlns:viewmodel="clr-namespace:DodoPitca.MVVM.ViewModels"
              x:Class="DodoPitca.MVVM.Views.ViewMenu">
+    <ContentView.BindingContext>
+        <viewmodel:MenuViewModel/>
+    </ContentView.BindingContext>
   <ContentView.Content>
         <ScrollView Orientation="Vertical"
                     VerticalScrollBarVisibility="Never">
@@ -11,7 +15,12 @@
                    Spacing="0">
                 <StackLayout Orientation="Horizontal">
                     <view:CustomButton Margin="10"
-                                   HorizontalOptions="StartAndExpand"/>
+                                       HorizontalOptions="StartAndExpand"
+                                       CityIndex="0">
+                        <view:CustomButton.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding commandSelectCity}"/>
+                        </view:CustomButton.GestureRecognizers>
+                    </view:CustomButton>
                     <Image Source="{local:ImageResource DodoPitca.Images.search.png}"
                        HorizontalOptions="EndAndExpand"
                        Margin="10"/>
