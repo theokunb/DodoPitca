@@ -21,6 +21,10 @@
             <view:ViewProfile/>
         </ContentPage.Content>
     </ContentPage>
-    <ContentPage Title="Контакты" IconImageSource="{local:ImageResource DodoPitca.Images.contactsSelected.png}" />
+    <ContentPage Title="Контакты" IconImageSource="{local:ImageResource DodoPitca.Images.contactsSelected.png}">
+        <ContentPage.Content>
+            <view:ViewContacts/>
+        </ContentPage.Content>
+    </ContentPage>
     <ContentPage Title="Корзина" IconImageSource="{local:ImageResource DodoPitca.Images.korzinaSelected.png}" />
 </TabbedPage>

@@ -19,7 +19,12 @@
     <None Remove="Images\Combo\combo5Pitci.png" />
     <None Remove="Images\Combo\comboSubbota.png" />
     <None Remove="Images\contactsSelected.png" />
+    <None Remove="Images\Contacts\dodoFacebook.png" />
+    <None Remove="Images\Contacts\dodoInsta.png" />
+    <None Remove="Images\Contacts\dodoVK.png" />
+    <None Remove="Images\Contacts\dodoYoutube.png" />
     <None Remove="Images\dodoCoin.png" />
+    <None Remove="Images\dodoMap.png" />
     <None Remove="Images\dostavka.png" />
     <None Remove="Images\galochka.png" />
     <None Remove="Images\galochka_90.png" />
@@ -83,7 +88,12 @@
     <EmbeddedResource Include="Images\Combo\combo5Pitci.png" />
     <EmbeddedResource Include="Images\Combo\comboSubbota.png" />
     <EmbeddedResource Include="Images\contactsSelected.png" />
+    <EmbeddedResource Include="Images\Contacts\dodoFacebook.png" />
+    <EmbeddedResource Include="Images\Contacts\dodoInsta.png" />
+    <EmbeddedResource Include="Images\Contacts\dodoVK.png" />
+    <EmbeddedResource Include="Images\Contacts\dodoYoutube.png" />
     <EmbeddedResource Include="Images\dodoCoin.png" />
+    <EmbeddedResource Include="Images\dodoMap.png" />
     <EmbeddedResource Include="Images\dostavka.png" />
     <EmbeddedResource Include="Images\galochka.png" />
     <EmbeddedResource Include="Images\galochka_90.png" />
@@ -150,6 +160,9 @@
     <EmbeddedResource Update="MVVM\Views\CustomButtonAddress.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="MVVM\Views\CustomContactsButton.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="MVVM\Views\CustomMultiItem.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -172,6 +185,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MVVM\Views\TabbedPageMain.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MVVM\Views\ViewContacts.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MVVM\Views\ViewMenu.xaml">

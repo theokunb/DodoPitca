@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DodoPitca.MVVM.Models"
+             xmlns:view="clr-namespace:DodoPitca.MVVM.Views"
+             x:Class="DodoPitca.MVVM.Views.ViewContacts">
+  <ContentView.Content>
+        <ScrollView Orientation="Vertical">
+            <StackLayout Orientation="Vertical">
+                <Grid>
+                    <Frame Margin="10"
+                           CornerRadius="120"
+                           WidthRequest="150"
+                           HeightRequest="150"
+                           IsClippedToBounds="True"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center">
+                        <Image Source="{local:ImageResource DodoPitca.Images.dodoMap.png}"
+                               Margin="-20"/>
+                    </Frame>
+                    <Button Text="  Пицерии на карте  "
+                            FontSize="16"
+                            CornerRadius="20"
+                            TextColor="White"
+                            BackgroundColor="Orange"
+                            HorizontalOptions="Center"
+                            VerticalOptions="End"
+                            Margin="0,0,0,30"/>
+                </Grid>
+                <Label Text="Связаться с поддержкой"
+                       TextColor="Black"
+                       FontSize="20"
+                       Margin="10,20,0,0"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"/>
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="Center"
+                             Margin="0,10,0,0"
+                             Spacing="50">
+                    <Button Text="      Позвонить      "
+                            BackgroundColor="#FEF0E5"
+                            CornerRadius="20"
+                            HorizontalOptions="Start"/>
+                    <Button Text="    Написать EMAIL    "
+                            BackgroundColor="#FEF0E5"
+                            CornerRadius="20"
+                            HorizontalOptions="End"/>
+                </StackLayout>
+                <Line BackgroundColor="#E2E3E7"
+                      WidthRequest="100"
+                      HeightRequest="2"
+                      Margin="0,20,0,0"/>
+                <StackLayout Orientation="Horizontal"
+                             Spacing="50"
+                             Margin="0,20,0,20"
+                             HorizontalOptions="Center">
+                    <Image Source="{local:ImageResource DodoPitca.Images.Contacts.dodoVK.png}"/>
+                    <Image Source="{local:ImageResource DodoPitca.Images.Contacts.dodoFacebook.png}"/>
+                    <Image Source="{local:ImageResource DodoPitca.Images.Contacts.dodoInsta.png}"/>
+                    <Image Source="{local:ImageResource DodoPitca.Images.Contacts.dodoYoutube.png}"/>
+                </StackLayout>
+                <Line BackgroundColor="#E2E3E7"
+                      WidthRequest="100"
+                      HeightRequest="2"/>
+                <view:CustomContactsButton Text="Правовые документы"/>
+                <Line BackgroundColor="#E2E3E7"
+                      WidthRequest="100"
+                      HeightRequest="2"/>
+                <view:CustomContactsButton Text="Правовые документы"/>
+                <Line BackgroundColor="#E2E3E7"
+                      WidthRequest="100"
+                      HeightRequest="2"/>
+            </StackLayout>
+        </ScrollView>
+  </ContentView.Content>
+</ContentView>
