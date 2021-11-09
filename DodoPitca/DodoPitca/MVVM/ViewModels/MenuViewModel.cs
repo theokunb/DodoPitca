@@ -9,15 +9,9 @@ namespace DodoPitca.MVVM.ViewModels
 {
     public class MenuViewModel : BaseViewModel
     {
-        public ICommand commandSelectCity { get; }
-
-
         public MenuViewModel()
         {
-            commandSelectCity = new Command(param =>
-            {
-                Application.Current.MainPage.Navigation.PushAsync(new PageCitySelect());
-            });
+
         }
     }
 }

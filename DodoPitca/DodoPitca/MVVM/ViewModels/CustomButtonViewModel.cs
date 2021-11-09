@@ -1,32 +1,35 @@
 ﻿using DodoPitca.MVVM.Models;
+using DodoPitca.MVVM.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace DodoPitca.MVVM.ViewModels
 {
     public class CustomButtonViewModel : BaseViewModel
     {
-        private City currentCity = City.Yakutsk;
-
-        public City CurrentCity
+        private string cityTitle;
+        
+        public string CityTitle
         {
-            get => currentCity;
+            get => cityTitle;
             set
             {
-                if (currentCity == value)
+                if (cityTitle == value)
                     return;
-                currentCity = value;
+                cityTitle = value;
                 OnpropertyChagned();
             }
         }
-        public string DisplayCity
-        {
-            get => CityHelp.GetTitle(CurrentCity);
-        }
+        public ICommand CommandSelectCity { get; }
         public CustomButtonViewModel()
         {
-            
+            CommandSelectCity = new Command(async param =>
+            {
+                await App.Current.MainPage.Navigation.PushModalAsync(new PageCitySelect());
+            });
         }
     }
 }

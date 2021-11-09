@@ -16,9 +16,9 @@
                 <StackLayout Orientation="Horizontal">
                     <view:CustomButton Margin="10"
                                        HorizontalOptions="StartAndExpand"
-                                       CityIndex="0">
+                                       CityTitle="Якутск">
                         <view:CustomButton.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding commandSelectCity}"/>
+                            <TapGestureRecognizer Command="{Binding CommandSelectCity}"/>
                         </view:CustomButton.GestureRecognizers>
                     </view:CustomButton>
                     <Image Source="{local:ImageResource DodoPitca.Images.search.png}"

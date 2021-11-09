@@ -13,21 +13,22 @@ namespace DodoPitca.MVVM.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CustomButton : ContentView
     {
-        public static readonly BindableProperty CityIndexProperty = BindableProperty.Create(nameof(CityIndex), typeof(int), typeof(CustomButton), 0, BindingMode.TwoWay, propertyChanged: CityIndexPropertyChanged);
+        public static readonly BindableProperty CityTitleProperty = BindableProperty.Create(nameof(CityTitle), typeof(string), typeof(CustomButton), "", BindingMode.TwoWay, propertyChanged: CityTitlePropertyChanged);
 
-        private static void CityIndexPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+
+        public string CityTitle
         {
+            get { return GetValue(CityTitleProperty).ToString(); }
+            set { SetValue(CityTitleProperty, value); }
+        }
+        private static void CityTitlePropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if (newValue == null)
+                return;
             var control = (CustomButton)bindable;
             var controlVM = control.BindingContext as CustomButtonViewModel;
-            controlVM.CurrentCity = (Models.City)newValue;
+            controlVM.CityTitle = newValue.ToString();
         }
-
-        public int CityIndex
-        {
-            get { return Convert.ToInt32(GetValue(CityIndexProperty)); }
-            set { SetValue(CityIndexProperty, value); }
-        }
-
 
         public CustomButton()
         {
