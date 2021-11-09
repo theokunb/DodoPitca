@@ -9,7 +9,7 @@
     </ContentView.BindingContext>
   <ContentView.Content>
       <StackLayout Orientation="Horizontal">
-          <Label Text="Якутск"
+          <Label Text="{Binding DisplayCity}"
                  TextColor="#5B6370"
                  FontSize="20"/>
             <Image Source="{local:ImageResource DodoPitca.Images.galochka.png}"
