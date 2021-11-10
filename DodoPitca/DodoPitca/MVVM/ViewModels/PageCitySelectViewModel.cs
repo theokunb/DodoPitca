@@ -1,4 +1,5 @@
 ﻿using DodoPitca.MVVM.Models;
+using DodoPitca.MVVM.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,19 +10,33 @@ namespace DodoPitca.MVVM.ViewModels
 {
     public class PageCitySelectViewModel : BaseViewModel
     {
+        private CustomCity currentCity;
 
+        public CustomCity CurrentCity
+        {
+            get => currentCity;
+            set
+            {
+                if (currentCity != null)
+                    currentCity.IsChecked = false;
+                value.IsChecked = true;
+                currentCity = value;
+                OnpropertyChagned();
+            }
+        }
 
         public ICommand CommandExit { get; }
         public ICommand CommandSetCity { get; }
         public PageCitySelectViewModel()
         {
+            MessagingCenter.Subscribe<BaseViewModel, CustomCity>(this, Strings.SELECT_CITY, (obj, param) =>
+            {
+                CurrentCity = param;
+            });
             CommandExit = new Command(async o =>
             {
-                await App.Current.MainPage.Navigation.PopModalAsync();
-            });
-            CommandSetCity = new Command(param =>
-            {
-                MessagingCenter.Send<BaseViewModel,string>(this, Strings.SET_CITY, "Москва");
+                MessagingCenter.Send<BaseViewModel, string>(this, Strings.SET_CITY, CurrentCity.Title);
+                await Application.Current.MainPage.Navigation.PopModalAsync();
             });
         }
     }

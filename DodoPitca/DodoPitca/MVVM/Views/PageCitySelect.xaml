@@ -11,8 +11,7 @@
     <ContentPage.Content>
         <ScrollView Orientation="Vertical"
                     VerticalScrollBarVisibility="Never">
-            <StackLayout Orientation="Vertical"
-                         Spacing="0">
+            <StackLayout Orientation="Vertical">
                 <StackLayout Orientation="Horizontal">
                     <Image Source="{local:ImageResource DodoPitca.Images.close.png}"
                            Margin="10"
@@ -25,15 +24,26 @@
                            Margin="10"
                            HorizontalOptions="EndAndExpand"/>
                 </StackLayout>
-                <view:CustomCity Title="Якутск"
-                                 ImagePath="{local:ImageResource DodoPitca.Images.galochka.png}"
-                                 IsChecked="True"/>
-                <view:CustomCity Title="Москва"
-                                 ImagePath="{local:ImageResource DodoPitca.Images.galochka.png}"
-                                 IsChecked="False"/>
-                <view:CustomCity Title="Краснодар"
-                                 ImagePath="{local:ImageResource DodoPitca.Images.galochka.png}"
-                                 IsChecked="False"/>
+                <StackLayout Orientation="Vertical"
+                             x:Name="stackCities"
+                             Spacing="0">
+                    <view:CustomCity Title="Якутск"
+                                 ImagePath="{local:ImageResource DodoPitca.Images.galochka.png}"/>
+                    <view:CustomCity Title="Москва"
+                                 ImagePath="{local:ImageResource DodoPitca.Images.galochka.png}"/>
+                    <view:CustomCity Title="Краснодар"
+                                 ImagePath="{local:ImageResource DodoPitca.Images.galochka.png}"/>
+                    <view:CustomCity Title="Санкт-Петербург"
+                                 ImagePath="{local:ImageResource DodoPitca.Images.galochka.png}"/>
+                    <view:CustomCity Title="Новосибирск"
+                                 ImagePath="{local:ImageResource DodoPitca.Images.galochka.png}"/>
+                    <view:CustomCity Title="Екатеринбург"
+                                 ImagePath="{local:ImageResource DodoPitca.Images.galochka.png}"/>
+                    <view:CustomCity Title="Нижний Новгород"
+                                 ImagePath="{local:ImageResource DodoPitca.Images.galochka.png}"/>
+                    <view:CustomCity Title="Казань"
+                                 ImagePath="{local:ImageResource DodoPitca.Images.galochka.png}"/>
+                </StackLayout>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DodoPitca.MVVM.Models;
+using DodoPitca.MVVM.Views;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
@@ -46,10 +48,6 @@ namespace DodoPitca.MVVM.ViewModels
                     OnpropertyChagned();
                 }
             }
-        }
-        public CustomCityViewModel()
-        {
-
         }
     }
 }

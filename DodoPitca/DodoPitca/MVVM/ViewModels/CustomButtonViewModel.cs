@@ -43,7 +43,7 @@ namespace DodoPitca.MVVM.ViewModels
         {
             CommandSelectCity = new Command(async param =>
             {
-                await Application.Current.MainPage.Navigation.PushModalAsync(new PageCitySelect());
+                await Application.Current.MainPage.Navigation.PushModalAsync(new PageCitySelect(CityTitle));
             });
             MessagingCenter.Subscribe<BaseViewModel, string>(this, Strings.SET_CITY, (obj ,param) =>
             {

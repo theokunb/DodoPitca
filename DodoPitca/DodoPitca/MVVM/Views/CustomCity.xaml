@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:DodoPitca.MVVM.Models"
              xmlns:viewmodel="clr-namespace:DodoPitca.MVVM.ViewModels"
-             x:Class="DodoPitca.MVVM.Views.CustomCity">
+             x:Class="DodoPitca.MVVM.Views.CustomCity"
+             x:Name="city">
     <ContentView.BindingContext>
         <viewmodel:CustomCityViewModel/>
     </ContentView.BindingContext>
@@ -22,7 +23,7 @@
                        IsVisible="{Binding IsChecked}"/>
             </StackLayout>
             <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command=""/>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
             </Frame.GestureRecognizers>
         </Frame>
     </ContentView.Content>

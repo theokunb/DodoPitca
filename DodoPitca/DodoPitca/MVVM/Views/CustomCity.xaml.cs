@@ -1,4 +1,5 @@
-﻿using DodoPitca.MVVM.ViewModels;
+﻿using DodoPitca.MVVM.Models;
+using DodoPitca.MVVM.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,6 +56,11 @@ namespace DodoPitca.MVVM.Views
         public CustomCity()
         {
             InitializeComponent();
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            MessagingCenter.Send<BaseViewModel, CustomCity>(BindingContext as CustomCityViewModel, Strings.SELECT_CITY, this);
         }
     }
 }
