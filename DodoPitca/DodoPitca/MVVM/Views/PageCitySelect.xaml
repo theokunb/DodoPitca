@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodel="clr-namespace:DodoPitca.MVVM.ViewModels"
+             xmlns:view="clr-namespace:DodoPitca.MVVM.Views"
              xmlns:local="clr-namespace:DodoPitca.MVVM.Models"
              x:Class="DodoPitca.MVVM.Views.PageCitySelect">
     <ContentPage.BindingContext>
@@ -11,7 +12,7 @@
         <ScrollView Orientation="Vertical"
                     VerticalScrollBarVisibility="Never">
             <StackLayout Orientation="Vertical"
-                         x:Name="stackCities">
+                         Spacing="0">
                 <StackLayout Orientation="Horizontal">
                     <Image Source="{local:ImageResource DodoPitca.Images.close.png}"
                            Margin="10"
@@ -24,7 +25,15 @@
                            Margin="10"
                            HorizontalOptions="EndAndExpand"/>
                 </StackLayout>
-                
+                <view:CustomCity Title="Якутск"
+                                 ImagePath="{local:ImageResource DodoPitca.Images.galochka.png}"
+                                 IsChecked="True"/>
+                <view:CustomCity Title="Москва"
+                                 ImagePath="{local:ImageResource DodoPitca.Images.galochka.png}"
+                                 IsChecked="False"/>
+                <view:CustomCity Title="Краснодар"
+                                 ImagePath="{local:ImageResource DodoPitca.Images.galochka.png}"
+                                 IsChecked="False"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

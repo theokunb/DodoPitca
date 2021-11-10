@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DodoPitca.MVVM.Models"
+             xmlns:viewmodel="clr-namespace:DodoPitca.MVVM.ViewModels"
+             x:Class="DodoPitca.MVVM.Views.CustomCity">
+    <ContentView.BindingContext>
+        <viewmodel:CustomCityViewModel/>
+    </ContentView.BindingContext>
+  <ContentView.Content>
+        <Frame BackgroundColor="White"
+               BorderColor="LightGray"
+               HasShadow="False">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="{Binding Title}"
+                   TextColor="Black"
+                   FontSize="18"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="Center"/>
+                <Image Source="{Binding ImagePath}"
+                       HorizontalOptions="EndAndExpand"
+                       IsVisible="{Binding IsChecked}"/>
+            </StackLayout>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command=""/>
+            </Frame.GestureRecognizers>
+        </Frame>
+    </ContentView.Content>
+</ContentView>
