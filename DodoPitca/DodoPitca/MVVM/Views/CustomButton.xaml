@@ -12,7 +12,7 @@
           <Label Text="{Binding CityTitle}"
                  TextColor="#5B6370"
                  FontSize="20"/>
-            <Image Source="{local:ImageResource DodoPitca.Images.galochka.png}"
+            <Image Source="{Binding ImagePath}"
                    WidthRequest="20"
                    HeightRequest="20"/>
         </StackLayout>

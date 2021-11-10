@@ -10,8 +10,6 @@ namespace DodoPitca.MVVM.ViewModels
         private string title;
         private int coins;
         private ImageSource imagePath;
-        private Brush colorBegin;
-        private Brush colorEnd;
         public string Title
         {
             get => title;

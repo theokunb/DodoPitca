@@ -11,7 +11,7 @@ namespace DodoPitca.MVVM.ViewModels
     public class CustomButtonViewModel : BaseViewModel
     {
         private string cityTitle;
-        
+        private ImageSource imagePath;
         public string CityTitle
         {
             get => cityTitle;
@@ -23,12 +23,31 @@ namespace DodoPitca.MVVM.ViewModels
                 OnpropertyChagned();
             }
         }
+        public ImageSource ImagePath
+        {
+            get => imagePath;
+            set
+            {
+                if (imagePath != value)
+                {
+                    imagePath = value;
+                    OnpropertyChagned();
+                }
+            }
+        }
+
         public ICommand CommandSelectCity { get; }
+
+        
         public CustomButtonViewModel()
         {
             CommandSelectCity = new Command(async param =>
             {
-                await App.Current.MainPage.Navigation.PushModalAsync(new PageCitySelect());
+                await Application.Current.MainPage.Navigation.PushModalAsync(new PageCitySelect());
+            });
+            MessagingCenter.Subscribe<BaseViewModel, string>(this, Strings.SET_CITY, (obj ,param) =>
+            {
+                CityTitle = param;
             });
         }
     }
