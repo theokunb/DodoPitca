@@ -14,5 +14,9 @@ namespace DodoPitca.MVVM.Models
         /// set city in selectCities view
         /// </summary>
         public static string SELECT_CITY = "selectCity";
+        /// <summary>
+        /// set focus in element
+        /// </summary>
+        public static string FOCUS_SEARCHBOX = "focusSearchBox";
     }
 }

@@ -10,8 +10,10 @@ namespace DodoPitca.MVVM.ViewModels
 {
     public class PageCitySelectViewModel : BaseViewModel
     {
-        private bool isSearchBoxVisible = false;
+        private bool isSearching = false;
         private CustomCity currentCity;
+        private string searchPattern = string.Empty;
+
 
         public CustomCity CurrentCity
         {
@@ -25,14 +27,32 @@ namespace DodoPitca.MVVM.ViewModels
                 OnpropertyChagned();
             }
         }
-        public bool IsSearchBoxVisible
+        public bool IsSearching
         {
-            get => isSearchBoxVisible;
+            get => isSearching;
+            set
+            {
+                if(isSearching!=value)
+                {
+                    isSearching = value;
+                    OnpropertyChagned();
+                }
+            }
         }
-
-
+        public string SearchPattern
+        {
+            get => searchPattern;
+            set
+            {
+                if (searchPattern != value)
+                {
+                    searchPattern = value;
+                    OnpropertyChagned();
+                }
+            }
+        }
+        public ICommand CommandSearch { get; }
         public ICommand CommandExit { get; }
-        public ICommand CommandSetCity { get; }
         public PageCitySelectViewModel()
         {
             MessagingCenter.Subscribe<BaseViewModel, CustomCity>(this, Strings.SELECT_CITY, (obj, param) =>
@@ -43,6 +63,18 @@ namespace DodoPitca.MVVM.ViewModels
             {
                 MessagingCenter.Send<BaseViewModel, string>(this, Strings.SET_CITY, CurrentCity.Title);
                 await Application.Current.MainPage.Navigation.PopModalAsync();
+            });
+            CommandSearch = new Command(param =>
+            {
+                IsSearching = !IsSearching;
+                if (!IsSearching)
+                {
+                    SearchPattern = string.Empty;
+                }
+                else
+                {
+                    MessagingCenter.Send<BaseViewModel>(this, Strings.FOCUS_SEARCHBOX);
+                }
             });
         }
     }

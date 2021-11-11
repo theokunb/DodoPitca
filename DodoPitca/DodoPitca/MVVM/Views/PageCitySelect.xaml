@@ -20,14 +20,20 @@
                             <TapGestureRecognizer Command="{Binding CommandExit}"/>
                         </Image.GestureRecognizers>
                     </Image>
-                    <Entry Text=""
+                    <Entry Text="{Binding SearchPattern,Mode=TwoWay}"
+                           x:Name="searchBox"
                            Placeholder="Город"
                            PlaceholderColor="LightGray"
-                           HorizontalOptions="EndAndExpand"
-                           IsVisible=""/>
+                           HorizontalOptions="FillAndExpand"
+                           IsVisible="{Binding IsSearching}"
+                           TextChanged="Entry_TextChanged"/>
                     <Image Source="{local:ImageResource DodoPitca.Images.searchOrange.png}"
                            Margin="10"
-                           HorizontalOptions="EndAndExpand"/>
+                           HorizontalOptions="EndAndExpand">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CommandSearch}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
                 </StackLayout>
                 <StackLayout Orientation="Vertical"
                              x:Name="stackCities"
