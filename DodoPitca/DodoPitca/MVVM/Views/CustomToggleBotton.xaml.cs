@@ -24,7 +24,7 @@ namespace DodoPitca.MVVM.Views
 
         private void TapGestureRecognizerOFF_Tapped(object sender, EventArgs e)
         {
-            Slider.TranslateTo(180, 0);
+            Slider.TranslateTo(baseRect.Width / 2, 0);
         }
     }
 }

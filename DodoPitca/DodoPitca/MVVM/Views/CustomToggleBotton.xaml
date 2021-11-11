@@ -7,64 +7,66 @@
         <viewmodel:CustomToggleBottonViewModel/>
     </ContentView.BindingContext>
   <ContentView.Content>
-        <Grid>
+        <Grid HeightRequest="40">
+
             <Rectangle Fill="#E2E3E8"
-                       WidthRequest="380"
-                       HeightRequest="40"
-                       HorizontalOptions="Start"
+                       HorizontalOptions="FillAndExpand"
                        RadiusX="10"
                        RadiusY="10"
-                       x:Name="Base"/>
-            <Rectangle Fill="#E2E3E8"
-                       WidthRequest="190"
-                       HeightRequest="40"
-                       HorizontalOptions="Start"
+                       x:Name="baseRect"/>
+            <Grid HeightRequest="40">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Fill="#E2E3E8"
+                       Grid.Column="0"
+                       HorizontalOptions="FillAndExpand"
                        RadiusX="10"
                        RadiusY="10"
                        x:Name="On">
-                <Rectangle.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizerON_Tapped"/>
-                </Rectangle.GestureRecognizers>
-            </Rectangle>
-            <Rectangle Fill="#E2E3E8"
-                       WidthRequest="190"
-                       HeightRequest="40"
-                       HorizontalOptions="Start"
+                    <Rectangle.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizerON_Tapped"/>
+                    </Rectangle.GestureRecognizers>
+                </Rectangle>
+                <Rectangle Fill="#E2E3E8"
+                       Grid.Column="1"
+                       HorizontalOptions="FillAndExpand"
                        RadiusX="10"
                        RadiusY="10"
-                       Margin="150,0,0,0"
                        x:Name="Off">
-                <Rectangle.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizerOFF_Tapped"/>
-                </Rectangle.GestureRecognizers>
-            </Rectangle>
-            <Rectangle Fill="White"
-                       WidthRequest="185"
-                       HeightRequest="35"
-                       HorizontalOptions="Start"
-                       VerticalOptions="Center"
-                       Margin="2.5,0,0,0"
-                       RadiusX="10"
-                       RadiusY="10"
-                       x:Name="Slider"/>
-            <Label Text="На доставку"
-                   FontSize="18"
-                   TextColor="Black"
-                   HorizontalOptions="Start"
-                   Margin="40,6,0,0">
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizerON_Tapped"/>
-                </Label.GestureRecognizers>
-            </Label>
-            <Label Text="В зале"
-                   FontSize="18"
-                   TextColor="Black"
-                   HorizontalOptions="Start"
-                   Margin="240,6,0,0">
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizerOFF_Tapped"/>
-                </Label.GestureRecognizers>
-            </Label>
+                    <Rectangle.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizerOFF_Tapped"/>
+                    </Rectangle.GestureRecognizers>
+                </Rectangle>
+                <Rectangle Fill="White"
+                           Grid.Column="0"
+                           HorizontalOptions="FillAndExpand"
+                           RadiusX="10"
+                           RadiusY="10"
+                           x:Name="Slider"/>
+                <Label Text="На доставку"
+                       Grid.Column="0"
+                       FontSize="18"
+                       TextColor="Black"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizerON_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="В зале"
+                       Grid.Column="1"
+                       FontSize="18"
+                       TextColor="Black"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizerOFF_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+            
         </Grid>
   </ContentView.Content>
 </ContentView>
