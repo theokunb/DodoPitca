@@ -10,6 +10,7 @@ namespace DodoPitca.MVVM.ViewModels
 {
     public class PageCitySelectViewModel : BaseViewModel
     {
+        private bool isSearchBoxVisible = false;
         private CustomCity currentCity;
 
         public CustomCity CurrentCity
@@ -24,6 +25,11 @@ namespace DodoPitca.MVVM.ViewModels
                 OnpropertyChagned();
             }
         }
+        public bool IsSearchBoxVisible
+        {
+            get => isSearchBoxVisible;
+        }
+
 
         public ICommand CommandExit { get; }
         public ICommand CommandSetCity { get; }

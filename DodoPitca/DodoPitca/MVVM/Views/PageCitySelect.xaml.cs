@@ -15,13 +15,8 @@ namespace DodoPitca.MVVM.Views
     {
         public PageCitySelect(string title)
         {
-            
             InitializeComponent();
-            foreach (CustomCity item in stackCities.Children)
-            {
-                if (item.Title == title)
-                    (BindingContext as PageCitySelectViewModel).CurrentCity = item;
-            }
+            (BindingContext as PageCitySelectViewModel).CurrentCity = stackCities.Children.Where(item => (item as CustomCity).Title == title).First() as CustomCity;
         }
     }
 }

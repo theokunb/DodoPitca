@@ -20,6 +20,11 @@
                             <TapGestureRecognizer Command="{Binding CommandExit}"/>
                         </Image.GestureRecognizers>
                     </Image>
+                    <Entry Text=""
+                           Placeholder="Город"
+                           PlaceholderColor="LightGray"
+                           HorizontalOptions="EndAndExpand"
+                           IsVisible=""/>
                     <Image Source="{local:ImageResource DodoPitca.Images.searchOrange.png}"
                            Margin="10"
                            HorizontalOptions="EndAndExpand"/>
