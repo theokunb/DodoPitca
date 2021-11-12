@@ -29,12 +29,12 @@
                            Placeholder="Название"
                            PlaceholderColor="LightGray"
                            FontSize="18"
-                           TextChanged="Entry_TextChanged"/>
+                           TextChanged="Entry_TextChanged"
+                           Margin="10"/>
                     <Image Source="{local:ImageResource DodoPitca.Images.closeBlack.png}"
                            HorizontalOptions="EndAndExpand"
                            VerticalOptions="CenterAndExpand"
-                           Margin="0,0,10,0"
-                           IsVisible="{Binding IsSearchMode}">
+                           Margin="10">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding CommandClear}"/>
                         </Image.GestureRecognizers>
