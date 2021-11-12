@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DodoPitca.MVVM.Models"
+             xmlns:view="clr-namespace:DodoPitca.MVVM.Views"
+             xmlns:viewmodel="clr-namespace:DodoPitca.MVVM.ViewModels"
+             x:Class="DodoPitca.MVVM.Views.PageSearchTovar">
+    <ContentPage.BindingContext>
+        <viewmodel:PageSearchTovarViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical"
+                    VerticalScrollBarVisibility="Never"
+                    HorizontalScrollBarVisibility="Never">
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="{local:ImageResource DodoPitca.Images.galochka_90.png}"
+                           HorizontalOptions="Start"
+                           VerticalOptions="CenterAndExpand"
+                           Margin="10"
+                           Scale="2">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CommandBack}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Entry Text="{Binding SearchPattern,Mode=TwoWay}"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           Placeholder="Название"
+                           PlaceholderColor="LightGray"
+                           FontSize="18"
+                           TextChanged="Entry_TextChanged"/>
+                    <Image Source="{local:ImageResource DodoPitca.Images.closeBlack.png}"
+                           HorizontalOptions="EndAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           Margin="0,0,10,0"
+                           IsVisible="{Binding IsSearchMode}">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CommandClear}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+                <StackLayout Orientation="Vertical"
+                             x:Name="stackTovars"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

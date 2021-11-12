@@ -23,8 +23,12 @@
                         </view:CustomButton.GestureRecognizers>
                     </view:CustomButton>
                     <Image Source="{local:ImageResource DodoPitca.Images.search.png}"
-                       HorizontalOptions="EndAndExpand"
-                       Margin="10"/>
+                           HorizontalOptions="EndAndExpand"
+                           Margin="10">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="SearchTovar_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
                 </StackLayout>
                 <view:CustomMultiItem/>
                 <ScrollView Orientation="Horizontal"
@@ -46,8 +50,8 @@
                    FontSize="18"
                    Margin="15,40,0,0"/>
                 <ScrollView Orientation="Horizontal"
-                       HorizontalScrollBarVisibility="Never"
-                        Margin="15,10,0,0">
+                            HorizontalScrollBarVisibility="Never"
+                            Margin="15,10,0,0">
                     <StackLayout Orientation="Horizontal">
                         <view:CustomNewAndHot ImagePath="{local:ImageResource DodoPitca.Images.peperoni.png}"
                                           Title="Пеперони фреш"
@@ -71,7 +75,8 @@
                     <ScrollView Orientation="Vertical"
                                 IsClippedToBounds="True"
                                 VerticalScrollBarVisibility="Never">
-                        <StackLayout Orientation="Vertical">
+                        <StackLayout Orientation="Vertical"
+                                     x:Name="stackTovars">
                             <view:CustomTovar ImagePath="{local:ImageResource DodoPitca.Images.Pitci.diablo.png}"
                                               Title="Диабло"
                                               Description="Острая чоризо, острый перец халапеньо, соуус барбекю, митболы, томаты, сладкий перец, красный лук, моцарелла, томатный соус"

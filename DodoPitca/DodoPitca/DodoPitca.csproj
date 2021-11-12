@@ -12,7 +12,8 @@
 
   <ItemGroup>
     <None Remove="Images\brysletiki.png" />
-    <None Remove="Images\close.png" />
+    <None Remove="Images\closeBlack.png" />
+    <None Remove="Images\closeOrange.png" />
     <None Remove="Images\Combo\combo2Pitci.png" />
     <None Remove="Images\Combo\combo2PitciNapitok.png" />
     <None Remove="Images\Combo\combo3Pitci.png" />
@@ -127,7 +128,8 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Images\brysletiki.png" />
-    <EmbeddedResource Include="Images\close.png" />
+    <EmbeddedResource Include="Images\closeBlack.png" />
+    <EmbeddedResource Include="Images\closeOrange.png" />
     <EmbeddedResource Include="Images\Combo\combo2Pitci.png" />
     <EmbeddedResource Include="Images\Combo\combo2PitciNapitok.png" />
     <EmbeddedResource Include="Images\Combo\combo3Pitci.png" />
@@ -280,6 +282,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MVVM\Views\PageCitySelect.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MVVM\Views\PageSearchTovar.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MVVM\Views\TabbedPageMain.xaml">

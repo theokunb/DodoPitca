@@ -13,7 +13,7 @@
                     VerticalScrollBarVisibility="Never">
             <StackLayout Orientation="Vertical">
                 <StackLayout Orientation="Horizontal">
-                    <Image Source="{local:ImageResource DodoPitca.Images.close.png}"
+                    <Image Source="{local:ImageResource DodoPitca.Images.closeOrange.png}"
                            Margin="10"
                            HorizontalOptions="StartAndExpand">
                         <Image.GestureRecognizers>

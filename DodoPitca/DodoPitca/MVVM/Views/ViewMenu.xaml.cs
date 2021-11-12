@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DodoPitca.MVVM.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,11 @@ namespace DodoPitca.MVVM.Views
         public ViewMenu()
         {
             InitializeComponent();
+        }
+
+        private void SearchTovar_Tapped(object sender, EventArgs e)
+        {
+            Application.Current.MainPage.Navigation.PushModalAsync(new PageSearchTovar(stackTovars.Children));
         }
     }
 }
