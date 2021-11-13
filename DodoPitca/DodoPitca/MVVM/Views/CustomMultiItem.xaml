@@ -14,7 +14,7 @@
                Margin="15">
             <StackLayout Orientation="Vertical" 
                          Spacing="15">
-                <view:CustomToggleBotton/>
+                <view:CustomToggleBotton Mode="{Binding Path=Mode}"/>
                 <Line BackgroundColor="#E2E3E7"
                       WidthRequest="100"
                       HeightRequest="2"/>

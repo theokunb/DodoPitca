@@ -31,7 +31,7 @@ namespace DodoPitca.MVVM.Views
                 stackTovars.Children.Clear();
                 return;
             }
-            Regex reg = new Regex("^" + (BindingContext as PageSearchTovarViewModel).SearchPattern + @".+$", RegexOptions.IgnoreCase);
+            Regex reg = new Regex("^" + (BindingContext as PageSearchTovarViewModel).SearchPattern + @".*$", RegexOptions.IgnoreCase);
             for(int i = 0; i < tovars.Length; i++)
             {
                 for(int j = stackTovars.Children.Count - 1; j >= 0; j--)

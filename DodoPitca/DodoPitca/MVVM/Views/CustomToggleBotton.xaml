@@ -8,7 +8,6 @@
     </ContentView.BindingContext>
   <ContentView.Content>
         <Grid HeightRequest="40">
-
             <Rectangle Fill="#E2E3E8"
                        HorizontalOptions="FillAndExpand"
                        RadiusX="10"
@@ -26,7 +25,8 @@
                        RadiusY="10"
                        x:Name="On">
                     <Rectangle.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizerON_Tapped"/>
+                        <TapGestureRecognizer Command="{Binding CommandSwitchMode}"
+                                              CommandParameter="0"/>
                     </Rectangle.GestureRecognizers>
                 </Rectangle>
                 <Rectangle Fill="#E2E3E8"
@@ -36,7 +36,8 @@
                        RadiusY="10"
                        x:Name="Off">
                     <Rectangle.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizerOFF_Tapped"/>
+                        <TapGestureRecognizer Command="{Binding CommandSwitchMode}"
+                                              CommandParameter="1"/>
                     </Rectangle.GestureRecognizers>
                 </Rectangle>
                 <Rectangle Fill="White"
@@ -44,6 +45,7 @@
                            HorizontalOptions="FillAndExpand"
                            RadiusX="10"
                            RadiusY="10"
+                           Margin="2"
                            x:Name="Slider"/>
                 <Label Text="На доставку"
                        Grid.Column="0"
@@ -52,7 +54,8 @@
                        HorizontalOptions="Center"
                        VerticalOptions="Center">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizerON_Tapped"/>
+                        <TapGestureRecognizer Command="{Binding CommandSwitchMode}"
+                                              CommandParameter="0"/>
                     </Label.GestureRecognizers>
                 </Label>
                 <Label Text="В зале"
@@ -62,7 +65,8 @@
                        HorizontalOptions="Center"
                        VerticalOptions="Center">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizerOFF_Tapped"/>
+                        <TapGestureRecognizer Command="{Binding CommandSwitchMode}"
+                                              CommandParameter="1"/>
                     </Label.GestureRecognizers>
                 </Label>
             </Grid>
