@@ -18,5 +18,9 @@ namespace DodoPitca.MVVM.Models
         /// set focus in element
         /// </summary>
         public static string FOCUS_SEARCHBOX = "focusSearchBox";
+        /// <summary>
+        /// set addres at custom multiitem
+        /// </summary>
+        public static string SET_ADDRESS = "setAddress";
     }
 }

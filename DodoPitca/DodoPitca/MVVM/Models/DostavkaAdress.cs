@@ -11,16 +11,18 @@ namespace DodoPitca.MVVM.Models
             new DostavkaAddress("Чернышевского","4","Работа","попросить охрану позонить 1122, что бы пропустили. второй этаж по лестнице, повортор налево, каб 201"),
             new DostavkaAddress("Чернышевского","4")
         };
+        public static void AddAddress(DostavkaAddress address)
+        {
+            addresses.Add(address);
+        }
     }
 
-    public class DostavkaAddress
+    public class DostavkaAddress : Address
     {
-        private readonly string street;
-        private readonly string house;
         private readonly string kvartira;
         private readonly string podezd;
         private readonly int floor;
-        private readonly string titleAddress="Дом";
+        private readonly string titleAddress = "Дом";
         private readonly string comment;
         public DostavkaAddress(string street, string house, string kvartira, string podezd, int floor, string titleAddress, string comment)
         {
@@ -32,7 +34,7 @@ namespace DodoPitca.MVVM.Models
             this.titleAddress = titleAddress;
             this.comment = comment;
         }
-        public DostavkaAddress(string street, string house, string titleAddress,string comment)
+        public DostavkaAddress(string street, string house, string titleAddress, string comment)
         {
             this.street = street;
             this.house = house;
@@ -76,5 +78,6 @@ namespace DodoPitca.MVVM.Models
         {
             get => titleAddress;
         }
+
     }
 }

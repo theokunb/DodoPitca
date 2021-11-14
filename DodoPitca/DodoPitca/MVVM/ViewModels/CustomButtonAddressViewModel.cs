@@ -112,6 +112,13 @@ namespace DodoPitca.MVVM.ViewModels
 
         public CustomButtonAddressViewModel()
         {
+            MessagingCenter.Subscribe<BaseViewModel, string>(this, Strings.SET_ADDRESS, (sender, param) =>
+             {
+                 if (Mode == Mode.Dostavka)
+                     TextDostavka = param;
+                 else if (Mode == Mode.Restoran)
+                     TextRestoran = param;
+             });
             CommandSelectAddress = new Command(param =>
             {
                 if (Mode == Mode.Dostavka)

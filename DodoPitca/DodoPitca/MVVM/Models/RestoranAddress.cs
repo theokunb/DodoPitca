@@ -11,12 +11,14 @@ namespace DodoPitca.MVVM.Models
             new RestoranAddress("улица Дзержинского","11",new TimeSpan(8,30,0),new TimeSpan(23,0,0)),
             new RestoranAddress("улица Кирова","31",new TimeSpan(8,20,0),new TimeSpan(23,0,0)),
         };
+        public static void AddAddress(RestoranAddress address)
+        {
+            addresses.Add(address);
+        }
     }
 
-    public class RestoranAddress
+    public class RestoranAddress : Address
     {
-        private string street;
-        private string house;
         private TimeSpan startWork;
         private TimeSpan endWork;
 
@@ -42,5 +44,6 @@ namespace DodoPitca.MVVM.Models
                 return "с " + startWork.ToString() + " до " + endWork.ToString();
             }
         }
+
     }
 }
