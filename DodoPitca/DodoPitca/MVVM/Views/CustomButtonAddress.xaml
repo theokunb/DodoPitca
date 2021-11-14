@@ -7,13 +7,13 @@
     <ContentView.BindingContext>
         <viewmodel:CustomButtonAddressViewModel/>
     </ContentView.BindingContext>
-    <ContentView.Content>
-      <StackLayout Orientation="Horizontal"
+  <ContentView.Content>
+        <StackLayout Orientation="Horizontal"
                    HorizontalOptions="Center">
-            <Image Source="{local:ImageResource DodoPitca.Images.dostavka.png}"/>
+            <Image Source="{Binding DisplayImage}"/>
             <Label Text="Улица Чернышевского, 4"
                    FontSize="18"/>
             <Image Source="{local:ImageResource DodoPitca.Images.galochka_90.png}"/>
         </StackLayout>
-  </ContentView.Content>
+    </ContentView.Content>
 </ContentView>

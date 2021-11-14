@@ -97,6 +97,7 @@
     <None Remove="Images\Pitci\vetchinaSir.png" />
     <None Remove="Images\podarki.png" />
     <None Remove="Images\profileSelected.png" />
+    <None Remove="Images\restoran.png" />
     <None Remove="Images\search.png" />
     <None Remove="Images\searchOrange.png" />
     <None Remove="Images\settings.png" />
@@ -213,6 +214,7 @@
     <EmbeddedResource Include="Images\Pitci\vetchinaSir.png" />
     <EmbeddedResource Include="Images\podarki.png" />
     <EmbeddedResource Include="Images\profileSelected.png" />
+    <EmbeddedResource Include="Images\restoran.png" />
     <EmbeddedResource Include="Images\search.png" />
     <EmbeddedResource Include="Images\searchOrange.png" />
     <EmbeddedResource Include="Images\settings.png" />
@@ -282,6 +284,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MVVM\Views\PageCitySelect.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MVVM\Views\PageDostavkaAddress.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MVVM\Views\PageResoranAddress.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MVVM\Views\PageSearchTovar.xaml">

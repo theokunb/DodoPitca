@@ -30,7 +30,6 @@ namespace DodoPitca.MVVM.ViewModels
               {
                   Enum.TryParse(param.ToString(), out Mode tmp);
                   Mode = tmp;
-
               });
         }
     }

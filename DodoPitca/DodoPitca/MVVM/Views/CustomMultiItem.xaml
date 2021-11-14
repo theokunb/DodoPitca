@@ -14,11 +14,19 @@
                Margin="15">
             <StackLayout Orientation="Vertical" 
                          Spacing="15">
-                <view:CustomToggleBotton Mode="{Binding Path=Mode}"/>
+                <view:CustomToggleBotton Mode="{Binding Path=Mode}"
+                                         x:Name="toggleButton"/>
                 <Line BackgroundColor="#E2E3E7"
                       WidthRequest="100"
                       HeightRequest="2"/>
-                <view:CustomButtonAddress/>
+                <view:CustomButtonAddress ImageDostavka="{local:ImageResource DodoPitca.Images.dostavka.png}"
+                                          ImageRestoran="{local:ImageResource DodoPitca.Images.restoran.png}"
+                                          Mode="{Binding Mode,Source={x:Reference toggleButton},Mode=TwoWay}"
+                                          x:Name="buttonAddress">
+                    <view:CustomButtonAddress.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CommandSelectAddress}"/>
+                    </view:CustomButtonAddress.GestureRecognizers>
+                </view:CustomButtonAddress>
             </StackLayout>
         </Frame>
   </ContentView.Content>
