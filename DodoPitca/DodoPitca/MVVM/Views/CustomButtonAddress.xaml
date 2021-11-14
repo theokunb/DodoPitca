@@ -11,7 +11,7 @@
         <StackLayout Orientation="Horizontal"
                    HorizontalOptions="Center">
             <Image Source="{Binding DisplayImage}"/>
-            <Label Text="Улица Чернышевского, 4"
+            <Label Text="{Binding DisplayText}"
                    FontSize="18"/>
             <Image Source="{local:ImageResource DodoPitca.Images.galochka_90.png}"/>
         </StackLayout>

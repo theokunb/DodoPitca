@@ -14,7 +14,7 @@ namespace DodoPitca.MVVM.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CustomToggleBotton : ContentView
     {
-        public static readonly BindableProperty ModeProperty = BindableProperty.Create(nameof(Mode),typeof(Mode),typeof(CustomToggleBotton),Mode.Dostavka,BindingMode.TwoWay,propertyChanged:ModePropertyChanged);
+        public static readonly BindableProperty ModeProperty = BindableProperty.Create(nameof(Mode),typeof(Mode),typeof(CustomToggleBotton),Mode.Restoran,BindingMode.TwoWay,propertyChanged:ModePropertyChanged);
 
         private static void ModePropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {

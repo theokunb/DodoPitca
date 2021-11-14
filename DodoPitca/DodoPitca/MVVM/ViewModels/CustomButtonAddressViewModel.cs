@@ -13,6 +13,36 @@ namespace DodoPitca.MVVM.ViewModels
         private ImageSource imagePathDostavka;
         private ImageSource imagePathRestoran;
         private Mode mode;
+        private string textDostavka = DostavkaAddresses.addresses[0].Address;
+        private string textRestoran = RestoranAddresses.addresses[0].Address;
+
+        public string TextDostavka
+        {
+            get => textDostavka;
+            set
+            {
+                if(textDostavka != value)
+                {
+                    textDostavka = value;
+                    OnpropertyChagned();
+                    OnpropertyChagned(nameof(DisplayText));
+                }
+            }
+        }
+        public string TextRestoran
+        {
+            get => textRestoran;
+            set
+            {
+                if (textRestoran != value)
+                {
+                    textRestoran = value;
+                    OnpropertyChagned();
+                    OnpropertyChagned(nameof(DisplayText));
+                }
+            }
+        }
+
         public ImageSource ImagePathDostavka
         {
             get => imagePathDostavka;
@@ -49,6 +79,7 @@ namespace DodoPitca.MVVM.ViewModels
                     mode = value;
                     OnpropertyChagned();
                     OnpropertyChagned(nameof(DisplayImage));
+                    OnpropertyChagned(nameof(DisplayText));
                 }
             }
         }
@@ -61,6 +92,18 @@ namespace DodoPitca.MVVM.ViewModels
                     case Mode.Dostavka: return ImagePathDostavka;
                     case Mode.Restoran: return ImagePathRestoran;
                     default: return ImagePathDostavka;
+                }
+            }
+        }
+        public string DisplayText
+        {
+            get
+            {
+                switch (Mode)
+                {
+                    case Mode.Dostavka: return TextDostavka;
+                    case Mode.Restoran: return TextRestoran;
+                    default: return TextDostavka;
                 }
             }
         }
