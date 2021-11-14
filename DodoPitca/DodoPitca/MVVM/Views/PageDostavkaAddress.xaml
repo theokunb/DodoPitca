@@ -17,7 +17,11 @@
                            VerticalOptions="CenterAndExpand"
                            HorizontalOptions="StartAndExpand"
                            Scale="2"
-                           Margin="10"/>
+                           Margin="10">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CommandBack}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
                     <Label Text="Адрес доставки"
                            FontSize="22"
                            FontAttributes="Bold"
