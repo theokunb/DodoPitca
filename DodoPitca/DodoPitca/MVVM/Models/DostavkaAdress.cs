@@ -8,12 +8,27 @@ namespace DodoPitca.MVVM.Models
     {
         public static List<DostavkaAddress> addresses = new List<DostavkaAddress>()
         {
-            new DostavkaAddress("Чернышевского","4","Работа","попросить охрану позонить 1122, что бы пропустили. второй этаж по лестнице, повортор налево, каб 201"),
-            new DostavkaAddress("Чернышевского","4")
+            new DostavkaAddress("Ленина","4","Работа","попросить охрану позонить 1122, что бы пропустили. второй этаж по лестнице, повортор налево, каб 201"),
+            new DostavkaAddress("Белинского","15"),
+            new DostavkaAddress("где то хз","895","дом","там собаки осторожно")
         };
         public static void AddAddress(DostavkaAddress address)
         {
             addresses.Add(address);
+        }
+        public static List<int> IDs
+        {
+            get
+            {
+                List<int> res = new List<int>();
+                if (addresses == null)
+                    return res;
+                foreach (var element in addresses)
+                {
+                    res.Add(element.Id);
+                }
+                return res;
+            }
         }
     }
 
@@ -24,7 +39,7 @@ namespace DodoPitca.MVVM.Models
         private readonly int floor;
         private readonly string titleAddress = "Дом";
         private readonly string comment;
-        public DostavkaAddress(string street, string house, string kvartira, string podezd, int floor, string titleAddress, string comment)
+        public DostavkaAddress(string street, string house, string kvartira, string podezd, int floor, string titleAddress, string comment):base()
         {
             this.street = street;
             this.house = house;
@@ -34,20 +49,20 @@ namespace DodoPitca.MVVM.Models
             this.titleAddress = titleAddress;
             this.comment = comment;
         }
-        public DostavkaAddress(string street, string house, string titleAddress, string comment)
+        public DostavkaAddress(string street, string house, string titleAddress, string comment):base()
         {
             this.street = street;
             this.house = house;
             this.titleAddress = titleAddress;
             this.comment = comment;
         }
-        public DostavkaAddress(string street, string house, string titleAddress)
+        public DostavkaAddress(string street, string house, string titleAddress):base()
         {
             this.street = street;
             this.house = house;
             this.titleAddress = titleAddress;
         }
-        public DostavkaAddress(string street, string house)
+        public DostavkaAddress(string street, string house):base()
         {
             this.street = street;
             this.house = house;
@@ -78,6 +93,5 @@ namespace DodoPitca.MVVM.Models
         {
             get => titleAddress;
         }
-
     }
 }

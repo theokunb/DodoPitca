@@ -15,6 +15,20 @@ namespace DodoPitca.MVVM.Models
         {
             addresses.Add(address);
         }
+        public static List<int> IDs
+        {
+            get
+            {
+                List<int> res = new List<int>();
+                if (addresses == null)
+                    return res;
+                foreach (var element in addresses)
+                {
+                    res.Add(element.Id);
+                }
+                return res;
+            }
+        }
     }
 
     public class RestoranAddress : Address
@@ -22,7 +36,7 @@ namespace DodoPitca.MVVM.Models
         private TimeSpan startWork;
         private TimeSpan endWork;
 
-        public RestoranAddress(string street,string house, TimeSpan startWork, TimeSpan endWork)
+        public RestoranAddress(string street, string house, TimeSpan startWork, TimeSpan endWork) : base()
         {
             this.street = street;
             this.house = house;

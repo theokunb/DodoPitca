@@ -1,8 +1,10 @@
 ﻿using DodoPitca.MVVM.Models;
+using DodoPitca.MVVM.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -13,25 +15,25 @@ namespace DodoPitca.MVVM.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PageDostavkaAddress : ContentPage
     {
-        public PageDostavkaAddress()
+        private string currentAddres;
+
+        public PageDostavkaAddress(string address)
         {
+            currentAddres = address;
             InitializeComponent();
-            F();
+            LoadAddresses();
         }
 
-        private async void F()
+        private void LoadAddresses()
         {
-            for (int i = 0; i < DostavkaAddresses.addresses.Count; i++)
+            foreach(var element in DostavkaAddresses.addresses)
             {
-                Task<CustomAddress> addressesTask = LoadAddreses(i);
-                stackAddresses.Children.Add(await addressesTask);
+                stackAddresses.Children.Add(new CustomAddress(element));
+                if(element.Address == currentAddres)
+                {
+                    (BindingContext as PageDostavkaAddressViewModel).SelectedAddress = stackAddresses.Children.Last() as CustomAddress;
+                }
             }
-        }
-
-        private async Task<CustomAddress> LoadAddreses(int index)
-        {
-            await Task.Delay(5);
-            return new CustomAddress(DostavkaAddresses.addresses[index]);
         }
     }
 }

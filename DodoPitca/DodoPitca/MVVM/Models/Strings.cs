@@ -22,5 +22,14 @@ namespace DodoPitca.MVVM.Models
         /// set addres at custom multiitem
         /// </summary>
         public static string SET_ADDRESS = "setAddress";
+        /// <summary>
+        /// set addres in PageDostavkaAddress
+        /// </summary>
+        public static string SELECT_ADDRESS = "selectAddress";
+
+        /// <summary>
+        /// send to multiitem current addres dostavki
+        /// </summary>
+        public static string SELECT_DOSTAVKA_ADDRESS = "selectDostavkaAddress";
     }
 }

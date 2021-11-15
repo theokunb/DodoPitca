@@ -14,10 +14,18 @@
                Margin="10"
                HorizontalOptions="FillAndExpand"
                VerticalOptions="FillAndExpand">
-            <StackLayout Orientation="Horizontal"
-                         Spacing="20"
-                         Margin="-10">
-                <StackLayout Orientation="Vertical">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="CusctomAddress_Tapped"/>
+            </Frame.GestureRecognizers>
+            <Grid BackgroundColor="Transparent"
+                  Margin="-10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="7*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Orientation="Vertical"
+                             Grid.Column="0"
+                             HorizontalOptions="FillAndExpand">
                     <Label Text="{Binding FullAddress}"
                            TextColor="Black"
                            FontSize="18"/>
@@ -26,8 +34,12 @@
                            FontSize="14"/>
                 </StackLayout>
                 <Image Source="{local:ImageResource DodoPitca.Images.galochka.png}"
-                       IsVisible="False"/>
-            </StackLayout>
+                       Grid.Column="1"
+                       IsVisible="{Binding IsSelected}"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       Scale="2"/>
+            </Grid>
         </Frame>
   </ContentView.Content>
 </ContentView>

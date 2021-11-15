@@ -15,7 +15,7 @@ namespace DodoPitca.MVVM.ViewModels
         private Mode mode;
         private string textDostavka = DostavkaAddresses.addresses[0].Address;
         private string textRestoran = RestoranAddresses.addresses[0].Address;
-
+        
         public string TextDostavka
         {
             get => textDostavka;
@@ -119,13 +119,17 @@ namespace DodoPitca.MVVM.ViewModels
                  else if (Mode == Mode.Restoran)
                      TextRestoran = param;
              });
+            MessagingCenter.Subscribe<BaseViewModel, string>(this, Strings.SELECT_DOSTAVKA_ADDRESS, (sender, param) => 
+            {
+                TextDostavka = param;
+            });
+
             CommandSelectAddress = new Command(param =>
             {
                 if (Mode == Mode.Dostavka)
-                    Application.Current.MainPage.Navigation.PushModalAsync(new PageDostavkaAddress());
+                    Application.Current.MainPage.Navigation.PushModalAsync(new PageDostavkaAddress(TextDostavka));
                 else if (Mode == Mode.Restoran)
                     Application.Current.MainPage.Navigation.PushModalAsync(new PageResoranAddress());
-
             });
         }
     }

@@ -1,6 +1,9 @@
-﻿using System;
+﻿using DodoPitca.MVVM.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace DodoPitca.MVVM.ViewModels
 {
@@ -8,7 +11,21 @@ namespace DodoPitca.MVVM.ViewModels
     {
         private string fullAddress;
         private string comment;
+        private bool isSelected;
 
+
+        public bool IsSelected
+        {
+            get => isSelected;
+            set
+            {
+                if(isSelected!=value)
+                {
+                    isSelected = value;
+                    OnpropertyChagned();
+                }
+            }
+        }
         public string FullAddress
         {
             get => fullAddress;
@@ -33,6 +50,5 @@ namespace DodoPitca.MVVM.ViewModels
                 }
             }
         }
-
     }
 }
