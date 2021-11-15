@@ -11,7 +11,7 @@
         <Frame BackgroundColor="Transparent"
                BorderColor="LightGray"
                CornerRadius="10"
-               Margin="10"
+               Margin="5,5,5,0"
                HorizontalOptions="FillAndExpand"
                VerticalOptions="FillAndExpand">
             <Frame.GestureRecognizers>

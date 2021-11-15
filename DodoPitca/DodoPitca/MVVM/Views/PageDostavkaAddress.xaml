@@ -27,10 +27,11 @@
                            FontAttributes="Bold"
                            VerticalOptions="CenterAndExpand"
                            HorizontalOptions="StartAndExpand"
-                           Margin="20,10,0,0"/>
+                           Margin="-50,10,0,0"/>
                 </StackLayout>
                 <StackLayout Orientation="Vertical"
-                             x:Name="stackAddresses"/>
+                             x:Name="stackAddresses"
+                             Spacing="0"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
