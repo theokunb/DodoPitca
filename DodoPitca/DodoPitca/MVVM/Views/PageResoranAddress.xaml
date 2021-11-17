@@ -1,12 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DodoPitca.MVVM.Models"
+             xmlns:viewmodel="clr-namespace:DodoPitca.MVVM.ViewModels"
              x:Class="DodoPitca.MVVM.Views.PageResoranAddress">
+    <ContentPage.BindingContext>
+        <viewmodel:PageRestoranAddressViewModel/>
+    </ContentPage.BindingContext>
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="this is restorans adresa"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView Orientation="Vertical"
+                    VerticalScrollBarVisibility="Never">
+            <StackLayout Orientation="Vertical">
+                <Image Source="{local:ImageResource DodoPitca.Images.galochka_90.png}"
+                       HorizontalOptions="StartAndExpand"
+                       Margin="10"
+                       Scale="2">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CommandBack}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <StackLayout Orientation="Vertical"
+                             x:Name="stackAddresses"/>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

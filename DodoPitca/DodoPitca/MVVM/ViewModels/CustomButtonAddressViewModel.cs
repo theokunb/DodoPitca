@@ -123,13 +123,16 @@ namespace DodoPitca.MVVM.ViewModels
             {
                 TextDostavka = param;
             });
-
+            MessagingCenter.Subscribe<BaseViewModel, string>(this, Strings.SELECT_RESTORAN_ADDRESS, (sender, param) =>
+            {
+                TextRestoran = param;
+            });
             CommandSelectAddress = new Command(param =>
             {
                 if (Mode == Mode.Dostavka)
                     Application.Current.MainPage.Navigation.PushModalAsync(new PageDostavkaAddress(TextDostavka));
                 else if (Mode == Mode.Restoran)
-                    Application.Current.MainPage.Navigation.PushModalAsync(new PageResoranAddress());
+                    Application.Current.MainPage.Navigation.PushModalAsync(new PageResoranAddress(TextRestoran));
             });
         }
     }

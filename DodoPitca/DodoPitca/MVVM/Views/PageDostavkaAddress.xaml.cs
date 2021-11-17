@@ -15,7 +15,7 @@ namespace DodoPitca.MVVM.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PageDostavkaAddress : ContentPage
     {
-        private string currentAddres;
+        private readonly string currentAddres;
 
         public PageDostavkaAddress(string address)
         {

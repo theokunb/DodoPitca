@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace DodoPitca.MVVM.ViewModels
 {
-    public class CustomAddressViewModel:BaseViewModel
+    public class CustomAddressViewModel : BaseViewModel
     {
         private string fullAddress;
         private string comment;
