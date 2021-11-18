@@ -16,7 +16,7 @@ namespace DodoPitca.MVVM.Views
     {
         public static readonly BindableProperty ImageDostavkaProperty = BindableProperty.Create(nameof(ImageDostavka),typeof(ImageSource),typeof(CustomButtonAddress),null,BindingMode.TwoWay,propertyChanged:ImageDostavkaPropertyChanged);
         public static readonly BindableProperty ImageRestoranProperty = BindableProperty.Create(nameof(ImageRestoran), typeof(ImageSource), typeof(CustomButtonAddress), null, BindingMode.TwoWay,propertyChanged:ImageRestoranPropertyChanged);
-        public static readonly BindableProperty ModeProperty = BindableProperty.Create(nameof(Mode),typeof(Mode),typeof(CustomButtonAddress),Mode.Dostavka,BindingMode.TwoWay,propertyChanged:ModePropertyChanged);
+        public static readonly BindableProperty ModeProperty = BindableProperty.Create(nameof(Mode),typeof(Mode),typeof(CustomButtonAddress),Mode.First,BindingMode.TwoWay,propertyChanged:ModePropertyChanged);
         public static readonly BindableProperty TextDostavkaProperty = BindableProperty.Create(nameof(TextDostavka), typeof(string), typeof(CustomButtonAddress), string.Empty, BindingMode.TwoWay, propertyChanged: TextDostavkaPropertyChanged);
         public static readonly BindableProperty TextRestoranProperty = BindableProperty.Create(nameof(TextRestoran), typeof(string), typeof(CustomButtonAddress), string.Empty, BindingMode.TwoWay, propertyChanged: TextRestoranPropertyChanged);
 

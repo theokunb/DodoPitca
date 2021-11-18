@@ -89,8 +89,8 @@ namespace DodoPitca.MVVM.ViewModels
             {
                 switch (Mode)
                 {
-                    case Mode.Dostavka: return ImagePathDostavka;
-                    case Mode.Restoran: return ImagePathRestoran;
+                    case Mode.First: return ImagePathDostavka;
+                    case Mode.Second: return ImagePathRestoran;
                     default: return ImagePathDostavka;
                 }
             }
@@ -101,8 +101,8 @@ namespace DodoPitca.MVVM.ViewModels
             {
                 switch (Mode)
                 {
-                    case Mode.Dostavka: return TextDostavka;
-                    case Mode.Restoran: return TextRestoran;
+                    case Mode.First: return TextDostavka;
+                    case Mode.Second: return TextRestoran;
                     default: return TextDostavka;
                 }
             }
@@ -114,9 +114,9 @@ namespace DodoPitca.MVVM.ViewModels
         {
             MessagingCenter.Subscribe<BaseViewModel, string>(this, Strings.SET_ADDRESS, (sender, param) =>
              {
-                 if (Mode == Mode.Dostavka)
+                 if (Mode == Mode.First)
                      TextDostavka = param;
-                 else if (Mode == Mode.Restoran)
+                 else if (Mode == Mode.Second)
                      TextRestoran = param;
              });
             MessagingCenter.Subscribe<BaseViewModel, string>(this, Strings.SELECT_DOSTAVKA_ADDRESS, (sender, param) => 
@@ -129,9 +129,9 @@ namespace DodoPitca.MVVM.ViewModels
             });
             CommandSelectAddress = new Command(param =>
             {
-                if (Mode == Mode.Dostavka)
+                if (Mode == Mode.First)
                     Application.Current.MainPage.Navigation.PushModalAsync(new PageDostavkaAddress(TextDostavka));
-                else if (Mode == Mode.Restoran)
+                else if (Mode == Mode.Second)
                     Application.Current.MainPage.Navigation.PushModalAsync(new PageResoranAddress(TextRestoran));
             });
         }

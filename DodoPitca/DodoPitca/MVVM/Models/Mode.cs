@@ -6,7 +6,7 @@ namespace DodoPitca.MVVM.Models
 {
     public enum Mode
     {
-        Dostavka,
-        Restoran
+        First,
+        Second
     }
 }

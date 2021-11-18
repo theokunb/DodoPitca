@@ -47,7 +47,7 @@
                            RadiusY="10"
                            Margin="2"
                            x:Name="Slider"/>
-                <Label Text="На доставку"
+                <Label Text="{Binding FirstText}"
                        Grid.Column="0"
                        FontSize="18"
                        TextColor="Black"
@@ -58,7 +58,7 @@
                                               CommandParameter="0"/>
                     </Label.GestureRecognizers>
                 </Label>
-                <Label Text="В зале"
+                <Label Text="{Binding SecondText}"
                        Grid.Column="1"
                        FontSize="18"
                        TextColor="Black"

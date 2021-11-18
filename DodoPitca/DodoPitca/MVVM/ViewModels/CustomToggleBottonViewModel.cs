@@ -10,6 +10,8 @@ namespace DodoPitca.MVVM.ViewModels
     public class CustomToggleBottonViewModel:BaseViewModel
     {
         private Mode mode;
+        private string firstText;
+        private string secondText;
 
         public ICommand CommandSwitchMode { get; }
         public Mode Mode
@@ -20,6 +22,32 @@ namespace DodoPitca.MVVM.ViewModels
                 if(mode!=value)
                 {
                     mode = value;
+                    OnpropertyChagned();
+                }
+            }
+        }
+        public string FirstText
+        {
+            get => firstText;
+            set
+            {
+                if (firstText != value)
+                {
+                    firstText = value;
+                    OnpropertyChagned();
+                }
+            }
+        }
+
+
+        public string SecondText
+        {
+            get => secondText;
+            set
+            {
+                if (secondText != value)
+                {
+                    secondText = value;
                     OnpropertyChagned();
                 }
             }
