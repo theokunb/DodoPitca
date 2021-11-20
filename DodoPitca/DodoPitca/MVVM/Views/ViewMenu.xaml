@@ -24,7 +24,8 @@
                     </view:CustomButton>
                     <Image Source="{local:ImageResource DodoPitca.Images.search.png}"
                            HorizontalOptions="EndAndExpand"
-                           Margin="10">
+                           Margin="10"
+                           x:Name="searchControl">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="SearchTovar_Tapped"/>
                         </Image.GestureRecognizers>

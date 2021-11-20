@@ -10,6 +10,9 @@
   <ContentView.Content>
         <Frame BackgroundColor="White"
                BorderColor="White">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CommandOpenTovarView}"/>
+            </Frame.GestureRecognizers>
             <StackLayout Orientation="Horizontal">
                 <Image Source="{Binding ImagePath}"
                        Margin="-10"/>

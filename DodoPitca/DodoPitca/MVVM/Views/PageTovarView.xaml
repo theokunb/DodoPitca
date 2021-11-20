@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DodoPitca.MVVM.Models"
+             xmlns:viewmodel="clr-namespace:DodoPitca.MVVM.ViewModels"
+             xmlns:view="clr-namespace:DodoPitca.MVVM.Views"
+             x:Class="DodoPitca.MVVM.Views.PageTovarView">
+    <ContentPage.BindingContext>
+        <viewmodel:PageTovarViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical"
+                    VerticalScrollBarVisibility="Never">
+            <StackLayout Orientation="Vertical"
+                         Margin="10">
+                <Frame BackgroundColor="White"
+                           HasShadow="True"
+                           CornerRadius="30"
+                           VerticalOptions="Start"
+                           HorizontalOptions="Start">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CommandBack}"/>
+                    </Frame.GestureRecognizers>
+                    <Image Source="{local:ImageResource DodoPitca.Images.galochka_90.png}"
+                           HorizontalOptions="StartAndExpand"
+                           VerticalOptions="StartAndExpand"
+                           Scale="2"
+                           Margin="-10"/>
+                </Frame>
+                <Image Source="{Binding ImagePath}"
+                       Margin="10,-10,0,10"/>
+                <Label Text="{Binding Title}"
+                       TextColor="Black"
+                       FontSize="26"
+                       FontAttributes="Bold"/>
+                <Label Text="{Binding Info}"
+                       TextColor="DarkGray"
+                       FontSize="14"/>
+                <Label Text="{Binding Description}"
+                       TextColor="DarkGray"
+                       FontSize="16"/>
+                <Label Text="Убрать ингредиенты"
+                       TextColor="Orange"
+                       FontSize="16"/>
+                <view:CustomToggleBotton FirstText="Традиционное"
+                                         SecondText="Тонкое"
+                                         Mode="{Binding Mode}"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

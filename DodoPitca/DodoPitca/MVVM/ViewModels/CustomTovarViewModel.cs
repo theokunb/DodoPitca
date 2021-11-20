@@ -1,16 +1,18 @@
-﻿using System;
+﻿using DodoPitca.MVVM.Views;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace DodoPitca.MVVM.ViewModels
 {
     public class CustomTovarViewModel:BaseViewModel
     {
-        private ImageSource imagePath;
-        private string title;
-        private string description;
-        private string price;
+        protected ImageSource imagePath;
+        protected string title;
+        protected string description;
+        protected string price;
 
         public ImageSource ImagePath
         {
@@ -57,6 +59,22 @@ namespace DodoPitca.MVVM.ViewModels
                 price = value;
                 OnpropertyChagned();
             }
+        }
+
+        public ICommand CommandOpenTovarView { get; }
+
+        public CustomTovarViewModel()
+        {
+            CommandOpenTovarView = new Command(param =>
+              {
+                  Application.Current.MainPage.Navigation.PushModalAsync(new PageTovarView()
+                  {
+                      TitleTovar = Title,
+                      Description = Description,
+                      ImagePath = ImagePath,
+                      Info="info about this tovar =)"
+                  });
+              });
         }
     }
 }

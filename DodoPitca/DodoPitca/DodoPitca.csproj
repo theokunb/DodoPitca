@@ -11,6 +11,37 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\BigPitci\Аррива.png" />
+    <None Remove="Images\BigPitci\Ветчина и грибы.png" />
+    <None Remove="Images\BigPitci\Ветчина и сыр.png" />
+    <None Remove="Images\BigPitci\Гавайская.png" />
+    <None Remove="Images\BigPitci\Двойная пепперони.png" />
+    <None Remove="Images\BigPitci\Двойной цыпленок.png" />
+    <None Remove="Images\BigPitci\Диабло.png" />
+    <None Remove="Images\BigPitci\Додо Микс.png" />
+    <None Remove="Images\BigPitci\Додо.png" />
+    <None Remove="Images\BigPitci\Карбонара.png" />
+    <None Remove="Images\BigPitci\Колбаски Барбекю.png" />
+    <None Remove="Images\BigPitci\Маргарита.png" />
+    <None Remove="Images\BigPitci\Мексиканская.png" />
+    <None Remove="Images\BigPitci\Мясная.png" />
+    <None Remove="Images\BigPitci\Нежный лосось.png" />
+    <None Remove="Images\BigPitci\Овощи и грибы.png" />
+    <None Remove="Images\BigPitci\Пепперони фреш.png" />
+    <None Remove="Images\BigPitci\Пепперони.png" />
+    <None Remove="Images\BigPitci\Песто.png" />
+    <None Remove="Images\BigPitci\Пицца от Кеши с игрушкой из коллекции.png" />
+    <None Remove="Images\BigPitci\Пицца от Тучки с игрушкой из коллекции.png" />
+    <None Remove="Images\BigPitci\Пицца-пирог.png" />
+    <None Remove="Images\BigPitci\Супермясная.png" />
+    <None Remove="Images\BigPitci\Сырная.png" />
+    <None Remove="Images\BigPitci\Сырный цыпленок.png" />
+    <None Remove="Images\BigPitci\Фристайло.png" />
+    <None Remove="Images\BigPitci\Цыпленок барбекю.png" />
+    <None Remove="Images\BigPitci\Цыпленок ранч.png" />
+    <None Remove="Images\BigPitci\Четыре сезона.png" />
+    <None Remove="Images\BigPitci\Четыре сыра.png" />
+    <None Remove="Images\BigPitci\Чизбургер-пицца.png" />
     <None Remove="Images\brysletiki.png" />
     <None Remove="Images\closeBlack.png" />
     <None Remove="Images\closeOrange.png" />
@@ -128,6 +159,37 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Images\BigPitci\Аррива.png" />
+    <EmbeddedResource Include="Images\BigPitci\Ветчина и грибы.png" />
+    <EmbeddedResource Include="Images\BigPitci\Ветчина и сыр.png" />
+    <EmbeddedResource Include="Images\BigPitci\Гавайская.png" />
+    <EmbeddedResource Include="Images\BigPitci\Двойная пепперони.png" />
+    <EmbeddedResource Include="Images\BigPitci\Двойной цыпленок.png" />
+    <EmbeddedResource Include="Images\BigPitci\Диабло.png" />
+    <EmbeddedResource Include="Images\BigPitci\Додо Микс.png" />
+    <EmbeddedResource Include="Images\BigPitci\Додо.png" />
+    <EmbeddedResource Include="Images\BigPitci\Карбонара.png" />
+    <EmbeddedResource Include="Images\BigPitci\Колбаски Барбекю.png" />
+    <EmbeddedResource Include="Images\BigPitci\Маргарита.png" />
+    <EmbeddedResource Include="Images\BigPitci\Мексиканская.png" />
+    <EmbeddedResource Include="Images\BigPitci\Мясная.png" />
+    <EmbeddedResource Include="Images\BigPitci\Нежный лосось.png" />
+    <EmbeddedResource Include="Images\BigPitci\Овощи и грибы.png" />
+    <EmbeddedResource Include="Images\BigPitci\Пепперони фреш.png" />
+    <EmbeddedResource Include="Images\BigPitci\Пепперони.png" />
+    <EmbeddedResource Include="Images\BigPitci\Песто.png" />
+    <EmbeddedResource Include="Images\BigPitci\Пицца от Кеши с игрушкой из коллекции.png" />
+    <EmbeddedResource Include="Images\BigPitci\Пицца от Тучки с игрушкой из коллекции.png" />
+    <EmbeddedResource Include="Images\BigPitci\Пицца-пирог.png" />
+    <EmbeddedResource Include="Images\BigPitci\Супермясная.png" />
+    <EmbeddedResource Include="Images\BigPitci\Сырная.png" />
+    <EmbeddedResource Include="Images\BigPitci\Сырный цыпленок.png" />
+    <EmbeddedResource Include="Images\BigPitci\Фристайло.png" />
+    <EmbeddedResource Include="Images\BigPitci\Цыпленок барбекю.png" />
+    <EmbeddedResource Include="Images\BigPitci\Цыпленок ранч.png" />
+    <EmbeddedResource Include="Images\BigPitci\Четыре сезона.png" />
+    <EmbeddedResource Include="Images\BigPitci\Четыре сыра.png" />
+    <EmbeddedResource Include="Images\BigPitci\Чизбургер-пицца.png" />
     <EmbeddedResource Include="Images\brysletiki.png" />
     <EmbeddedResource Include="Images\closeBlack.png" />
     <EmbeddedResource Include="Images\closeOrange.png" />
@@ -296,6 +358,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MVVM\Views\PageSearchTovar.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MVVM\Views\PageTovarView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MVVM\Views\TabbedPageMain.xaml">
