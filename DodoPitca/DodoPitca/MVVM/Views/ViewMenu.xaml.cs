@@ -20,10 +20,5 @@ namespace DodoPitca.MVVM.Views
         {
             InitializeComponent();
         }
-
-        private void SearchTovar_Tapped(object sender, EventArgs e)
-        {
-            Application.Current.MainPage.Navigation.PushModalAsync(new PageSearchTovar(stackTovars.Children));
-        }
     }
 }

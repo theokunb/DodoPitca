@@ -41,7 +41,40 @@
                     </Image>
                 </StackLayout>
                 <StackLayout Orientation="Vertical"
-                             x:Name="stackTovars"/>
+                             BindableLayout.ItemsSource="{Binding DisplayTovars}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Frame BackgroundColor="White"
+                                               BorderColor="White">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding CommandOpenTovarView}"/>
+                                </Frame.GestureRecognizers>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding ImagePath}"
+                                                       Margin="-10"/>
+                                    <StackLayout Orientation="Vertical"
+                                                             Margin="10,0,0,0">
+                                        <Label Text="{Binding Title}"
+                                                           FontSize="18"
+                                                           TextColor="Black"/>
+                                        <Label Text="{Binding Description}"
+                                                           FontSize="14"
+                                                           TextColor="#5B636E"/>
+                                        <Frame BackgroundColor="#FEF0E5"
+                                                           CornerRadius="20"
+                                                           HorizontalOptions="Start">
+                                            <Label Text="{Binding Price}"
+                                                               TextColor="#C55B0F"
+                                                               FontSize="16"
+                                                               HorizontalTextAlignment="Center"
+                                                               Margin="-10"/>
+                                        </Frame>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using DodoPitca.MVVM.Models;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -10,8 +12,8 @@ namespace DodoPitca.MVVM.ViewModels
     {
         private string searchPattern;
         private bool isSearchMode = false;
-
-
+        public ObservableCollection<CustomTovarViewModel> DisplayTovars { get; set; }
+        public ObservableCollection<CustomTovarViewModel> Tovars { get; set; }
         public string SearchPattern
         {
             get => searchPattern;
@@ -40,6 +42,11 @@ namespace DodoPitca.MVVM.ViewModels
         public ICommand CommandBack { get; }
         public PageSearchTovarViewModel()
         {
+            DisplayTovars = new ObservableCollection<CustomTovarViewModel>();
+            MessagingCenter.Subscribe<BaseViewModel, ObservableCollection<CustomTovarViewModel>>(this, Strings.FIND_TOVARS, (sender, param) =>
+            {
+                Tovars = param;
+            });
             CommandBack = new Command(async param =>
             {
                 await Application.Current.MainPage.Navigation.PopModalAsync();
@@ -48,6 +55,7 @@ namespace DodoPitca.MVVM.ViewModels
             {
                 SearchPattern = string.Empty;
             });
+            
         }
 
     }

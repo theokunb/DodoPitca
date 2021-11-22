@@ -27,7 +27,7 @@
                            Margin="10"
                            x:Name="searchControl">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="SearchTovar_Tapped"/>
+                            <TapGestureRecognizer Command="{Binding CommandSearchTovar}"/>
                         </Image.GestureRecognizers>
                     </Image>
                 </StackLayout>

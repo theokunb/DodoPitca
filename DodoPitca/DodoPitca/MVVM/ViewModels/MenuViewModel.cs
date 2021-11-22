@@ -1,4 +1,5 @@
-﻿using DodoPitca.MVVM.Views;
+﻿using DodoPitca.MVVM.Models;
+using DodoPitca.MVVM.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,13 +17,17 @@ namespace DodoPitca.MVVM.ViewModels
 
         public ObservableCollection<CustomTovarViewModel> Tovars { get => tovars; }
         public ObservableCollection<CustomTovarViewModel> NewAndHot { get => newAndHot; }
-
+        public ICommand CommandSearchTovar { get; }
 
         public MenuViewModel()
         {
             LoadNewAndHot();
             LoadTovars();
-            
+            CommandSearchTovar = new Command(param =>
+            {
+                Application.Current.MainPage.Navigation.PushModalAsync(new PageSearchTovar());
+                MessagingCenter.Send<BaseViewModel, ObservableCollection<CustomTovarViewModel>>(this, Strings.FIND_TOVARS, Tovars);
+            });
         }
         private void LoadNewAndHot()
         {

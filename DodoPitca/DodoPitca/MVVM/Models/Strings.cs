@@ -35,6 +35,9 @@ namespace DodoPitca.MVVM.Models
         /// send multiitem adres restorana
         /// </summary>
         public static string SELECT_RESTORAN_ADDRESS = "selectRestoranAddress";
-
+        /// <summary>
+        /// send pageFindTovars collection of tovars
+        /// </summary>
+        public static string FIND_TOVARS = "findTovars";
     }
 }

@@ -2,6 +2,7 @@
 using DodoPitca.MVVM.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -15,48 +16,49 @@ namespace DodoPitca.MVVM.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PageSearchTovar : ContentPage
     {
-        private View[] tovars;
-        public PageSearchTovar(IList<View> views)
+        public PageSearchTovar()
         {
             InitializeComponent();
-            tovars = new View[views.Count];
-            views.CopyTo(tovars, 0);
         }
 
         private void Entry_TextChanged(object sender, TextChangedEventArgs e)
         {
+            var allCollection = (BindingContext as PageSearchTovarViewModel).Tovars;
+            ObservableCollection<CustomTovarViewModel> displayCollection = (BindingContext as PageSearchTovarViewModel).DisplayTovars;
 
             if ((sender as Entry).Text == string.Empty)
             {
-                stackTovars.Children.Clear();
+                displayCollection.Clear();
                 return;
             }
             Regex reg = new Regex("^" + (BindingContext as PageSearchTovarViewModel).SearchPattern + @".*$", RegexOptions.IgnoreCase);
-            for(int i = 0; i < tovars.Length; i++)
+            for(int i = 0; i < allCollection.Count; i++)
             {
-                for(int j = stackTovars.Children.Count - 1; j >= 0; j--)
+                for(int j = displayCollection.Count - 1; j >= 0; j--)
                 {
-                    if (stackTovars.Children.Contains(stackTovars.Children[j]) && !reg.IsMatch((stackTovars.Children[j] as CustomTovar).Title))
-                        stackTovars.Children.Remove(stackTovars.Children[j]);
+                    //если элемент есть в коллекции и не подходит регулярному выражению
+                    if (displayCollection.Contains(displayCollection[j]) && !reg.IsMatch(displayCollection[j].Title))
+                        displayCollection.Remove(displayCollection[j]);
                 }
-                if(reg.IsMatch((tovars[i] as CustomTovar).Title))
+                if(reg.IsMatch(allCollection[i].Title))
                 {
                     bool povtorenie = false;
-                    for(int k = 0; k < stackTovars.Children.Count; k++)
+                    //проверка на повторение в отображаемой коллекции
+                    for(int k = 0; k < displayCollection.Count; k++)
                     {
-                        if ((stackTovars.Children[k] as CustomTovar).Title == (tovars[i] as CustomTovar).Title)
+                        if (displayCollection[k].Title == allCollection[i].Title)
                             povtorenie = true;
                         if (povtorenie)
                             break;
                     }
                     if (povtorenie)
                         continue;
-                    stackTovars.Children.Add(new CustomTovar()
+                    displayCollection.Add(new CustomTovarViewModel()
                     {
-                        Title = (tovars[i] as CustomTovar).Title,
-                        Description = (tovars[i] as CustomTovar).Description,
-                        Price = (tovars[i] as CustomTovar).Price,
-                        ImagePath = (tovars[i] as CustomTovar).ImagePath
+                        Title = allCollection[i].Title,
+                        Description = allCollection[i].Description,
+                        Price = allCollection[i].Price,
+                        ImagePath = allCollection[i].ImagePath
                     });
                 }
             }
