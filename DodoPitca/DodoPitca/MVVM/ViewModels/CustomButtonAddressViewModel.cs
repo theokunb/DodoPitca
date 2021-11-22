@@ -12,7 +12,7 @@ namespace DodoPitca.MVVM.ViewModels
     {
         private ImageSource imagePathDostavka;
         private ImageSource imagePathRestoran;
-        private Mode mode;
+        private Mode2 mode;
         private string textDostavka = DostavkaAddresses.addresses[0].Address;
         private string textRestoran = RestoranAddresses.addresses[0].Address;
         
@@ -69,7 +69,7 @@ namespace DodoPitca.MVVM.ViewModels
                 }
             }
         }
-        public Mode Mode
+        public Mode2 Mode
         {
             get => mode;
             set
@@ -89,8 +89,8 @@ namespace DodoPitca.MVVM.ViewModels
             {
                 switch (Mode)
                 {
-                    case Mode.First: return ImagePathDostavka;
-                    case Mode.Second: return ImagePathRestoran;
+                    case Mode2.First: return ImagePathDostavka;
+                    case Mode2.Second: return ImagePathRestoran;
                     default: return ImagePathDostavka;
                 }
             }
@@ -101,8 +101,8 @@ namespace DodoPitca.MVVM.ViewModels
             {
                 switch (Mode)
                 {
-                    case Mode.First: return TextDostavka;
-                    case Mode.Second: return TextRestoran;
+                    case Mode2.First: return TextDostavka;
+                    case Mode2.Second: return TextRestoran;
                     default: return TextDostavka;
                 }
             }
@@ -114,9 +114,9 @@ namespace DodoPitca.MVVM.ViewModels
         {
             MessagingCenter.Subscribe<BaseViewModel, string>(this, Strings.SET_ADDRESS, (sender, param) =>
              {
-                 if (Mode == Mode.First)
+                 if (Mode == Mode2.First)
                      TextDostavka = param;
-                 else if (Mode == Mode.Second)
+                 else if (Mode == Mode2.Second)
                      TextRestoran = param;
              });
             MessagingCenter.Subscribe<BaseViewModel, string>(this, Strings.SELECT_DOSTAVKA_ADDRESS, (sender, param) => 
@@ -129,9 +129,9 @@ namespace DodoPitca.MVVM.ViewModels
             });
             CommandSelectAddress = new Command(param =>
             {
-                if (Mode == Mode.First)
+                if (Mode == Mode2.First)
                     Application.Current.MainPage.Navigation.PushModalAsync(new PageDostavkaAddress(TextDostavka));
-                else if (Mode == Mode.Second)
+                else if (Mode == Mode2.Second)
                     Application.Current.MainPage.Navigation.PushModalAsync(new PageResoranAddress(TextRestoran));
             });
         }

@@ -4,9 +4,10 @@ using System.Text;
 
 namespace DodoPitca.MVVM.Models
 {
-    public enum Mode2
+    public enum Mode3
     {
         First,
-        Second
+        Second,
+        Third
     }
 }

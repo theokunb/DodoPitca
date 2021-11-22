@@ -14,7 +14,7 @@ namespace DodoPitca.MVVM.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CustomToggleBotton : ContentView
     {
-        public static readonly BindableProperty ModeProperty = BindableProperty.Create(nameof(Mode),typeof(Mode),typeof(CustomToggleBotton),Mode.Second,BindingMode.TwoWay,propertyChanged:ModePropertyChanged);
+        public static readonly BindableProperty ModeProperty = BindableProperty.Create(nameof(Mode),typeof(Mode2),typeof(CustomToggleBotton),Mode2.Second,BindingMode.TwoWay,propertyChanged:ModePropertyChanged);
         public static readonly BindableProperty FirstTextProperty = BindableProperty.Create(nameof(FirstText),typeof(string),typeof(CustomToggleBotton),"",BindingMode.TwoWay,propertyChanged:FirstTextPropertyChanged);
         public static readonly BindableProperty SecondTextProperty = BindableProperty.Create(nameof(SecondText),typeof(string),typeof(CustomToggleBotton),"",BindingMode.TwoWay,propertyChanged:SecondTextPropertyChanged);
 
@@ -32,7 +32,7 @@ namespace DodoPitca.MVVM.Views
         {
             var control = (CustomToggleBotton)bindable;
             var controlVM = control.BindingContext as CustomToggleBottonViewModel;
-            controlVM.Mode = (Mode)newValue;
+            controlVM.Mode = (Mode2)newValue;
             control.SliderMoveTo(controlVM.Mode);
         }
 
@@ -47,9 +47,9 @@ namespace DodoPitca.MVVM.Views
             get { return GetValue(SecondTextProperty).ToString(); }
             set { SetValue(SecondTextProperty, value); }
         }
-        public Mode Mode
+        public Mode2 Mode
         {
-            get { return (Mode)GetValue(ModeProperty);}
+            get { return (Mode2)GetValue(ModeProperty);}
             set 
             {
                 SetValue(ModeProperty, value);
@@ -62,11 +62,11 @@ namespace DodoPitca.MVVM.Views
             InitializeComponent();
         }
 
-        private void SliderMoveTo(Mode mode)
+        private void SliderMoveTo(Mode2 mode)
         {
-            if(mode == Mode.First)
+            if(mode == Mode2.First)
                 Slider.TranslateTo(0, 0);
-            else if(mode == Mode.Second)
+            else if(mode == Mode2.Second)
                 Slider.TranslateTo(baseRect.Width / 2, 0);
         }
     }

@@ -9,12 +9,12 @@ namespace DodoPitca.MVVM.ViewModels
 {
     public class CustomToggleBottonViewModel:BaseViewModel
     {
-        private Mode mode;
+        private Mode2 mode;
         private string firstText;
         private string secondText;
 
         public ICommand CommandSwitchMode { get; }
-        public Mode Mode
+        public Mode2 Mode
         {
             get => mode;
             set
@@ -56,7 +56,7 @@ namespace DodoPitca.MVVM.ViewModels
         {
             CommandSwitchMode = new Command(param =>
               {
-                  Enum.TryParse(param.ToString(), out Mode tmp);
+                  Enum.TryParse(param.ToString(), out Mode2 tmp);
                   Mode = tmp;
               });
         }

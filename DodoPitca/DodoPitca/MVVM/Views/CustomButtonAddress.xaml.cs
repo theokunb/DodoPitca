@@ -16,7 +16,7 @@ namespace DodoPitca.MVVM.Views
     {
         public static readonly BindableProperty ImageDostavkaProperty = BindableProperty.Create(nameof(ImageDostavka),typeof(ImageSource),typeof(CustomButtonAddress),null,BindingMode.TwoWay,propertyChanged:ImageDostavkaPropertyChanged);
         public static readonly BindableProperty ImageRestoranProperty = BindableProperty.Create(nameof(ImageRestoran), typeof(ImageSource), typeof(CustomButtonAddress), null, BindingMode.TwoWay,propertyChanged:ImageRestoranPropertyChanged);
-        public static readonly BindableProperty ModeProperty = BindableProperty.Create(nameof(Mode),typeof(Mode),typeof(CustomButtonAddress),Mode.First,BindingMode.TwoWay,propertyChanged:ModePropertyChanged);
+        public static readonly BindableProperty ModeProperty = BindableProperty.Create(nameof(Mode),typeof(Mode2),typeof(CustomButtonAddress),Mode2.First,BindingMode.TwoWay,propertyChanged:ModePropertyChanged);
         public static readonly BindableProperty TextDostavkaProperty = BindableProperty.Create(nameof(TextDostavka), typeof(string), typeof(CustomButtonAddress), string.Empty, BindingMode.TwoWay, propertyChanged: TextDostavkaPropertyChanged);
         public static readonly BindableProperty TextRestoranProperty = BindableProperty.Create(nameof(TextRestoran), typeof(string), typeof(CustomButtonAddress), string.Empty, BindingMode.TwoWay, propertyChanged: TextRestoranPropertyChanged);
 
@@ -31,9 +31,9 @@ namespace DodoPitca.MVVM.Views
             get { return GetValue(TextRestoranProperty).ToString(); }
             set { SetValue(TextRestoranProperty, value); }
         }
-        public Mode Mode
+        public Mode2 Mode
         {
-            get { return (Mode)GetValue(ModeProperty); }
+            get { return (Mode2)GetValue(ModeProperty); }
             set { SetValue(ModeProperty, value); }
         }
         public ImageSource ImageDostavka
@@ -66,7 +66,7 @@ namespace DodoPitca.MVVM.Views
         {
             var control = (CustomButtonAddress)bindable;
             var controlVM = control.BindingContext as CustomButtonAddressViewModel;
-            controlVM.Mode = (Mode)newValue;
+            controlVM.Mode = (Mode2)newValue;
         }
 
         private static void ImageDostavkaPropertyChanged(BindableObject bindable, object oldValue, object newValue)
