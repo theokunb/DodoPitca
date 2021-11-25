@@ -33,9 +33,7 @@
                        TextColor="Black"
                        FontSize="26"
                        FontAttributes="Bold"/>
-                <Label Text="{Binding Info}"
-                       TextColor="DarkGray"
-                       FontSize="14"/>
+                <view:CustomInfo Testo="{Binding Mode,Source={x:Reference toggleButton},Mode=TwoWay}"/>
                 <Label Text="{Binding Description}"
                        TextColor="DarkGray"
                        FontSize="16"/>
@@ -44,7 +42,8 @@
                        FontSize="16"/>
                 <view:CustomToggleBotton FirstText="Традиционное"
                                          SecondText="Тонкое"
-                                         Mode="{Binding Mode}"/>
+                                         Mode="{Binding Mode}"
+                                         x:Name="toggleButton"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

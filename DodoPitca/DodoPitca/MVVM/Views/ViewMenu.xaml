@@ -32,6 +32,7 @@
                     </Image>
                 </StackLayout>
                 <view:CustomMultiItem/>
+                <view:CustomToggle3/>
                 <ScrollView Orientation="Horizontal"
                         HorizontalScrollBarVisibility="Never"
                          Margin="15,0,0,0">

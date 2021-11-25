@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DodoPitca.MVVM.Views.CustomToggle3">
+  <ContentView.Content>
+      <StackLayout Margin="10">
+            <Grid HeightRequest="40">
+                <Rectangle Fill="#E2E3E8"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="FillAndExpand"
+                           RadiusX="10"
+                           RadiusY="10"
+                           x:Name="baseRect"/>
+                <Grid Margin="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Fill="green"
+                               Grid.Column="0"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="FillAndExpand"
+                               RadiusX="10"
+                               RadiusY="10"
+                               x:Name="leftRect"/>
+                    <Rectangle Fill="blue"
+                               Grid.Column="1"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="FillAndExpand"
+                               RadiusX="10"
+                               RadiusY="10"
+                               x:Name="middleRect"/>
+                    <Rectangle Fill="red"
+                               Grid.Column="2"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="FillAndExpand"
+                               RadiusX="10"
+                               RadiusY="10"
+                               x:Name="rightRect"/>
+                    <Rectangle Fill="White"
+                               HorizontalOptions="FillAndExpand"
+                               RadiusX="10"
+                               RadiusY="10"
+                               x:Name="slider"/>
+                    <Label Text="left"
+                           Grid.Column="0"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           FontSize="18"
+                           TextColor="Black"/>
+                    <Label Text="middle"
+                           Grid.Column="1"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           FontSize="18"
+                           TextColor="Black"/>
+                    <Label Text="right"
+                           Grid.Column="2"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           FontSize="18"
+                           TextColor="Black"/>
+                </Grid>
+                
+                
+                
+            </Grid>
+      </StackLayout>
+  </ContentView.Content>
+</ContentView>
