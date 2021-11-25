@@ -24,7 +24,7 @@ namespace DodoPitca.MVVM.Views
         private void Entry_TextChanged(object sender, TextChangedEventArgs e)
         {
             var allCollection = (BindingContext as PageSearchTovarViewModel).Tovars;
-            ObservableCollection<CustomTovarViewModel> displayCollection = (BindingContext as PageSearchTovarViewModel).DisplayTovars;
+            ObservableCollection<Tovar> displayCollection = (BindingContext as PageSearchTovarViewModel).DisplayTovars;
 
             if ((sender as Entry).Text == string.Empty)
             {
@@ -53,7 +53,7 @@ namespace DodoPitca.MVVM.Views
                     }
                     if (povtorenie)
                         continue;
-                    displayCollection.Add(new CustomTovarViewModel()
+                    displayCollection.Add(new Pitca()
                     {
                         Title = allCollection[i].Title,
                         Description = allCollection[i].Description,

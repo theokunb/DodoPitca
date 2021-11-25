@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DodoPitca.MVVM.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
@@ -6,7 +7,7 @@ using Xamarin.Forms;
 
 namespace DodoPitca.MVVM.ViewModels
 {
-    public class PageTovarViewModel : CustomTovarViewModel
+    public class PageTovarViewModel : Tovar
     {
         private string info;
 

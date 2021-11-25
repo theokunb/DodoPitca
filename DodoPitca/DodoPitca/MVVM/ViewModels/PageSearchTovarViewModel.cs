@@ -12,8 +12,8 @@ namespace DodoPitca.MVVM.ViewModels
     {
         private string searchPattern;
         private bool isSearchMode = false;
-        public ObservableCollection<CustomTovarViewModel> DisplayTovars { get; set; }
-        public ObservableCollection<CustomTovarViewModel> Tovars { get; set; }
+        public ObservableCollection<Tovar> DisplayTovars { get; set; }
+        public ObservableCollection<Tovar> Tovars { get; set; }
         public string SearchPattern
         {
             get => searchPattern;
@@ -42,8 +42,8 @@ namespace DodoPitca.MVVM.ViewModels
         public ICommand CommandBack { get; }
         public PageSearchTovarViewModel()
         {
-            DisplayTovars = new ObservableCollection<CustomTovarViewModel>();
-            MessagingCenter.Subscribe<BaseViewModel, ObservableCollection<CustomTovarViewModel>>(this, Strings.FIND_TOVARS, (sender, param) =>
+            DisplayTovars = new ObservableCollection<Tovar>();
+            MessagingCenter.Subscribe<BaseViewModel, ObservableCollection<Tovar>>(this, Strings.FIND_TOVARS, (sender, param) =>
             {
                 Tovars = param;
             });
