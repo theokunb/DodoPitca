@@ -12,7 +12,7 @@ namespace DodoPitca.MVVM.Models
         protected string title;
         protected string description;
         protected string price;
-
+        protected int mass;
         public ImageSource ImagePath
         {
             get => imagePath;
@@ -59,6 +59,17 @@ namespace DodoPitca.MVVM.Models
                 OnpropertyChagned();
             }
         }
-
+        public int Mass
+        {
+            get => mass;
+            set
+            {
+                if (mass != value)
+                {
+                    mass = value;
+                    OnpropertyChagned();
+                }
+            }
+        }
     }
 }

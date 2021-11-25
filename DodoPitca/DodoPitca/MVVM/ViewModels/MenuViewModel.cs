@@ -67,7 +67,8 @@ namespace DodoPitca.MVVM.ViewModels
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.pitcaTychki.png"),
                 Title = "Пицца от Тучки с игрушкой из коллекции",
                 Description = "Ветчина, картошка, моцарелла, соус альфредо",
-                Price = "от 529 р"
+                Price = "от 529 р",
+                Info = ""
             });
             tovars.Add(new Pitca()
             {

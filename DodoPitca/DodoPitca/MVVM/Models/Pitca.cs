@@ -34,13 +34,25 @@ namespace DodoPitca.MVVM.ViewModels
                 {
                     testo = value;
                     OnpropertyChagned();
+                    OnpropertyChagned(Info);
                 }
+            }
+        }
+        private string testoStr
+        {
+            get
+            {
+                if (testo == Mode2.First)
+                    return "Традиционное";
+                else
+                    return "Тонкое";
             }
         }
         public ICommand CommandOpenTovarView { get; }
 
         public Pitca()
         {
+            Info = testoStr + " ," + mass + "гр.";
             CommandOpenTovarView = new Command(param =>
               {
                   Application.Current.MainPage.Navigation.PushModalAsync(new PageTovarView()
