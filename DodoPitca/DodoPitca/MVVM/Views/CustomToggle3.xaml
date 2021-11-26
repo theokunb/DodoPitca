@@ -1,9 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:DodoPitca.MVVM.ViewModels"
              x:Class="DodoPitca.MVVM.Views.CustomToggle3">
+    <ContentView.BindingContext>
+        <viewmodel:CustomToggle3ViewModel/>
+    </ContentView.BindingContext>
   <ContentView.Content>
-      <StackLayout Margin="10">
+      <StackLayout>
             <Grid HeightRequest="40">
                 <Rectangle Fill="#E2E3E8"
                            HorizontalOptions="FillAndExpand"
@@ -17,54 +21,81 @@
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <Rectangle Fill="green"
+                    <Rectangle Fill="#E2E3E8"
                                Grid.Column="0"
                                HorizontalOptions="FillAndExpand"
                                VerticalOptions="FillAndExpand"
                                RadiusX="10"
                                RadiusY="10"
-                               x:Name="leftRect"/>
-                    <Rectangle Fill="blue"
+                               x:Name="leftRect">
+                        <Rectangle.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CommandSwitchMode}"
+                                                  CommandParameter="0"/>
+                        </Rectangle.GestureRecognizers>
+                    </Rectangle>
+                    <Rectangle Fill="#E2E3E8"
                                Grid.Column="1"
                                HorizontalOptions="FillAndExpand"
                                VerticalOptions="FillAndExpand"
                                RadiusX="10"
                                RadiusY="10"
-                               x:Name="middleRect"/>
-                    <Rectangle Fill="red"
+                               x:Name="middleRect">
+                        <Rectangle.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CommandSwitchMode}"
+                                                  CommandParameter="1"/>
+                        </Rectangle.GestureRecognizers>
+                    </Rectangle>
+                    <Rectangle Fill="#E2E3E8"
                                Grid.Column="2"
                                HorizontalOptions="FillAndExpand"
                                VerticalOptions="FillAndExpand"
                                RadiusX="10"
                                RadiusY="10"
-                               x:Name="rightRect"/>
+                               x:Name="rightRect">
+                        <Rectangle.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CommandSwitchMode}"
+                                                  CommandParameter="2"/>
+                        </Rectangle.GestureRecognizers>
+                    </Rectangle>
                     <Rectangle Fill="White"
                                HorizontalOptions="FillAndExpand"
                                RadiusX="10"
                                RadiusY="10"
                                x:Name="slider"/>
-                    <Label Text="left"
+                    <Label Text="{Binding FirstText}"
                            Grid.Column="0"
                            HorizontalOptions="Center"
                            VerticalOptions="Center"
                            FontSize="18"
-                           TextColor="Black"/>
-                    <Label Text="middle"
+                           TextColor="Black">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CommandSwitchMode}"
+                                                  CommandParameter="0"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label Text="{Binding SecondText}"
                            Grid.Column="1"
                            HorizontalOptions="Center"
                            VerticalOptions="Center"
                            FontSize="18"
-                           TextColor="Black"/>
-                    <Label Text="right"
+                           TextColor="Black">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CommandSwitchMode}"
+                                                  CommandParameter="1"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label Text="{Binding ThirdText}"
                            Grid.Column="2"
                            HorizontalOptions="Center"
                            VerticalOptions="Center"
                            FontSize="18"
-                           TextColor="Black"/>
+                           TextColor="Black">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CommandSwitchMode}"
+                                                  CommandParameter="2"/>
+                        </Label.GestureRecognizers>
+                    </Label>
                 </Grid>
-                
-                
-                
             </Grid>
       </StackLayout>
   </ContentView.Content>

@@ -33,17 +33,23 @@
                        TextColor="Black"
                        FontSize="26"
                        FontAttributes="Bold"/>
-                <view:CustomInfo Testo="{Binding Mode,Source={x:Reference toggleButton},Mode=TwoWay}"/>
+                <view:CustomInfo Testo="{Binding Mode,Source={x:Reference toggleButton2},Mode=TwoWay}"
+                                 Size="{Binding Mode,Source={x:Reference toggleButton3},Mode=TwoWay}"/>
                 <Label Text="{Binding Description}"
                        TextColor="DarkGray"
                        FontSize="16"/>
                 <Label Text="Убрать ингредиенты"
                        TextColor="Orange"
                        FontSize="16"/>
+                <view:CustomToggle3 FirstText="Маленькая"
+                                    SecondText="Средняя"
+                                    ThirdText="Большая"
+                                    Mode="{Binding Mode}"
+                                    x:Name="toggleButton3"/>
                 <view:CustomToggleBotton FirstText="Традиционное"
                                          SecondText="Тонкое"
                                          Mode="{Binding Mode}"
-                                         x:Name="toggleButton"/>
+                                         x:Name="toggleButton2"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

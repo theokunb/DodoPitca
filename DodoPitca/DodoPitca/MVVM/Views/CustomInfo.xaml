@@ -8,7 +8,7 @@
     </ContentView.BindingContext>
   <ContentView.Content>
       <StackLayout>
-          <Label Text="{Binding Info,Mode=TwoWay}"
+          <Label Text="{Binding Info}"
                  TextColor="DarkGray"
                  FontSize="14"/>
       </StackLayout>
