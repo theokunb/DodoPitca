@@ -34,7 +34,8 @@
                        FontSize="26"
                        FontAttributes="Bold"/>
                 <view:CustomInfo Testo="{Binding Mode,Source={x:Reference toggleButton2},Mode=TwoWay}"
-                                 Size="{Binding Mode,Source={x:Reference toggleButton3},Mode=TwoWay}"/>
+                                 Size="{Binding Mode,Source={x:Reference toggleButton3},Mode=TwoWay}"
+                                 x:Name="info"/>
                 <Label Text="{Binding Description}"
                        TextColor="DarkGray"
                        FontSize="16"/>
