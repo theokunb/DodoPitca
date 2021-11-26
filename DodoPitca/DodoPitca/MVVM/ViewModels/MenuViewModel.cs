@@ -68,7 +68,6 @@ namespace DodoPitca.MVVM.ViewModels
                 Title = "Пицца от Тучки с игрушкой из коллекции",
                 Description = "Ветчина, картошка, моцарелла, соус альфредо",
                 Price = "от 529 р",
-                Info = ""
             });
             tovars.Add(new Pitca()
             {

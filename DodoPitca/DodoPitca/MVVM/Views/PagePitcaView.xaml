@@ -4,9 +4,9 @@
              xmlns:local="clr-namespace:DodoPitca.MVVM.Models"
              xmlns:viewmodel="clr-namespace:DodoPitca.MVVM.ViewModels"
              xmlns:view="clr-namespace:DodoPitca.MVVM.Views"
-             x:Class="DodoPitca.MVVM.Views.PageTovarView">
+             x:Class="DodoPitca.MVVM.Views.PagePitcaView">
     <ContentPage.BindingContext>
-        <viewmodel:PageTovarViewModel/>
+        <viewmodel:PagePitcaViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <ScrollView Orientation="Vertical"

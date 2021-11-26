@@ -7,24 +7,10 @@ using Xamarin.Forms;
 
 namespace DodoPitca.MVVM.ViewModels
 {
-    public class PageTovarViewModel : Tovar
+    public class PagePitcaViewModel : Tovar
     {
-        private string info;
-
-        public string Info
-        {
-            get => info;
-            set
-            {
-                if(info!=value)
-                {
-                    info = value;
-                    OnpropertyChagned();
-                }
-            }
-        }
         public ICommand CommandBack { get; }
-        public PageTovarViewModel()
+        public PagePitcaViewModel()
         {
             CommandBack = new Command(param =>
             {
