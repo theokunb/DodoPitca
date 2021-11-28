@@ -58,7 +58,9 @@ namespace DodoPitca.MVVM.Views
                         Title = allCollection[i].Title,
                         Description = allCollection[i].Description,
                         Price = allCollection[i].Price,
-                        ImagePath = allCollection[i].ImagePath
+                        ImagePath = allCollection[i].ImagePath,
+                        BigImage = allCollection[i].BigImage,
+                        Id = allCollection[i].Id
                     });
                 }
             }

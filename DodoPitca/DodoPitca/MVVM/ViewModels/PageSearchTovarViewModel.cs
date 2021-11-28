@@ -1,7 +1,9 @@
 ﻿using DodoPitca.MVVM.Models;
+using DodoPitca.MVVM.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -40,6 +42,7 @@ namespace DodoPitca.MVVM.ViewModels
         }
         public ICommand CommandClear { get; }
         public ICommand CommandBack { get; }
+        public ICommand CommandViewTovar { get; }
         public PageSearchTovarViewModel()
         {
             DisplayTovars = new ObservableCollection<Tovar>();
@@ -55,7 +58,17 @@ namespace DodoPitca.MVVM.ViewModels
             {
                 SearchPattern = string.Empty;
             });
-            
+            CommandViewTovar = new Command(param =>
+            {
+                if (int.TryParse(param.ToString(), out int id))
+                {
+                    var selectedItem = DisplayTovars.First(item => item.Id == id);
+                    if (selectedItem.GetType() == typeof(Pitca))
+                    {
+                        Application.Current.MainPage.Navigation.PushModalAsync(new PagePitcaView(selectedItem as Pitca));
+                    }
+                }
+            });
         }
 
     }
