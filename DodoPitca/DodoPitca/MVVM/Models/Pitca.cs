@@ -10,8 +10,6 @@ namespace DodoPitca.MVVM.ViewModels
 {
     public class Pitca:Tovar
     {
-        public ICommand CommandOpenTovarView { get; }
-
         public Pitca()
         {
             CommandOpenTovarView = new Command(param =>

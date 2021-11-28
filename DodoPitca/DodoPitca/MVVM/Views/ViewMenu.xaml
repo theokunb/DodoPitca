@@ -104,7 +104,8 @@
                                     <Frame BackgroundColor="White"
                                                BorderColor="White">
                                         <Frame.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding CommandOpenTovarView}"/>
+                                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MenuViewModel}},Path=CommandViewTovar}"
+                                                                  CommandParameter="{Binding Id}"/>
                                         </Frame.GestureRecognizers>
                                         <StackLayout Orientation="Horizontal">
                                             <Image Source="{Binding ImagePath}"

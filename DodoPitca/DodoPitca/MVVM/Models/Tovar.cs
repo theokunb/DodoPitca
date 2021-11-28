@@ -1,18 +1,23 @@
 ﻿using DodoPitca.MVVM.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace DodoPitca.MVVM.Models
 {
     public abstract class Tovar : BaseViewModel
     {
+        protected int id;
         protected ImageSource imagePath;
         protected string title;
         protected string description;
         protected string price;
         protected int mass;
+        public ICommand CommandOpenTovarView { get; set; }
+
         public ImageSource ImagePath
         {
             get => imagePath;
@@ -24,7 +29,18 @@ namespace DodoPitca.MVVM.Models
                 OnpropertyChagned();
             }
         }
-
+        public int Id
+        {
+            get => id;
+            set
+            {
+                if (id != value)
+                {
+                    id = value;
+                    OnpropertyChagned();
+                }
+            }
+        }
         public string Title
         {
             get => title;

@@ -39,5 +39,10 @@ namespace DodoPitca.MVVM.Models
         /// send pageFindTovars collection of tovars
         /// </summary>
         public static string FIND_TOVARS = "findTovars";
+        /// <summary>
+        /// return pitci from menu view model
+        /// </summary>
+        public static string GET_PITCI = "getPitic";
+
     }
 }

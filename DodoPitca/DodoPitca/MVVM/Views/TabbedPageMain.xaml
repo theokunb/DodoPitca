@@ -26,5 +26,9 @@
             <view:ViewContacts/>
         </ContentPage.Content>
     </ContentPage>
-    <ContentPage Title="Корзина" IconImageSource="{local:ImageResource DodoPitca.Images.korzinaSelected.png}" />
+    <ContentPage Title="Корзина" IconImageSource="{local:ImageResource DodoPitca.Images.korzinaSelected.png}">
+        <ContentPage.Content>
+            <view:ViewKorzina/>
+        </ContentPage.Content>
+    </ContentPage>
 </TabbedPage>

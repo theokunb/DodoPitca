@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace DodoPitca.MVVM.ViewModels
 {
-    public class PagePitcaViewModel : Tovar
+    public class PagePitcaViewModel : Pitca
     {
         public ICommand CommandBack { get; }
         public PagePitcaViewModel()

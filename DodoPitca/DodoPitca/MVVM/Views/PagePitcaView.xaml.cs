@@ -1,4 +1,5 @@
-﻿using DodoPitca.MVVM.ViewModels;
+﻿using DodoPitca.MVVM.Models;
+using DodoPitca.MVVM.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,6 +55,10 @@ namespace DodoPitca.MVVM.Views
         }
 
         public PagePitcaView()
+        {
+            InitializeComponent();
+        }
+        public PagePitcaView(IEnumerable<Tovar> tovars)
         {
             InitializeComponent();
         }
