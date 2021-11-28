@@ -35,12 +35,15 @@ namespace DodoPitca.MVVM.ViewModels
                 if(int.TryParse(param.ToString(), out id))
                 {
                     var selectedItem = Tovars.First(item => item.Id == id);
-                    Application.Current.MainPage.Navigation.PushModalAsync(new PagePitcaView()
+                    if(selectedItem.GetType() == typeof(Pitca))
                     {
-                        TitleTovar = selectedItem.Title,
-                        ImagePath = selectedItem.ImagePath,
-                        Description = selectedItem.Description
-                    });
+                        Application.Current.MainPage.Navigation.PushModalAsync(new PagePitcaView()
+                        {
+                            TitleTovar = selectedItem.Title,
+                            ImagePath = selectedItem.ImagePath,
+                            Description = selectedItem.Description
+                        });
+                    }
                 }
             });
         }
