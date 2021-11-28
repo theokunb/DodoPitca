@@ -13,13 +13,14 @@ namespace DodoPitca.MVVM.ViewModels
 {
     public class MenuViewModel : BaseViewModel
     {
-        private ObservableCollection<Tovar> tovars = new ObservableCollection<Tovar>();
-        private ObservableCollection<Tovar> newAndHot = new ObservableCollection<Tovar>();
+        private readonly ObservableCollection<Tovar> tovars = new ObservableCollection<Tovar>();
+        private readonly ObservableCollection<Tovar> newAndHot = new ObservableCollection<Tovar>();
 
         public ObservableCollection<Tovar> Tovars { get => tovars; }
         public ObservableCollection<Tovar> NewAndHot { get => newAndHot; }
         public ICommand CommandSearchTovar { get; }
         public ICommand CommandViewTovar { get; }
+        public ICommand CommandViewNewAndHot { get; }
         public MenuViewModel()
         {
             LoadTovars();
@@ -31,18 +32,23 @@ namespace DodoPitca.MVVM.ViewModels
             });
             CommandViewTovar = new Command(param =>
             {
-                int id;
-                if(int.TryParse(param.ToString(), out id))
+                if (int.TryParse(param.ToString(), out int id))
                 {
                     var selectedItem = Tovars.First(item => item.Id == id);
-                    if(selectedItem.GetType() == typeof(Pitca))
+                    if (selectedItem.GetType() == typeof(Pitca))
                     {
-                        Application.Current.MainPage.Navigation.PushModalAsync(new PagePitcaView()
-                        {
-                            TitleTovar = selectedItem.Title,
-                            ImagePath = selectedItem.ImagePath,
-                            Description = selectedItem.Description
-                        });
+                        Application.Current.MainPage.Navigation.PushModalAsync(new PagePitcaView(selectedItem as Pitca, Tovars.Where(item => item.GetType() == typeof(Pitca))));
+                    }
+                }
+            });
+            CommandViewNewAndHot = new Command(param =>
+            {
+                if (int.TryParse(param.ToString(), out int id))
+                {
+                    var selectedItem = Tovars.First(item => item.Id == id);
+                    if (selectedItem.GetType() == typeof(Pitca))
+                    {
+                        Application.Current.MainPage.Navigation.PushModalAsync(new PagePitcaView(selectedItem as Pitca));
                     }
                 }
             });
@@ -50,9 +56,9 @@ namespace DodoPitca.MVVM.ViewModels
         private void LoadNewAndHot()
         {
             string[] collection = new string[] { "Сырная", "Пепперони фреш", "Песто", "Аррива!", "Додо" };
-            foreach(var item in tovars.Where(item => collection.Contains(item.Title)))
+            foreach(var item in Tovars.Where(item => collection.Contains(item.Title)))
             {
-                newAndHot.Add(item);
+                NewAndHot.Add(item);
             }
         }
         private int Randomizer()
@@ -62,13 +68,13 @@ namespace DodoPitca.MVVM.ViewModels
             while (true)
             {
                 res = rand.Next();
-                if (tovars.Where(item => item.Id == res).Count() == 0)
+                if (Tovars.Where(item => item.Id == res).Count() == 0)
                     return res;
             }
         }
         private void LoadTovars()
         {
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.diablo.png"),
                 Title = "Диабло",
@@ -76,7 +82,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 545 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.sirniTciplenok.png"),
                 Title = "Сырный цыпленок",
@@ -84,7 +90,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 545 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.pitcaTychki.png"),
                 Title = "Пицца от Тучки с игрушкой из коллекции",
@@ -92,7 +98,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 529 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.pitcaKeshi.png"),
                 Title = "Пицца от Кеши с игрушкой из коллекции",
@@ -100,7 +106,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 529 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.kolbaskiBarbeku.png"),
                 Title = "Колбаски Барбекю",
@@ -108,7 +114,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 495 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.margarita.png"),
                 Title = "Маргарита",
@@ -116,7 +122,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 435 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.arriva.png"),
                 Title = "Аррива!",
@@ -124,7 +130,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 495 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.peperoni380.png"),
                 Title = "Пеперони",
@@ -132,7 +138,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 495 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.vetchinaGribi.png"),
                 Title = "Ветчина и грибы",
@@ -140,7 +146,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 435 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.diablo.png"),
                 Title = "Диабло",
@@ -148,7 +154,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 545 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.sirnaya2.png"),
                 Title = "Сырная",
@@ -156,7 +162,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 295 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.vetchinaSir.png"),
                 Title = "Ветчина и сыр",
@@ -164,7 +170,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 375 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.doubleTsiplenok.png"),
                 Title = "Двойной цыпленок",
@@ -172,7 +178,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 375 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.pitcaIzPolovinok.png"),
                 Title = "Пицца из половинок",
@@ -180,7 +186,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "Собрать",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.dodoMiks.png"),
                 Title = "Додо микс",
@@ -188,7 +194,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 625 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.peperoniFresh.png"),
                 Title = "Пепперони фреш",
@@ -196,7 +202,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 295 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.pesto.png"),
                 Title = "Песто",
@@ -204,7 +210,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 545 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.karbonara.png"),
                 Title = "Карбонара",
@@ -212,7 +218,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 545 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.fristailo.png"),
                 Title = "Фристайло",
@@ -220,7 +226,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 495 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.chizborger.png"),
                 Title = "Чизбургер-пицца",
@@ -228,7 +234,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 495 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.gavaiskaya.png"),
                 Title = "Гавайская",
@@ -236,7 +242,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 495 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.fourSeason.png"),
                 Title = "Четыре сезона",
@@ -244,7 +250,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 495 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.ovoshiGribi.png"),
                 Title = "Овощи и грибы",
@@ -252,7 +258,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 495 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.dodo.png"),
                 Title = "Додо",
@@ -260,7 +266,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 545 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.fourSir.png"),
                 Title = "Четыре сыра",
@@ -268,7 +274,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 545 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.myasnaya.png"),
                 Title = "Мясная",
@@ -276,7 +282,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 545 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.tciplenokRanch.png"),
                 Title = "Цыпленок ранч",
@@ -284,7 +290,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 545 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.diablo.png"),
                 Title = "Диабло",
@@ -292,7 +298,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 545 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.tciplenokBarbeky.png"),
                 Title = "Цыпленок барбекю",
@@ -300,7 +306,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 545 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.doublePeperoni.png"),
                 Title = "Двойная пепперони",
@@ -308,7 +314,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 545 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.superMyasnaya.png"),
                 Title = "Супермясная",
@@ -316,7 +322,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 625 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.pitcaPirog.png"),
                 Title = "Пицца-пирог",
@@ -324,7 +330,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 435 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.nejniLosos.png"),
                 Title = "Нежный лосось",
@@ -332,7 +338,7 @@ namespace DodoPitca.MVVM.ViewModels
                 Price = "от 675 р",
                 Id = Randomizer()
             });
-            tovars.Add(new Pitca()
+            Tovars.Add(new Pitca()
             {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.meksikanskaya.png"),
                 Title = "Мексиканская",

@@ -63,7 +63,8 @@
                                        HeightRequest="80"
                                        Margin="4">
                                     <Frame.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding CommandOpenTovarView}"/>
+                                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MenuViewModel}},Path=CommandViewNewAndHot}"
+                                                              CommandParameter="{Binding Id}"/>
                                     </Frame.GestureRecognizers>
                                     <StackLayout Orientation="Horizontal"
                                                  Margin="-5">

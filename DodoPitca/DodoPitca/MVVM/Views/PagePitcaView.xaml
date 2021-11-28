@@ -10,48 +10,56 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <ScrollView Orientation="Vertical"
-                    VerticalScrollBarVisibility="Never">
-            <StackLayout Orientation="Vertical"
-                         Margin="10">
-                <Frame BackgroundColor="White"
-                           HasShadow="True"
-                           CornerRadius="30"
-                           VerticalOptions="Start"
-                           HorizontalOptions="Start">
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding CommandBack}"/>
-                    </Frame.GestureRecognizers>
-                    <Image Source="{local:ImageResource DodoPitca.Images.galochka_90.png}"
-                           HorizontalOptions="StartAndExpand"
-                           VerticalOptions="StartAndExpand"
-                           Scale="2"
-                           Margin="-10"/>
-                </Frame>
-                <Image Source="{Binding ImagePath}"
-                       Margin="10,-10,0,10"/>
-                <Label Text="{Binding Title}"
-                       TextColor="Black"
-                       FontSize="26"
-                       FontAttributes="Bold"/>
-                <view:CustomInfo Testo="{Binding Mode,Source={x:Reference toggleButton2},Mode=TwoWay}"
-                                 Size="{Binding Mode,Source={x:Reference toggleButton3},Mode=TwoWay}"
-                                 x:Name="info"/>
-                <Label Text="{Binding Description}"
-                       TextColor="DarkGray"
-                       FontSize="16"/>
-                <Label Text="Убрать ингредиенты"
-                       TextColor="Orange"
-                       FontSize="16"/>
-                <view:CustomToggle3 FirstText="Маленькая"
+                    VerticalScrollBarVisibility="Never"
+                    Margin="10">
+            <CarouselView ItemsSource="{Binding Pitci}"
+                          Loop="False"
+                          Position="{Binding SelectedId}">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Vertical">
+                            <Frame BackgroundColor="White"
+                                   HasShadow="True"
+                                   CornerRadius="30"
+                                   VerticalOptions="Start"
+                                   HorizontalOptions="Start">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewmodel:PagePitcaViewModel}},Path=CommandBack}"/>
+                                </Frame.GestureRecognizers>
+                                <Image Source="{local:ImageResource DodoPitca.Images.galochka_90.png}"
+                                       HorizontalOptions="StartAndExpand"
+                                       VerticalOptions="StartAndExpand"
+                                       Scale="2"
+                                       Margin="-10"/>
+                            </Frame>
+                            <Image Source="{Binding ImagePath}"
+                                   Margin="10,-10,0,10"/>
+                            <Label Text="{Binding Title}"
+                                   TextColor="Black"
+                                   FontSize="26"
+                                   FontAttributes="Bold"/>
+                            <view:CustomInfo Testo="{Binding Mode,Source={x:Reference toggleButton2},Mode=TwoWay}"
+                                             Size="{Binding Mode,Source={x:Reference toggleButton3},Mode=TwoWay}"
+                                             x:Name="info"/>
+                            <Label Text="{Binding Description}"
+                                   TextColor="DarkGray"
+                                   FontSize="16"/>
+                            <Label Text="Убрать ингредиенты"
+                                   TextColor="Orange"
+                                   FontSize="16"/>
+                            <view:CustomToggle3 FirstText="Маленькая"
                                     SecondText="Средняя"
                                     ThirdText="Большая"
                                     Mode="{Binding Mode}"
                                     x:Name="toggleButton3"/>
-                <view:CustomToggleBotton FirstText="Традиционное"
-                                         SecondText="Тонкое"
-                                         Mode="{Binding Mode}"
-                                         x:Name="toggleButton2"/>
-            </StackLayout>
+                            <view:CustomToggleBotton FirstText="Традиционное"
+                                                     SecondText="Тонкое"
+                                                     Mode="{Binding Mode}"
+                                                     x:Name="toggleButton2"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

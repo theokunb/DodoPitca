@@ -12,15 +12,7 @@ namespace DodoPitca.MVVM.ViewModels
     {
         public Pitca()
         {
-            CommandOpenTovarView = new Command(param =>
-              {
-                  Application.Current.MainPage.Navigation.PushModalAsync(new PagePitcaView()
-                  {
-                      TitleTovar = Title,
-                      Description = Description,
-                      ImagePath = ImagePath,
-                  });
-              });
+
         }
     }
 }

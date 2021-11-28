@@ -16,7 +16,6 @@ namespace DodoPitca.MVVM.Models
         protected string description;
         protected string price;
         protected int mass;
-        public ICommand CommandOpenTovarView { get; set; }
 
         public ImageSource ImagePath
         {
