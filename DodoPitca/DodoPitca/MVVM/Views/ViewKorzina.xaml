@@ -2,13 +2,36 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodel="clr-namespace:DodoPitca.MVVM.ViewModels"
+             xmlns:local="clr-namespace:DodoPitca.MVVM.Models"
+             xmlns:view="clr-namespace:DodoPitca.MVVM.Views"
              x:Class="DodoPitca.MVVM.Views.ViewKorzina">
     <ContentView.BindingContext>
         <viewmodel:KorzinaViewModel/>
     </ContentView.BindingContext>
   <ContentView.Content>
-        <StackLayout>
-            
+        <StackLayout Orientation="Horizontal"
+                     Margin="10">
+            <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Deserti.cookiesChocolate.png}"
+                                 ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
+                                 Text="шоколадное печенье"
+                                 Price="79"
+                                 IsChecked="True"
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="Start"/>
+            <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Deserti.cookiesChocolate.png}"
+                                 ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
+                                 Text="шоколадное печенье"
+                                 Price="79"
+                                 IsChecked="True"
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="Start"/>
+            <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Deserti.cookiesChocolate.png}"
+                                 ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
+                                 Text="шоколадное печенье"
+                                 Price="79"
+                                 IsChecked="True"
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="Start"/>
         </StackLayout>
   </ContentView.Content>
 </ContentView>

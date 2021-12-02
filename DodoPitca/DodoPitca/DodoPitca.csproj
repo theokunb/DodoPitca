@@ -43,6 +43,7 @@
     <None Remove="Images\BigPitci\Четыре сыра.png" />
     <None Remove="Images\BigPitci\Чизбургер-пицца.png" />
     <None Remove="Images\brysletiki.png" />
+    <None Remove="Images\checkOrange.png" />
     <None Remove="Images\closeBlack.png" />
     <None Remove="Images\closeOrange.png" />
     <None Remove="Images\Combo\combo2Pitci.png" />
@@ -191,6 +192,7 @@
     <EmbeddedResource Include="Images\BigPitci\Четыре сыра.png" />
     <EmbeddedResource Include="Images\BigPitci\Чизбургер-пицца.png" />
     <EmbeddedResource Include="Images\brysletiki.png" />
+    <EmbeddedResource Include="Images\checkOrange.png" />
     <EmbeddedResource Include="Images\closeBlack.png" />
     <EmbeddedResource Include="Images\closeOrange.png" />
     <EmbeddedResource Include="Images\Combo\combo2Pitci.png" />
@@ -325,6 +327,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MVVM\Views\CustomButtonAddress.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MVVM\Views\CustomCheckBox.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MVVM\Views\CustomCity.xaml">
