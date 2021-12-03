@@ -184,21 +184,12 @@ namespace DodoPitca.MVVM.ViewModels
             });
             Tovars.Add(new Pitca()
             {
-                ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.pitcaIzPolovinok.png"),
-                Title = "Пицца из половинок",
-                Description = "Соберите свою пицу 35см с двумя разными вкусами",
-                Price = "Собрать",
-                Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Пицца из половинок.png")
-            });
-            Tovars.Add(new Pitca()
-            {
                 ImagePath = ImageSource.FromResource("DodoPitca.Images.Pitci.dodoMiks.png"),
                 Title = "Додо микс",
                 Description = "Бекон, цыпленок, ветчина, сыр блю чиз, сыры чеддер и пармезан, соус песто, кубики брынзы, томаты, красный лук, моцарелла, соус альфредо, чеснок, итальянские травы",
                 Price = "от 625 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Додо микс.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Додо Микс.png")
             });
             Tovars.Add(new Pitca()
             {

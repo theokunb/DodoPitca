@@ -9,29 +9,6 @@
         <viewmodel:KorzinaViewModel/>
     </ContentView.BindingContext>
   <ContentView.Content>
-        <StackLayout Orientation="Horizontal"
-                     Margin="10">
-            <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Deserti.cookiesChocolate.png}"
-                                 ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
-                                 Text="шоколадное печенье"
-                                 Price="79"
-                                 IsChecked="True"
-                                 HorizontalOptions="Start"
-                                 VerticalOptions="Start"/>
-            <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Deserti.cookiesChocolate.png}"
-                                 ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
-                                 Text="шоколадное печенье"
-                                 Price="79"
-                                 IsChecked="True"
-                                 HorizontalOptions="Start"
-                                 VerticalOptions="Start"/>
-            <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Deserti.cookiesChocolate.png}"
-                                 ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
-                                 Text="шоколадное печенье"
-                                 Price="79"
-                                 IsChecked="True"
-                                 HorizontalOptions="Start"
-                                 VerticalOptions="Start"/>
-        </StackLayout>
+        
   </ContentView.Content>
 </ContentView>

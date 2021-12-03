@@ -9,15 +9,16 @@
         <viewmodel:PagePitcaViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <ScrollView Orientation="Vertical"
-                    VerticalScrollBarVisibility="Never"
-                    Margin="10">
-            <CarouselView ItemsSource="{Binding Pitci}"
-                          Loop="False"
-                          Position="{Binding SelectedId}">
-                <CarouselView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout Orientation="Vertical">
+        <CarouselView ItemsSource="{Binding Pitci}"
+                      Loop="False"
+                      Position="{Binding SelectedId}"
+                      Margin="10">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <ScrollView Orientation="Vertical"
+                                    VerticalScrollBarVisibility="Never">
+                        <StackLayout Orientation="Vertical"
+                                     Spacing="8">
                             <Frame BackgroundColor="White"
                                    HasShadow="True"
                                    CornerRadius="30"
@@ -56,10 +57,90 @@
                                                      SecondText="Тонкое"
                                                      Mode="{Binding Mode}"
                                                      x:Name="toggleButton2"/>
+                            <Label Text="Добавить в пиццу"
+                                   TextColor="Black"
+                                   FontSize="18"/>
+                            <FlexLayout Direction="Row"
+                                        Wrap="Wrap"
+                                        FlowDirection="LeftToRight"
+                                        JustifyContent="Start">
+                                <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Ingidienti.siriniBortik.png}"
+                                                     ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
+                                                     Text="Сырный бортик"
+                                                     Price="179"
+                                                     IsChecked="False"
+                                                     Margin="5"/>
+                                <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Ingidienti.bluchees.png}"
+                                                     ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
+                                                     Text="Сыр блю чиз"
+                                                     Price="79"
+                                                     IsChecked="False"
+                                                     Margin="5"/>
+                                <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Ingidienti.redOnion.png}"
+                                                     ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
+                                                     Text="Красный лук"
+                                                     Price="79"
+                                                     IsChecked="False"
+                                                     Margin="5"/>
+                                <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Ingidienti.gribi.png}"
+                                                     ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
+                                                     Text="Шампиньоны"
+                                                     Price="79"
+                                                     IsChecked="False"
+                                                     Margin="5"/>
+                                <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Ingidienti.holopenio.png}"
+                                                     ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
+                                                     Text="Острый халапеньо"
+                                                     Price="79"
+                                                     IsChecked="False"
+                                                     Margin="5"/>
+                                <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Ingidienti.maslini.png}"
+                                                     ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
+                                                     Text="Маслины"
+                                                     Price="179"
+                                                     IsChecked="False"
+                                                     Margin="5"/>
+                                <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Ingidienti.mocarella.png}"
+                                                     ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
+                                                     Text="Моцарелла"
+                                                     Price="79"
+                                                     IsChecked="False"
+                                                     Margin="5"/>
+                                <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Ingidienti.tomati.png}"
+                                                     ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
+                                                     Text="Томаты"
+                                                     Price="79"
+                                                     IsChecked="False"
+                                                     Margin="5"/>
+                                <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Ingidienti.tciplenok.png}"
+                                                     ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
+                                                     Text="Цыпленок"
+                                                     Price="79"
+                                                     IsChecked="False"
+                                                     Margin="5"/>
+                                <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Ingidienti.bekon.png}"
+                                                     ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
+                                                     Text="Ветчина"
+                                                     Price="79"
+                                                     IsChecked="False"
+                                                     Margin="5"/>
+                                <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Ingidienti.kolbaski.png}"
+                                                     ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
+                                                     Text="Пикантная пепперони"
+                                                     Price="79"
+                                                     IsChecked="False"
+                                                     Margin="5"/>
+                                <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Ingidienti.perec.png}"
+                                                     ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
+                                                     Text="Сладкий перец"
+                                                     Price="79"
+                                                     IsChecked="False"
+                                                     Margin="5"/>
+                            </FlexLayout>
                         </StackLayout>
-                    </DataTemplate>
-                </CarouselView.ItemTemplate>
-            </CarouselView>
-        </ScrollView>
+                    </ScrollView>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
     </ContentPage.Content>
 </ContentPage>
