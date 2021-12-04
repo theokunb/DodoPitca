@@ -81,7 +81,15 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Острая чоризо, острый перец халапеньо, соуус барбекю, митболы, томаты, сладкий перец, красный лук, моцарелла, томатный соус",
                 Price = "от 545 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Диабло.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Диабло.png"),
+                Ingridienti = 
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Halapenio,
+                    IngridientDone.Tciplenok,
+                    IngridientDone.Gribi
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -90,7 +98,15 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Цыпленок, моцарелла, сыры чеддер и пармезан, сырный соус, томаты, соус альфредо, чеснок",
                 Price = "от 545 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Сырный цыпленок.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Сырный цыпленок.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Halapenio,
+                    IngridientDone.Tciplenok,
+                    IngridientDone.Gribi
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -99,7 +115,15 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Ветчина, картошка, моцарелла, соус альфредо",
                 Price = "от 529 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Пицца от Тучки с игрушкой из коллекции.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Пицца от Тучки с игрушкой из коллекции.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Halapenio,
+                    IngridientDone.Tciplenok,
+                    IngridientDone.Gribi
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -108,7 +132,16 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Цыпленок, картошка, томаты, моцарелла, томатный соус",
                 Price = "от 529 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Пицца от Кеши с игрушкой из коллекции.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Пицца от Кеши с игрушкой из коллекции.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Vetchina,
+                    IngridientDone.Halapenio,
+                    IngridientDone.Perec,
+                    IngridientDone.Gribi,
+                    IngridientDone.Maslini
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -117,7 +150,15 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Острая чоризо, соус барбекю, томаты, красный лук, моцарелла, томатный соус",
                 Price = "от 495 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Колбаски Барбекю.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Колбаски Барбекю.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.BluChees,
+                    IngridientDone.Halapenio,
+                    IngridientDone.Kolbaski,
+                    IngridientDone.Gribi
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -126,7 +167,16 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Увеличенная порция моцареллы, томаты, итальянские травы, томатный соус",
                 Price = "от 435 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Маргарита.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Маргарита.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Halapenio,
+                    IngridientDone.Tciplenok,
+                    IngridientDone.BluChees,
+                    IngridientDone.Perec
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -135,7 +185,17 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Цыпленок, острая чоризо, соус бурргер, сладкий перец, красный лук, томаты, моцарелла, соус ранч, чеснок",
                 Price = "от 495 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Аррива.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Аррива.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Vetchina,
+                    IngridientDone.Halapenio,
+                    IngridientDone.Tciplenok,
+                    IngridientDone.Gribi,
+                    IngridientDone.RedOnion,
+                    IngridientDone.Maslini
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -144,7 +204,16 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Пикантная пеперони, увеличенная ппорция моцареллы, томатный соус",
                 Price = "от 495 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Пепперони.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Пепперони.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Halapenio,
+                    IngridientDone.Tciplenok,
+                    IngridientDone.Gribi,
+                    IngridientDone.Perec
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -153,7 +222,15 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Ветчина, шампиньоны, увеличенная порция моцареллы, томатный соус",
                 Price = "от 435 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Ветчина и грибы.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Ветчина и грибы.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Halapenio,
+                    IngridientDone.Tciplenok,
+                    IngridientDone.Gribi
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -162,7 +239,15 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Моцарелла, сыры чеддер и пармезан, соус альфредо",
                 Price = "от 295 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Сырная.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Сырная.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Halapenio,
+                    IngridientDone.Tciplenok,
+                    IngridientDone.Gribi
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -171,7 +256,15 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Ветчина, моцарелла, соус альфредо",
                 Price = "от 375 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Ветчина и сыр.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Ветчина и сыр.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Halapenio,
+                    IngridientDone.Tomati,
+                    IngridientDone.Gribi
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -180,7 +273,15 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Цыпленок, моцарелла, соус альфредо",
                 Price = "от 375 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Двойной цыпленок.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Двойной цыпленок.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Halapenio,
+                    IngridientDone.Tomati,
+                    IngridientDone.Gribi
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -189,7 +290,15 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Бекон, цыпленок, ветчина, сыр блю чиз, сыры чеддер и пармезан, соус песто, кубики брынзы, томаты, красный лук, моцарелла, соус альфредо, чеснок, итальянские травы",
                 Price = "от 625 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Додо Микс.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Додо Микс.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Halapenio,
+                    IngridientDone.Tciplenok,
+                    IngridientDone.Tomati
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -198,7 +307,15 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Пикантная пепперони, увеличенная порция моцареллы, томаты, томатный соус",
                 Price = "от 295 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Пепперони фреш.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Пепперони фреш.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Halapenio,
+                    IngridientDone.Tciplenok,
+                    IngridientDone.Tomati
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -207,7 +324,16 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Цыпленок, соус песто, кубики брынзы, томаты, моцарелла, соус альфредо",
                 Price = "от 545 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Песто.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Песто.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Halapenio,
+                    IngridientDone.Tciplenok,
+                    IngridientDone.Gribi,
+                    IngridientDone.Tomati
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -216,7 +342,17 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Бекон, сыры чеддер и пармезан, моцарелла, томаты, красный лук, чеснок, соус альфредо, итальянские травы",
                 Price = "от 545 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Карбонара.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Карбонара.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Halapenio,
+                    IngridientDone.Tciplenok,
+                    IngridientDone.Gribi,
+                    IngridientDone.Tomati,
+                    IngridientDone.Kolbaski
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -225,7 +361,15 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Томаты, сладкий перец, красный лук, соус песто, митболы, моцарелла, томатный соус",
                 Price = "от 495 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Фристайло.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Фристайло.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Halapenio,
+                    IngridientDone.Tciplenok,
+                    IngridientDone.Gribi
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -234,7 +378,15 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Мясной соус болоньезе, соус бургер, соленые огурчики, томаты, красный лук, моцарелла",
                 Price = "от 495 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Чизбургер-пицца.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Чизбургер-пицца.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Halapenio,
+                    IngridientDone.Tciplenok,
+                    IngridientDone.Gribi
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -243,7 +395,15 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Ветчина, ананасы, моцарелла, томатный соус",
                 Price = "от 495 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Гавайская.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Гавайская.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Halapenio,
+                    IngridientDone.Tciplenok,
+                    IngridientDone.Gribi
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -252,7 +412,15 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Увеличенная порчия моцареллы, ветчина, пикантная пепперони, кубики брынзы, томаты, шампиньоны, итальянские травы, томатный соус",
                 Price = "от 495 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Четыре сезона.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Четыре сезона.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Halapenio,
+                    IngridientDone.Tciplenok,
+                    IngridientDone.Gribi
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -261,7 +429,15 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Шампиньоны, томаты, сладкий перец, красный лук, маслины, кубики брынзы, моцарелла, томатный соус, итальянские травы",
                 Price = "от 495 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Овощи и грибы.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Овощи и грибы.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Halapenio,
+                    IngridientDone.Tciplenok,
+                    IngridientDone.Gribi
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -270,7 +446,15 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Бекон, митболы, пикантная пепперони, моцарелла, томаты, шампиньоны, сладкий перец, красный лук, чеснок, томатный соус",
                 Price = "от 545 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Додо.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Додо.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Halapenio,
+                    IngridientDone.Maslini,
+                    IngridientDone.Tomati
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -279,7 +463,15 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Сыр блю чиз, сыры чеддер и пармезан, моцарелла, соус альфредо",
                 Price = "от 545 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Четыре сыра.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Четыре сыра.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Halapenio,
+                    IngridientDone.Maslini,
+                    IngridientDone.Tomati
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -288,7 +480,15 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Цыпленок, ветчина, пикантная пепперони, острая чоризо, моцарелла, томатный соус",
                 Price = "от 545 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Мясная.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Мясная.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Tomati,
+                    IngridientDone.Maslini,
+                    IngridientDone.Tciplenok,
+                    IngridientDone.Gribi
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -297,7 +497,16 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Цыпленок, ветчина, соус ранч, моцарелла, томаты, чеснок",
                 Price = "от 545 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Цыпленок ранч.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Цыпленок ранч.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Tomati,
+                    IngridientDone.Tciplenok,
+                    IngridientDone.Gribi,
+                    IngridientDone.Maslini
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -306,7 +515,15 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Цыпленок, бекон, соус барбекю, красный лук, моцарелла, томатный соус",
                 Price = "от 545 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Цыпленок барбекю.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Цыпленок барбекю.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Halapenio,
+                    IngridientDone.Tomati,
+                    IngridientDone.Perec
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -315,7 +532,15 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Двойная порция пикантной пепперони, увеличенная порция моцареллы, томатный сооус",
                 Price = "от 545 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Двойная пепперони.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Двойная пепперони.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Halapenio,
+                    IngridientDone.RedOnion,
+                    IngridientDone.Tomati
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -324,7 +549,15 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Пикантная пеперрони, цыпленок, острая чоризо, бекон, митболы, моцарелла, томатный соус",
                 Price = "от 625 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Супермясная.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Супермясная.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Halapenio,
+                    IngridientDone.Tomati,
+                    IngridientDone.BluChees
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -333,7 +566,15 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Ананасы, брусника, сгущенное молоко",
                 Price = "от 435 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Пицца-пирог.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Пицца-пирог.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Halapenio,
+                    IngridientDone.Tciplenok,
+                    IngridientDone.BluChees
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -342,7 +583,15 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Лосось, томаты, соус песто, моцарелла, соус альфредо",
                 Price = "от 675 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Нежный лосось.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Нежный лосось.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Perec,
+                    IngridientDone.BluChees,
+                    IngridientDone.RedOnion
+                }
             });
             Tovars.Add(new Pitca()
             {
@@ -351,7 +600,15 @@ namespace DodoPitca.MVVM.ViewModels
                 Description = "Цыпленок, остный перец халапеньо, соус сальса, томаты, сладкий перец, красный лук, моцарелла, томатный соус",
                 Price = "от 545 р",
                 Id = Randomizer(),
-                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Мексиканская.png")
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigPitci.Мексиканская.png"),
+                Ingridienti =
+                {
+                    IngridientDone.SirniBortic,
+                    IngridientDone.Mocarella,
+                    IngridientDone.Perec,
+                    IngridientDone.BluChees,
+                    IngridientDone.RedOnion
+                }
             });
         }
     }

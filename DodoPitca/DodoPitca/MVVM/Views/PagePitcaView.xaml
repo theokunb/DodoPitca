@@ -60,83 +60,71 @@
                             <Label Text="Добавить в пиццу"
                                    TextColor="Black"
                                    FontSize="18"/>
-                            <FlexLayout Direction="Row"
-                                        Wrap="Wrap"
-                                        FlowDirection="LeftToRight"
-                                        JustifyContent="Start">
-                                <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Ingidienti.siriniBortik.png}"
-                                                     ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
-                                                     Text="Сырный бортик"
-                                                     Price="179"
-                                                     IsChecked="False"
-                                                     Margin="5"/>
-                                <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Ingidienti.bluchees.png}"
-                                                     ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
-                                                     Text="Сыр блю чиз"
-                                                     Price="79"
-                                                     IsChecked="False"
-                                                     Margin="5"/>
-                                <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Ingidienti.redOnion.png}"
-                                                     ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
-                                                     Text="Красный лук"
-                                                     Price="79"
-                                                     IsChecked="False"
-                                                     Margin="5"/>
-                                <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Ingidienti.gribi.png}"
-                                                     ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
-                                                     Text="Шампиньоны"
-                                                     Price="79"
-                                                     IsChecked="False"
-                                                     Margin="5"/>
-                                <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Ingidienti.holopenio.png}"
-                                                     ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
-                                                     Text="Острый халапеньо"
-                                                     Price="79"
-                                                     IsChecked="False"
-                                                     Margin="5"/>
-                                <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Ingidienti.maslini.png}"
-                                                     ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
-                                                     Text="Маслины"
-                                                     Price="179"
-                                                     IsChecked="False"
-                                                     Margin="5"/>
-                                <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Ingidienti.mocarella.png}"
-                                                     ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
-                                                     Text="Моцарелла"
-                                                     Price="79"
-                                                     IsChecked="False"
-                                                     Margin="5"/>
-                                <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Ingidienti.tomati.png}"
-                                                     ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
-                                                     Text="Томаты"
-                                                     Price="79"
-                                                     IsChecked="False"
-                                                     Margin="5"/>
-                                <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Ingidienti.tciplenok.png}"
-                                                     ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
-                                                     Text="Цыпленок"
-                                                     Price="79"
-                                                     IsChecked="False"
-                                                     Margin="5"/>
-                                <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Ingidienti.bekon.png}"
-                                                     ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
-                                                     Text="Ветчина"
-                                                     Price="79"
-                                                     IsChecked="False"
-                                                     Margin="5"/>
-                                <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Ingidienti.kolbaski.png}"
-                                                     ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
-                                                     Text="Пикантная пепперони"
-                                                     Price="79"
-                                                     IsChecked="False"
-                                                     Margin="5"/>
-                                <view:CustomCheckBox ImageIngedient="{local:ImageResource DodoPitca.Images.Ingidienti.perec.png}"
-                                                     ImageCheck="{local:ImageResource DodoPitca.Images.checkOrange.png}"
-                                                     Text="Сладкий перец"
-                                                     Price="79"
-                                                     IsChecked="False"
-                                                     Margin="5"/>
-                            </FlexLayout>
+                            <ScrollView Orientation="Vertical"
+                                        VerticalScrollBarVisibility="Never">
+                                <FlexLayout Direction="Row"
+                                            Wrap="Wrap"
+                                            FlowDirection="LeftToRight"
+                                            JustifyContent="Start"
+                                            AlignContent="Start"
+                                            BindableLayout.ItemsSource="{Binding Ingridienti}">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Frame BackgroundColor="Transparent"
+                                                   BorderColor="Transparent"
+                                                   CornerRadius="10"
+                                                   HasShadow="True"
+                                                   VerticalOptions="Start"
+                                                   HorizontalOptions="Start"
+                                                   HeightRequest="150"
+                                                   WidthRequest="80"
+                                                   Margin="5,0,5,0">
+                                                <Frame.Triggers>
+                                                    <DataTrigger TargetType="{x:Type Frame}" Binding="{Binding Path=IsChecked}" Value="True">
+                                                        <Setter Property="BorderColor" Value="#FC6903"/>
+                                                    </DataTrigger>
+                                                </Frame.Triggers>
+                                                <Frame.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding CommandTap}"/>
+                                                </Frame.GestureRecognizers>
+                                                <StackLayout Margin="-5">
+                                                    <Grid Margin="-10">
+                                                        <Image Grid.Row="0"
+                                                           Source="{Binding ImageIngedient}"
+                                                           VerticalOptions="FillAndExpand"
+                                                           HorizontalOptions="FillAndExpand"/>
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="5*"/>
+                                                                <ColumnDefinition Width="2*"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="2*"/>
+                                                                <RowDefinition Height="5*"/>
+                                                            </Grid.RowDefinitions>
+                                                            <Image Grid.Column="1"
+                                                               Grid.Row="0"
+                                                               Source="{Binding ImageCheck}"
+                                                               IsVisible="{Binding IsChecked}">
+                                                            </Image>
+                                                        </Grid>
+                                                    </Grid>
+
+                                                    <Label Grid.Row="1"
+                                                           Text="{Binding Text}"
+                                                           TextColor="Black"
+                                                           FontSize="14"/>
+                                                    <Label Grid.Row="2"
+                                                           Text="{Binding DisplayPrice}"
+                                                           TextColor="Black"
+                                                           FontSize="14"
+                                                           FontAttributes="Bold"/>
+                                                </StackLayout>
+                                            </Frame>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </FlexLayout>
+                            </ScrollView>
                         </StackLayout>
                     </ScrollView>
                 </DataTemplate>
