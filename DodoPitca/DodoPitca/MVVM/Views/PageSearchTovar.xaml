@@ -64,7 +64,7 @@
                                         <Frame BackgroundColor="#FEF0E5"
                                                            CornerRadius="20"
                                                            HorizontalOptions="Start">
-                                            <Label Text="{Binding Price}"
+                                            <Label Text="{Binding DisplayPrice}"
                                                                TextColor="#C55B0F"
                                                                FontSize="16"
                                                                HorizontalTextAlignment="Center"

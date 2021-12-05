@@ -14,7 +14,7 @@ namespace DodoPitca.MVVM.Models
         protected ImageSource imagePath;
         protected string title;
         protected string description;
-        protected string price;
+        protected int price;
         protected int mass;
         protected ImageSource bigImage;
 
@@ -75,8 +75,11 @@ namespace DodoPitca.MVVM.Models
                 OnpropertyChagned();
             }
         }
-
-        public string Price
+        public string DisplayPrice
+        {
+            get => $"от {Price} p";
+        }
+        public int Price
         {
             get => price;
             set
@@ -85,6 +88,7 @@ namespace DodoPitca.MVVM.Models
                     return;
                 price = value;
                 OnpropertyChagned();
+                OnpropertyChagned(nameof(DisplayPrice));
             }
         }
         public int Mass
@@ -99,5 +103,6 @@ namespace DodoPitca.MVVM.Models
                 }
             }
         }
+        public ICommand CommandBuy { get; protected set; }
     }
 }

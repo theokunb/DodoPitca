@@ -34,6 +34,11 @@ namespace DodoPitca.MVVM.ViewModels
             {
                 Application.Current.MainPage.Navigation.PopModalAsync();
             });
+
+            MessagingCenter.Subscribe<BaseViewModel, Mode3>(this, Strings.SIZE_CHANGED, (sender, param) =>
+            {
+                Pitci[SelectedId].Size = param;
+            });
         }
     }
 }

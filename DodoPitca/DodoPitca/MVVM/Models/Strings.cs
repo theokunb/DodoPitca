@@ -43,6 +43,17 @@ namespace DodoPitca.MVVM.Models
         /// return pitci from menu view model
         /// </summary>
         public static string GET_PITCI = "getPitic";
-
+        /// <summary>
+        /// send size changing
+        /// </summary>
+        public static string SIZE_CHANGED = "sizeChanged";
+        /// <summary>
+        /// update ingridients for final price
+        /// </summary>
+        public static string UPDATE_INGRIDIENTS = "updateIngridients";
+        /// <summary>
+        /// add totar to korzina
+        /// </summary>
+        public static string ADD_KORZINA = "addKorzina";
     }
 }

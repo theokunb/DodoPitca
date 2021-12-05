@@ -14,7 +14,7 @@ namespace DodoPitca.MVVM.Models
             ImageIngedient = ImageSource.FromResource("DodoPitca.Images.Ingidienti.siriniBortik.png"),
             ImageCheck = ImageSource.FromResource("DodoPitca.Images.checkOrange.png"),
             Text = "Сырный бортик",
-            Price = "179",
+            Price = 179,
             IsChecked = false
         };
         public static Ingidient Mocarella { get; } = new Ingidient()
@@ -22,7 +22,7 @@ namespace DodoPitca.MVVM.Models
             ImageIngedient = ImageSource.FromResource("DodoPitca.Images.Ingidienti.mocarella.png"),
             ImageCheck = ImageSource.FromResource("DodoPitca.Images.checkOrange.png"),
             Text = "Моцарелла",
-            Price = "79",
+            Price = 79,
             IsChecked = false
         };
         public static Ingidient Halapenio { get; } = new Ingidient()
@@ -30,7 +30,7 @@ namespace DodoPitca.MVVM.Models
             ImageIngedient = ImageSource.FromResource("DodoPitca.Images.Ingidienti.holopenio.png"),
             ImageCheck = ImageSource.FromResource("DodoPitca.Images.checkOrange.png"),
             Text = "Острый халапеньо",
-            Price = "79",
+            Price = 79,
             IsChecked = false
         };
         public static Ingidient Tciplenok { get; } = new Ingidient()
@@ -38,7 +38,7 @@ namespace DodoPitca.MVVM.Models
             ImageIngedient = ImageSource.FromResource("DodoPitca.Images.Ingidienti.tciplenok.png"),
             ImageCheck = ImageSource.FromResource("DodoPitca.Images.checkOrange.png"),
             Text = "Цыпленок",
-            Price = "79",
+            Price = 79,
             IsChecked = false
         };
         public static Ingidient Gribi { get; } = new Ingidient()
@@ -46,7 +46,7 @@ namespace DodoPitca.MVVM.Models
             ImageIngedient = ImageSource.FromResource("DodoPitca.Images.Ingidienti.gribi.png"),
             ImageCheck = ImageSource.FromResource("DodoPitca.Images.checkOrange.png"),
             Text = "Шампиньоны",
-            Price = "79",
+            Price = 79,
             IsChecked = false
         };
         public static Ingidient Vetchina { get; } = new Ingidient()
@@ -54,7 +54,7 @@ namespace DodoPitca.MVVM.Models
             ImageIngedient = ImageSource.FromResource("DodoPitca.Images.Ingidienti.bekon.png"),
             ImageCheck = ImageSource.FromResource("DodoPitca.Images.checkOrange.png"),
             Text = "Бекон",
-            Price = "79",
+            Price = 79,
             IsChecked = false
         };
         public static Ingidient BluChees { get; } = new Ingidient()
@@ -62,7 +62,7 @@ namespace DodoPitca.MVVM.Models
             ImageIngedient = ImageSource.FromResource("DodoPitca.Images.Ingidienti.bluchees.png"),
             ImageCheck = ImageSource.FromResource("DodoPitca.Images.checkOrange.png"),
             Text = "Блю чиз",
-            Price = "79",
+            Price = 79,
             IsChecked = false
         };
         public static Ingidient Kolbaski { get; } = new Ingidient()
@@ -70,7 +70,7 @@ namespace DodoPitca.MVVM.Models
             ImageIngedient = ImageSource.FromResource("DodoPitca.Images.Ingidienti.kolbaski.png"),
             ImageCheck = ImageSource.FromResource("DodoPitca.Images.checkOrange.png"),
             Text = "Пикантная пепперони",
-            Price = "79",
+            Price = 79,
             IsChecked = false
         };
         public static Ingidient Maslini { get; } = new Ingidient()
@@ -78,7 +78,7 @@ namespace DodoPitca.MVVM.Models
             ImageIngedient = ImageSource.FromResource("DodoPitca.Images.Ingidienti.maslini.png"),
             ImageCheck = ImageSource.FromResource("DodoPitca.Images.checkOrange.png"),
             Text = "Маслины",
-            Price = "79",
+            Price = 79,
             IsChecked = false
         };
         public static Ingidient Perec { get; } = new Ingidient()
@@ -86,7 +86,7 @@ namespace DodoPitca.MVVM.Models
             ImageIngedient = ImageSource.FromResource("DodoPitca.Images.Ingidienti.perec.png"),
             ImageCheck = ImageSource.FromResource("DodoPitca.Images.checkOrange.png"),
             Text = "Сладкий перец",
-            Price = "79",
+            Price = 79,
             IsChecked = false
         };
         public static Ingidient RedOnion { get; } = new Ingidient()
@@ -94,7 +94,7 @@ namespace DodoPitca.MVVM.Models
             ImageIngedient = ImageSource.FromResource("DodoPitca.Images.Ingidienti.redOnion.png"),
             ImageCheck = ImageSource.FromResource("DodoPitca.Images.checkOrange.png"),
             Text = "Красный лук",
-            Price = "79",
+            Price = 79,
             IsChecked = false
         };
         public static Ingidient Tomati { get; } = new Ingidient()
@@ -102,7 +102,7 @@ namespace DodoPitca.MVVM.Models
             ImageIngedient = ImageSource.FromResource("DodoPitca.Images.Ingidienti.tomati.png"),
             ImageCheck = ImageSource.FromResource("DodoPitca.Images.checkOrange.png"),
             Text = "Томаты",
-            Price = "79",
+            Price = 79,
             IsChecked = false
         };
     }
@@ -111,7 +111,7 @@ namespace DodoPitca.MVVM.Models
         private ImageSource imageIngedient;
         private ImageSource imageCheck;
         private string text;
-        private string price;
+        private int price;
         private bool isChecked;
 
 
@@ -123,6 +123,7 @@ namespace DodoPitca.MVVM.Models
                 if (isChecked != value)
                 {
                     isChecked = value;
+                    MessagingCenter.Send<BaseViewModel>(this, Strings.UPDATE_INGRIDIENTS);
                     OnpropertyChagned();
                 }
             }
@@ -131,7 +132,7 @@ namespace DodoPitca.MVVM.Models
         {
             get => Price + "p";
         }
-        public string Price
+        public int Price
         {
             get => price;
             set
@@ -188,6 +189,20 @@ namespace DodoPitca.MVVM.Models
             {
                 IsChecked = !IsChecked;
             });
+        }
+        /// <summary>
+        /// Создает клон объекта
+        /// </summary>
+        /// <returns></returns>
+        public Ingidient Clone()
+        {
+            Ingidient res = new Ingidient();
+            res.ImageIngedient = ImageIngedient;
+            res.ImageCheck = ImageCheck;
+            res.Text = Text;
+            res.Price = Price;
+            res.IsChecked = IsChecked;
+            return res;
         }
     }
 }

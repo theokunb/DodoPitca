@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace DodoPitca.MVVM.ViewModels
 {
@@ -27,6 +28,8 @@ namespace DodoPitca.MVVM.ViewModels
                 if (size != value)
                 {
                     size = value;
+                    //problem
+                    MessagingCenter.Send<BaseViewModel, Mode3>(this, Strings.SIZE_CHANGED, Size);
                     OnpropertyChagned();
                     OnpropertyChagned(nameof(Info));
                 }

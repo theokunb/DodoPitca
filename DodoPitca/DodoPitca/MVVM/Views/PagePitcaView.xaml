@@ -59,7 +59,8 @@
                                                      x:Name="toggleButton2"/>
                             <Label Text="Добавить в пиццу"
                                    TextColor="Black"
-                                   FontSize="18"/>
+                                   FontSize="18"
+                                   Margin="10"/>
                             <ScrollView Orientation="Vertical"
                                         VerticalScrollBarVisibility="Never">
                                 <FlexLayout Direction="Row"
@@ -78,7 +79,7 @@
                                                    HorizontalOptions="Start"
                                                    HeightRequest="150"
                                                    WidthRequest="80"
-                                                   Margin="5,0,5,0">
+                                                   Margin="5">
                                                 <Frame.Triggers>
                                                     <DataTrigger TargetType="{x:Type Frame}" Binding="{Binding Path=IsChecked}" Value="True">
                                                         <Setter Property="BorderColor" Value="#FC6903"/>
@@ -125,6 +126,13 @@
                                     </BindableLayout.ItemTemplate>
                                 </FlexLayout>
                             </ScrollView>
+                            <Button Text="{Binding FinalPrice}"
+                                    HorizontalOptions="FillAndExpand"
+                                    CornerRadius="40"
+                                    TextColor="White"
+                                    BackgroundColor="#FC6903"
+                                    Command="{Binding CommandBuy}">
+                            </Button>
                         </StackLayout>
                     </ScrollView>
                 </DataTemplate>

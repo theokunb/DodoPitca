@@ -81,7 +81,7 @@
                                             <Frame BackgroundColor="#FEF0E5"
                                                    CornerRadius="15"
                                                    VerticalOptions="EndAndExpand">
-                                                <Label Text="{Binding Price}"
+                                                <Label Text="{Binding DisplayPrice}"
                                                        HorizontalTextAlignment="Center"
                                                        TextColor="#BE5D18"
                                                        Margin="-20,-15,-20,-15"/>
@@ -122,7 +122,7 @@
                                                 <Frame BackgroundColor="#FEF0E5"
                                                            CornerRadius="20"
                                                            HorizontalOptions="Start">
-                                                    <Label Text="{Binding Price}"
+                                                    <Label Text="{Binding DisplayPrice}"
                                                                TextColor="#C55B0F"
                                                                FontSize="16"
                                                                HorizontalTextAlignment="Center"
