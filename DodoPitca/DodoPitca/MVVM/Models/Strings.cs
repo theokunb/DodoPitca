@@ -48,6 +48,10 @@ namespace DodoPitca.MVVM.Models
         /// </summary>
         public static string SIZE_CHANGED = "sizeChanged";
         /// <summary>
+        /// send testto changed
+        /// </summary>
+        public static string TESTO_CHANGED = "testo_changed";
+        /// <summary>
         /// update ingridients for final price
         /// </summary>
         public static string UPDATE_INGRIDIENTS = "updateIngridients";

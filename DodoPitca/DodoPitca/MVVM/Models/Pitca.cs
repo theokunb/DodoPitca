@@ -12,6 +12,21 @@ namespace DodoPitca.MVVM.ViewModels
     public class Pitca : Tovar
     {
         private Mode3 size;
+        private Mode2 testo;
+
+        public Mode2 Testo
+        {
+            get => testo;
+            set
+            {
+                if (testo != value)
+                {
+                    testo = value;
+                    OnpropertyChagned();
+                    OnpropertyChagned(nameof(FinalPrice));
+                }
+            }
+        }
         public Mode3 Size
         {
             get=> size;

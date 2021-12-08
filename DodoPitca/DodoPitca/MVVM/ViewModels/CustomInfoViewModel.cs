@@ -49,5 +49,10 @@ namespace DodoPitca.MVVM.ViewModels
             }
         }
 
+        public CustomInfoViewModel()
+        {
+            MessagingCenter.Send<BaseViewModel, Mode3>(this, Strings.SIZE_CHANGED, Size);
+            MessagingCenter.Send<BaseViewModel, Mode2>(this, Strings.TESTO_CHANGED, Testo);
+        }
     }
 }

@@ -39,6 +39,10 @@ namespace DodoPitca.MVVM.ViewModels
             {
                 Pitci[SelectedId].Size = param;
             });
+            MessagingCenter.Subscribe<BaseViewModel, Mode2>(this, Strings.TESTO_CHANGED, (sender, param) =>
+            {
+                Pitci[SelectedId].Testo = param;
+            });
         }
     }
 }
