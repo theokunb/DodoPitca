@@ -39,6 +39,10 @@ namespace DodoPitca.MVVM.ViewModels
                     {
                         Application.Current.MainPage.Navigation.PushModalAsync(new PagePitcaView(selectedItem as Pitca, Tovars.Where(item => item.GetType() == typeof(Pitca))));
                     }
+                    else if(selectedItem.GetType() == typeof(Zakuska))
+                    {
+                        Application.Current.MainPage.Navigation.PushModalAsync(new PageTovarView(selectedItem as Zakuska, Tovars.Where(item => item.GetType() == typeof(Zakuska))));
+                    }
                 }
             });
             CommandViewNewAndHot = new Command(param =>
@@ -609,6 +613,46 @@ namespace DodoPitca.MVVM.ViewModels
                     IngridientDone.BluChees.Clone(),
                     IngridientDone.RedOnion.Clone()
                 }
+            });
+            Tovars.Add(new Zakuska()
+            {
+                ImagePath = ImageSource.FromResource("DodoPitca.Images.Zakuski.dodster.png"),
+                Title = "Додстер",
+                Description = "Легендарная горячая закуска с цыпленком, томатами, моцареллой, соусом ранч в тонкой пшеничной лепешке",
+                Price = 189,
+                Id = Randomizer(),
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigZakuski.Додстер.png"),
+                Mass = 200
+            });
+            Tovars.Add(new Zakuska()
+            {
+                ImagePath = ImageSource.FromResource("DodoPitca.Images.Zakuski.hotDodster.png"),
+                Title = "Острый Додстер",
+                Description = "Горячая закуска с цыпленком, перчиком халапеньо, солеными огурчиками, томатами, моцареллой и соусом барбекю в тонкой пшеничной лепешке",
+                Price = 189,
+                Id = Randomizer(),
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigZakuski.Острый Додстер.png"),
+                Mass = 190
+            });
+            Tovars.Add(new Zakuska()
+            {
+                ImagePath = ImageSource.FromResource("DodoPitca.Images.Zakuski.starrterSirni.png"),
+                Title = "Сырный Стартер",
+                Description = "Горячая закуска с очень сырной начинкой. Моцарелла, пармезан, чеддер и соус ранч в тонкой пшеничной лепешке",
+                Price = 189,
+                Id = Randomizer(),
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigZakuski.Сырный Стартер.png"),
+                Mass = 160
+            });
+            Tovars.Add(new Zakuska()
+            {
+                ImagePath = ImageSource.FromResource("DodoPitca.Images.Zakuski.starterGribnoi.png"),
+                Title = "Грибной Стартер",
+                Description = "Горячая закуска с шампиньонами, моцареллой и соусом ранч в тонкой пшеничной лепешке",
+                Price = 189,
+                Id = Randomizer(),
+                BigImage = ImageSource.FromResource("DodoPitca.Images.BigZakuski.Грибной Стартер.png"),
+                Mass = 160
             });
         }
     }

@@ -18,6 +18,8 @@ namespace DodoPitca.MVVM.ViewModels
             {
                 if (param.GetType() == typeof(Pitca))
                     Tovars.Add(param as Pitca);
+                else if (param.GetType() == typeof(Zakuska))
+                    Tovars.Add(param as Zakuska);
             });
         }
     }

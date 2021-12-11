@@ -42,6 +42,10 @@
     <None Remove="Images\BigPitci\Четыре сезона.png" />
     <None Remove="Images\BigPitci\Четыре сыра.png" />
     <None Remove="Images\BigPitci\Чизбургер-пицца.png" />
+    <None Remove="Images\BigZakuski\Грибной Стартер.png" />
+    <None Remove="Images\BigZakuski\Додстер.png" />
+    <None Remove="Images\BigZakuski\Острый Додстер.png" />
+    <None Remove="Images\BigZakuski\Сырный Стартер.png" />
     <None Remove="Images\brysletiki.png" />
     <None Remove="Images\checkOrange.png" />
     <None Remove="Images\closeBlack.png" />
@@ -156,6 +160,7 @@
     <None Remove="Images\twoPitci.png" />
     <None Remove="Images\Zakuski\chickenKrilia.png" />
     <None Remove="Images\Zakuski\chickenKusochki.png" />
+    <None Remove="Images\Zakuski\dodster.png" />
     <None Remove="Images\Zakuski\hotDodster.png" />
     <None Remove="Images\Zakuski\kartofelniiOladi.png" />
     <None Remove="Images\Zakuski\kartoshka.png" />
@@ -166,6 +171,7 @@
     <None Remove="Images\Zakuski\ruletikiPepperoniSir.png" />
     <None Remove="Images\Zakuski\salatCesar.png" />
     <None Remove="Images\Zakuski\salatGrecheski.png" />
+    <None Remove="Images\Zakuski\starrterSirni.png" />
     <None Remove="Images\Zakuski\starterGribnoi.png" />
     <None Remove="Images\Zakuski\starterHot.png" />
     <None Remove="Images\Zakuski\starterMyasnoi.png" />
@@ -203,6 +209,10 @@
     <EmbeddedResource Include="Images\BigPitci\Четыре сезона.png" />
     <EmbeddedResource Include="Images\BigPitci\Четыре сыра.png" />
     <EmbeddedResource Include="Images\BigPitci\Чизбургер-пицца.png" />
+    <EmbeddedResource Include="Images\BigZakuski\Грибной Стартер.png" />
+    <EmbeddedResource Include="Images\BigZakuski\Додстер.png" />
+    <EmbeddedResource Include="Images\BigZakuski\Острый Додстер.png" />
+    <EmbeddedResource Include="Images\BigZakuski\Сырный Стартер.png" />
     <EmbeddedResource Include="Images\brysletiki.png" />
     <EmbeddedResource Include="Images\checkOrange.png" />
     <EmbeddedResource Include="Images\closeBlack.png" />
@@ -317,6 +327,7 @@
     <EmbeddedResource Include="Images\twoPitci.png" />
     <EmbeddedResource Include="Images\Zakuski\chickenKrilia.png" />
     <EmbeddedResource Include="Images\Zakuski\chickenKusochki.png" />
+    <EmbeddedResource Include="Images\Zakuski\dodster.png" />
     <EmbeddedResource Include="Images\Zakuski\hotDodster.png" />
     <EmbeddedResource Include="Images\Zakuski\kartofelniiOladi.png" />
     <EmbeddedResource Include="Images\Zakuski\kartoshka.png" />
@@ -327,6 +338,7 @@
     <EmbeddedResource Include="Images\Zakuski\ruletikiPepperoniSir.png" />
     <EmbeddedResource Include="Images\Zakuski\salatCesar.png" />
     <EmbeddedResource Include="Images\Zakuski\salatGrecheski.png" />
+    <EmbeddedResource Include="Images\Zakuski\starrterSirni.png" />
     <EmbeddedResource Include="Images\Zakuski\starterGribnoi.png" />
     <EmbeddedResource Include="Images\Zakuski\starterHot.png" />
     <EmbeddedResource Include="Images\Zakuski\starterMyasnoi.png" />
@@ -393,6 +405,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MVVM\Views\PagePitcaView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MVVM\Views\PageTovarView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MVVM\Views\TabbedPageMain.xaml">
