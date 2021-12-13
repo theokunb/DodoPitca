@@ -8,7 +8,36 @@
     <ContentView.BindingContext>
         <viewmodel:KorzinaViewModel/>
     </ContentView.BindingContext>
-  <ContentView.Content>
-        
-  </ContentView.Content>
+    <ContentView.Content>
+        <StackLayout Spacing="0">
+            <Label Text="Корзина"
+                   TextColor="Black"
+                   FontSize="24"
+                   Margin="10"/>
+            <ScrollView VerticalOptions="FillAndExpand">
+                <StackLayout>
+                    <Label Text="{Binding Sum}"
+                           TextColor="Black"
+                           FontSize="24"
+                           Margin="10"/>
+                    <StackLayout BindableLayout.ItemsSource="{Binding Tovars}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Label Text="{Binding Title}"/>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <Frame BackgroundColor="White">
+                <Button Text="Оплатить"
+                        TextColor="White"
+                        FontSize="18"
+                        CornerRadius="40"
+                        BackgroundColor="Orange"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"/>
+            </Frame>
+        </StackLayout>
+    </ContentView.Content>
 </ContentView>

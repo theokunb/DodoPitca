@@ -9,6 +9,7 @@ namespace DodoPitca.MVVM.ViewModels
     public class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+
         public void OnpropertyChagned([CallerMemberName]string name = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

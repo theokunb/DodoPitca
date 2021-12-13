@@ -23,6 +23,7 @@ namespace DodoPitca.MVVM.ViewModels
                 {
                     testo = value;
                     OnpropertyChagned();
+                    OnpropertyChagned(nameof(TotalPrice));
                     OnpropertyChagned(nameof(FinalPrice));
                 }
             }
@@ -36,11 +37,12 @@ namespace DodoPitca.MVVM.ViewModels
                 {
                     size = value;
                     OnpropertyChagned();
+                    OnpropertyChagned(nameof(TotalPrice));
                     OnpropertyChagned(nameof(FinalPrice));
                 }
             }
         }
-        public string FinalPrice
+        public int TotalPrice
         {
             get
             {
@@ -64,12 +66,19 @@ namespace DodoPitca.MVVM.ViewModels
                             break;
                         }
                 }
-                foreach(var element in Ingridienti)
+                foreach (var element in Ingridienti)
                 {
                     if (element.IsChecked)
                         additional += element.Price;
                 }
-                return $"В корзину за {basePrice + additional} р";
+                return basePrice + additional;
+            }
+        }
+        public string FinalPrice
+        {
+            get
+            {
+                return $"В корзину за {TotalPrice} р";
             }
         }
         public ObservableCollection<Ingidient> Ingridienti { get; set; }
@@ -77,6 +86,7 @@ namespace DodoPitca.MVVM.ViewModels
         {
             MessagingCenter.Subscribe<BaseViewModel>(this, Strings.UPDATE_INGRIDIENTS, (sender) =>
             {
+                OnpropertyChagned(nameof(TotalPrice));
                 OnpropertyChagned(nameof(FinalPrice));
             });
             Ingridienti = new ObservableCollection<Ingidient>();

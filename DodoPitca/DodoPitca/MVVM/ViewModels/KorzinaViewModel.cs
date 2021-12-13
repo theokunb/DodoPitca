@@ -10,6 +10,22 @@ namespace DodoPitca.MVVM.ViewModels
 {
     public class KorzinaViewModel: BaseViewModel
     {
+        private int sum;
+
+
+
+        public int Sum
+        {
+            get => sum;
+            set 
+            {
+                if (sum != value)
+                {
+                    sum = value;
+                    OnpropertyChagned();
+                }
+            }
+        }
         public ObservableCollection<Tovar> Tovars { get; set; }
         public KorzinaViewModel()
         {
@@ -17,9 +33,18 @@ namespace DodoPitca.MVVM.ViewModels
             MessagingCenter.Subscribe<BaseViewModel, object>(this, Strings.ADD_KORZINA, (sender, param) =>
             {
                 if (param.GetType() == typeof(Pitca))
-                    Tovars.Add(param as Pitca);
+                    Device.BeginInvokeOnMainThread(() =>
+                    {
+                        Tovars.Add(param as Pitca);
+                        Sum += (param as Pitca).TotalPrice;
+                    });
+
                 else if (param.GetType() == typeof(Zakuska))
-                    Tovars.Add(param as Zakuska);
+                    Device.BeginInvokeOnMainThread(() =>
+                    {
+                        Tovars.Add(param as Zakuska);
+                        Sum+=(param as Zakuska).Price;
+                    });
             });
         }
     }
