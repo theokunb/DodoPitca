@@ -3,7 +3,9 @@ using DodoPitca.MVVM.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace DodoPitca.MVVM.ViewModels
@@ -11,7 +13,6 @@ namespace DodoPitca.MVVM.ViewModels
     public class KorzinaViewModel: BaseViewModel
     {
         private int sum;
-
 
 
         public int Sum
@@ -23,10 +24,24 @@ namespace DodoPitca.MVVM.ViewModels
                 {
                     sum = value;
                     OnpropertyChagned();
+                    OnpropertyChagned(nameof(ButtonTextPay));
+                    OnpropertyChagned(nameof(AllSum));
                 }
             }
         }
+        public string AllSum
+        {
+            get
+            {
+                return $"{Tovars.Count} товара на {Tovars.Sum(element => element.Sum)}";
+            }
+        }
+        public string ButtonTextPay
+        {
+            get => $"ОФОРМИТЬ ЗА {Sum}";
+        }
         public ObservableCollection<Tovar> Tovars { get; set; }
+        public ICommand CommandPay { get; }
         public KorzinaViewModel()
         {
             Tovars = new ObservableCollection<Tovar>();
@@ -36,7 +51,7 @@ namespace DodoPitca.MVVM.ViewModels
                     Device.BeginInvokeOnMainThread(() =>
                     {
                         Tovars.Add(param as Pitca);
-                        Sum += (param as Pitca).TotalPrice;
+                        Sum += (param as Pitca).Sum;
                     });
 
                 else if (param.GetType() == typeof(Zakuska))
@@ -45,6 +60,12 @@ namespace DodoPitca.MVVM.ViewModels
                         Tovars.Add(param as Zakuska);
                         Sum+=(param as Zakuska).Price;
                     });
+            });
+            CommandPay = new Command(param =>
+            {
+                MessagingCenter.Send<BaseViewModel, int>(this, Strings.ADD_COINS, (int)(Tovars.Sum(element => element.Sum) * 0.05));
+                Tovars.Clear();
+                Sum = 0;
             });
         }
     }

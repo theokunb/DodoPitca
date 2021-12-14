@@ -13,6 +13,8 @@ namespace DodoPitca.MVVM.ViewModels
     {
         private Mode3 size;
         private Mode2 testo;
+        private string[,] combination = new string[2, 3] { { "Малеькая 25 см, традиционное тесто, 330 г", "Средняя 30 см, традиционное тесто, 480 г", "Большая 35 см, традиционное тесто, 650 г" },
+            { "Малеькая 25 см, тонкое тесто, 140 г", "Средняя 30 см, тонкое тесто, 370 г", "Большая 35 см, тонкое тесто, 540 г" } };
 
         public Mode2 Testo
         {
@@ -23,8 +25,9 @@ namespace DodoPitca.MVVM.ViewModels
                 {
                     testo = value;
                     OnpropertyChagned();
-                    OnpropertyChagned(nameof(TotalPrice));
+                    OnpropertyChagned(nameof(Sum));
                     OnpropertyChagned(nameof(FinalPrice));
+                    OnpropertyChagned(nameof(Info));
                 }
             }
         }
@@ -37,12 +40,13 @@ namespace DodoPitca.MVVM.ViewModels
                 {
                     size = value;
                     OnpropertyChagned();
-                    OnpropertyChagned(nameof(TotalPrice));
+                    OnpropertyChagned(nameof(Sum));
                     OnpropertyChagned(nameof(FinalPrice));
+                    OnpropertyChagned(nameof(Info));
                 }
             }
         }
-        public int TotalPrice
+        public override int Sum
         {
             get
             {
@@ -78,16 +82,33 @@ namespace DodoPitca.MVVM.ViewModels
         {
             get
             {
-                return $"В корзину за {TotalPrice} р";
+                return $"В корзину за {Sum} р";
             }
         }
+        public override string Info
+        {
+            get
+            {
+                string s = combination[(int)Testo, (int)Size];
+                foreach(var element in Ingridienti)
+                {
+                    if (element.IsChecked)
+                        s += ", " + element.Text;
+                }
+                return s;
+            }
+        }
+
         public ObservableCollection<Ingidient> Ingridienti { get; set; }
+        
+
         public Pitca()
         {
             MessagingCenter.Subscribe<BaseViewModel>(this, Strings.UPDATE_INGRIDIENTS, (sender) =>
             {
-                OnpropertyChagned(nameof(TotalPrice));
+                OnpropertyChagned(nameof(Sum));
                 OnpropertyChagned(nameof(FinalPrice));
+                OnpropertyChagned(nameof(Info));
             });
             Ingridienti = new ObservableCollection<Ingidient>();
             CommandBuy = new Command(param =>

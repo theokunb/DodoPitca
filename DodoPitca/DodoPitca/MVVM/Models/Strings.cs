@@ -59,5 +59,9 @@ namespace DodoPitca.MVVM.Models
         /// add totar to korzina
         /// </summary>
         public static string ADD_KORZINA = "addKorzina";
+        /// <summary>
+        /// add coins after buy
+        /// </summary>
+        public static string ADD_COINS = "addCoins";
     }
 }

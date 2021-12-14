@@ -104,5 +104,11 @@ namespace DodoPitca.MVVM.Models
             }
         }
         public ICommand CommandBuy { get; protected set; }
+        public abstract int Sum { get; }
+        public abstract string Info { get; }
+        public string DisplaySum
+        {
+            get { return $"{Sum} p"; }
+        }
     }
 }

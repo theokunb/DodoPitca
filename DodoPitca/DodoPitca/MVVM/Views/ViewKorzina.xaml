@@ -16,27 +16,52 @@
                    Margin="10"/>
             <ScrollView VerticalOptions="FillAndExpand">
                 <StackLayout>
-                    <Label Text="{Binding Sum}"
+                    <Label Text="{Binding AllSum}"
                            TextColor="Black"
                            FontSize="24"
                            Margin="10"/>
                     <StackLayout BindableLayout.ItemsSource="{Binding Tovars}">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
-                                <Label Text="{Binding Title}"/>
+                                <Frame BackgroundColor="White"
+                                       HasShadow="False">
+                                    <StackLayout Orientation="Vertical"
+                                                 Spacing="10">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="{Binding ImagePath}"
+                                                   Scale="0.5"
+                                                   Margin="-35"/>
+                                            <StackLayout Orientation="Vertical">
+                                                <Label Text="{Binding Title}"
+                                                       TextColor="Black"
+                                                       FontSize="18"/>
+                                                <Label Text="{Binding Info}"
+                                                       TextColor="DarkGray"
+                                                       FontSize="14"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <Line BackgroundColor="#E2E3E7"
+                                              WidthRequest="100"
+                                              HeightRequest="1"/>
+                                        <Label Text="{Binding DisplaySum}"
+                                               TextColor="Black"
+                                               FontSize="18"/>
+                                    </StackLayout>
+                                </Frame>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
                     </StackLayout>
                 </StackLayout>
             </ScrollView>
             <Frame BackgroundColor="White">
-                <Button Text="Оплатить"
+                <Button Text="{Binding ButtonTextPay}"
                         TextColor="White"
                         FontSize="18"
                         CornerRadius="40"
                         BackgroundColor="Orange"
                         VerticalOptions="FillAndExpand"
-                        HorizontalOptions="FillAndExpand"/>
+                        HorizontalOptions="FillAndExpand"
+                        Command="{Binding CommandPay}"/>
             </Frame>
         </StackLayout>
     </ContentView.Content>

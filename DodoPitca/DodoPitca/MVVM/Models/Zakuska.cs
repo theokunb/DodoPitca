@@ -9,6 +9,11 @@ namespace DodoPitca.MVVM.Models
     public class Zakuska : Tovar
     {
         public string FinalPrice { get => $"В корзину за {Price} р"; }
+        public override int Sum
+        {
+            get => Price;
+        }
+        public override string Info => Mass.ToString();
         public Zakuska()
         {
             CommandBuy = new Command(param =>
