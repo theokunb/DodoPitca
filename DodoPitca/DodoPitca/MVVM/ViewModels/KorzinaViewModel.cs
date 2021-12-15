@@ -26,6 +26,7 @@ namespace DodoPitca.MVVM.ViewModels
                     OnpropertyChagned();
                     OnpropertyChagned(nameof(ButtonTextPay));
                     OnpropertyChagned(nameof(AllSum));
+                    OnpropertyChagned(nameof(BonusCoins));
                 }
             }
         }
@@ -39,6 +40,10 @@ namespace DodoPitca.MVVM.ViewModels
         public string ButtonTextPay
         {
             get => $"ОФОРМИТЬ ЗА {Sum}";
+        }
+        public string BonusCoins
+        {
+            get => $"Начислим додокоинов    +{(int)(Tovars.Sum(element => element.Sum) * 0.05)} D";
         }
         public ObservableCollection<Tovar> Tovars { get; set; }
         public ICommand CommandPay { get; }

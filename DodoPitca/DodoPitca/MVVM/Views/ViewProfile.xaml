@@ -3,7 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:DodoPitca.MVVM.Models"
              xmlns:view="clr-namespace:DodoPitca.MVVM.Views"
+             xmlns:viewmodel="clr-namespace:DodoPitca.MVVM.ViewModels"
              x:Class="DodoPitca.MVVM.Views.ViewProfile">
+    <ContentView.BindingContext>
+        <viewmodel:ProfileViewModel/>
+    </ContentView.BindingContext>
   <ContentView.Content>
         <ScrollView Orientation="Vertical"
                   VerticalScrollBarVisibility="Never">
@@ -15,7 +19,7 @@
                        Margin="10,20,0,0"
                        HorizontalOptions="StartAndExpand"/>
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Алексей"
+                    <Label Text="{Binding UserName}"
                            TextColor="Black"
                            FontSize="28"
                            FontAttributes="Bold"
@@ -31,10 +35,10 @@
                              HorizontalOptions="CenterAndExpand"
                              Spacing="10">
                     <view:CustomProfileFrame Title="Додокоины"
-                                             Coins="200"
+                                             Coins="{Binding Source={x:RelativeSource AncestorType={x:Type viewmodel:ProfileViewModel}},Path=Coins}"
                                              ImagePath="{local:ImageResource DodoPitca.Images.dodoCoin.png}"/>
                     <view:CustomProfileFrame Title="Персональные акции"
-                                             Coins="0"
+                                             Coins="{Binding Source={x:RelativeSource AncestorType={x:Type viewmodel:ProfileViewModel}},Path=ActionsCount}"
                                              ImagePath="{local:ImageResource DodoPitca.Images.podarki.png}"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
@@ -43,7 +47,7 @@
                            FontSize="18"
                            HorizontalOptions="StartAndExpand"
                            Margin="10,0,0,0"/>
-                    <Label Text="2"
+                    <Label Text="{Binding DostavkaAddressesCount}"
                            TextColor="Black"
                            FontSize="18"
                            HorizontalOptions="EndAndExpand"
