@@ -43,7 +43,6 @@ namespace DodoPitca.MVVM.ViewModels
         public ProfileViewModel()
         {
             UserName = "Алексей";
-            Coins = 10;
             Actions = new ObservableCollection<PersonalAction>();
             Actions.Add(new PersonalAction()
             {
@@ -61,10 +60,7 @@ namespace DodoPitca.MVVM.ViewModels
             });
             MessagingCenter.Subscribe<BaseViewModel, int>(this, Strings.ADD_COINS, (sender, param) =>
             {
-                Device.BeginInvokeOnMainThread(() =>
-                {
-                    Coins += param;
-                });
+                Coins += param;
             });
 
         }
