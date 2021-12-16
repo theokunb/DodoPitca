@@ -44,7 +44,7 @@ namespace DodoPitca.MVVM.Views
         {
             var control = (CustomProfileFrame)bindable;
             var controlVM = control.BindingContext as CustomProfileFrameViewModel;
-            controlVM.Coins += Convert.ToInt32(newValue);
+            controlVM.Coins = Convert.ToInt32(newValue);
         }
         private static void ImagePathPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {

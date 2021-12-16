@@ -1,8 +1,10 @@
 ﻿using DodoPitca.MVVM.Models;
+using DodoPitca.MVVM.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace DodoPitca.MVVM.ViewModels
@@ -15,6 +17,7 @@ namespace DodoPitca.MVVM.ViewModels
         public int ActionsCount { get => Actions.Count; }
         public int DostavkaAddressesCount { get => DostavkaAddresses.addresses.Count; }
         public ObservableCollection<PersonalAction> Actions { get; set; }
+        public ICommand CommandAddresses { get; }
         public string UserName
         {
             get => userName;
@@ -61,6 +64,10 @@ namespace DodoPitca.MVVM.ViewModels
             MessagingCenter.Subscribe<BaseViewModel, int>(this, Strings.ADD_COINS, (sender, param) =>
             {
                 Coins += param;
+            });
+            CommandAddresses = new Command(param =>
+            {
+                Application.Current.MainPage.Navigation.PushModalAsync(new PageDostavkaAddress2());
             });
 
         }

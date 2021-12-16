@@ -68,7 +68,8 @@ namespace DodoPitca.MVVM.ViewModels
             });
             CommandPay = new Command(param =>
             {
-                MessagingCenter.Send<BaseViewModel, int>(this, Strings.ADD_COINS, (int)(Tovars.Sum(element => element.Sum) * 0.05));
+                int val = (int)(Tovars.Sum(element => element.Sum) * 0.05);
+                MessagingCenter.Send<BaseViewModel, int>(this, Strings.ADD_COINS, val);
                 Tovars.Clear();
                 Sum = 0;
             });

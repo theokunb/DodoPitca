@@ -42,6 +42,9 @@
                                              ImagePath="{local:ImageResource DodoPitca.Images.podarki.png}"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CommandAddresses}"/>
+                    </StackLayout.GestureRecognizers>
                     <Label Text="Адреса доставки"
                            TextColor="Black"
                            FontSize="18"

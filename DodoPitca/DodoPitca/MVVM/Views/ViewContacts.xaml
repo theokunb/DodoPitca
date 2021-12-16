@@ -66,7 +66,7 @@
                 <Line BackgroundColor="#E2E3E7"
                       WidthRequest="100"
                       HeightRequest="2"/>
-                <view:CustomContactsButton Text="Правовые документы"/>
+                <view:CustomContactsButton Text="О приложении"/>
                 <Line BackgroundColor="#E2E3E7"
                       WidthRequest="100"
                       HeightRequest="2"/>
